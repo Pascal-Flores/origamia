@@ -1,0 +1,153 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://origamia.vittascience/schema/exercise.schema.json",
+	"title": "Origamia Exercise",
+	"type": "object",
+	"additionalProperties": false,
+	"required": ["number", "enonce", "type", "media", "link"],
+	"properties": {
+		"number": {
+			"type": "integer",
+			"minimum": 1
+		},
+		"enonce": {
+			"type": "string",
+			"minLength": 1
+		},
+		"type": {
+			"type": "string",
+			"enum": ["qcu", "qcm", "dd", "ddt", "ddc", "free", "interface"]
+		},
+		"text": {
+			"type": "string",
+			"minLength": 1
+		},
+		"responses": {
+			"type": "object",
+			"minProperties": 1,
+			"additionalProperties": {
+				"type": "string"
+			}
+		},
+		"correctAnswers": {
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "string"
+			}
+		},
+		"correctAnswer": {
+			"type": "string",
+			"minLength": 1
+		},
+		"displayAnswer": {
+			"type": "string",
+			"minLength": 1
+		},
+		"items": {
+			"type": "object",
+			"minProperties": 1,
+			"additionalProperties": {
+				"type": "string"
+			}
+		},
+		"categories": {
+			"type": "object",
+			"minProperties": 1,
+			"additionalProperties": {
+				"type": "object",
+				"additionalProperties": false,
+				"required": ["name", "correctItems"],
+				"properties": {
+					"name": {
+						"type": "string",
+						"minLength": 1
+					},
+					"correctItems": {
+						"type": "array",
+						"minItems": 1,
+						"items": {
+							"type": "string"
+						}
+					}
+				}
+			}
+		},
+		"media": {
+			"type": "string",
+			"enum": ["", "image", "interface"]
+		},
+		"link": {
+			"type": "string"
+		},
+		"feedback": {
+			"type": "string"
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"enum": ["qcu", "qcm", "dd"]
+					}
+				}
+			},
+			"then": {
+				"required": ["responses", "correctAnswers", "feedback"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "ddt"
+					}
+				}
+			},
+			"then": {
+				"required": ["text", "responses", "correctAnswers", "feedback"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "ddc"
+					}
+				}
+			},
+			"then": {
+				"required": ["items", "categories", "feedback"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "free"
+					}
+				}
+			},
+			"then": {
+				"required": ["correctAnswer", "displayAnswer", "feedback"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "interface"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"media": {
+						"const": "interface"
+					}
+				}
+			}
+		}
+	]
+}

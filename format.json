@@ -1,0 +1,40 @@
+{
+  "1": {
+    "number": 1,
+    "enonce": "<p>La sonnerie de fin de récréation retentit. Remets les étapes dans l&#39;ordre pour rentrer correctement en classe.</p>",
+    "type": "dd",
+    "media": "",
+    "link": "",
+    "responses": {
+      "1": "<p><code>move: Se METTRE en rang</code></p>",
+      "2": "<p><code>move: ATTENDRE le signal du professeur</code></p>",
+      "3": "<p><code>move: SUIVRE le professeur jusqu&#39;à la salle de classe</code></p>"
+    },
+    "correctAnswers": [
+      "1",
+      "2",
+      "3"
+    ],
+    "feedback": "<p>Pour bien rentrer en classe, on commence par se mettre en rang, puis on attend le signal du professeur avant de le suivre jusqu&#39;à la salle : chaque étape doit être faite dans l&#39;ordre pour que tout se passe calmement.</p>"
+  },
+  "2": {
+    "number": 2,
+    "enonce": "<p>Complète le texte avec les étiquettes dans le bon ordre.</p>",
+    "type": "ddt",
+    "media": "",
+    "link": "",
+    "text": "<p>Pour envoyer un message sur l&#39;ENT, il faut d&#39;abord [[1]], puis [[2]]. À la fin, on peut [[3]].</p>",
+    "responses": {
+      "1": "<p>ouvrir l&#39;ENT</p>",
+      "2": "<p>se connecter à son compte</p>",
+      "3": "<p>envoyer le message</p>",
+      "4": "<p>fermer l&#39;ordinateur</p>"
+    },
+    "correctAnswers": [
+      "1",
+      "2",
+      "3"
+    ],
+    "feedback": "<p>Le texte se complète en suivant l&#39;ordre logique des actions : ouvrir l&#39;ENT, se connecter, puis envoyer le message. Les étiquettes doivent être de simples morceaux de phrase qui s&#39;insèrent directement dans le texte.</p>"
+  }
+}

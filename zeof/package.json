@@ -1,0 +1,17 @@
+{
+  "name": "blockly-svg-cli",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Render Blockly-style block diagrams from a tiny DSL to standalone SVG.",
+  "scripts": {
+    "build:exercises": "node build_exercises.js"
+  },
+  "bin": {
+    "blockly-svg-cli": "./blockly_svg_cli.js"
+  },
+  "dependencies": {
+    "blockly": "^12.4.1",
+    "js-yaml": "^4.1.1",
+    "playwright": "^1.58.2"
+  }
+}

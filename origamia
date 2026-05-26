@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+OUT_DIR="$ROOT_DIR/out"
+
+usage() {
+  cat <<'EOF'
+Origamia CLI
+
+Usage:
+  ./origamia <command> [options]
+
+Commands:
+  help, --help, -h     Show this help
+  build-exercises      Build exercises into out/format.json and out/images
+  build-dashboard      Build the project dashboard into out/dashboard
+  build                Alias for build-exercises
+  clean-out            Remove generated files from out/
+  clean                Alias for clean-out
+  rebuild-exercises    Clean out/ then build exercises
+  rebuild              Alias for rebuild-exercises
+
+Examples:
+  ./origamia build-exercises
+  ./origamia build-dashboard
+  ./origamia build --chromium-path /usr/bin/google-chrome
+  ./origamia clean-out
+EOF
+}
+
+clean_out() {
+  mkdir -p "$OUT_DIR"
+
+  find "$OUT_DIR" -mindepth 1 -maxdepth 1 -exec rm -rf {} +
+  echo "Cleaned $OUT_DIR"
+}
+
+build_exercises() {
+  node "$ROOT_DIR/zeof/build_exercises.js" "$@"
+}
+
+build_dashboard() {
+  python3 "$ROOT_DIR/src/assets/sql/build_project_dashboard.py" "$@"
+}
+
+main() {
+  local command="${1:-help}"
+
+  case "$command" in
+    help|--help|-h)
+      usage
+      ;;
+    build-exercises|build)
+      shift || true
+      build_exercises "$@"
+      ;;
+    build-dashboard|dashboard)
+      shift || true
+      build_dashboard "$@"
+      ;;
+    clean-out|clean)
+      clean_out
+      ;;
+    rebuild-exercises|rebuild)
+      shift || true
+      clean_out
+      build_exercises "$@"
+      ;;
+    *)
+      echo "Unknown command: $command" >&2
+      echo >&2
+      usage >&2
+      exit 1
+      ;;
+  esac
+}
+
+main "$@"

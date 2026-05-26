@@ -1,0 +1,7 @@
+.codex
+.agents
+.venv
+.vscode
+out
+__pycache__
+node_modules
