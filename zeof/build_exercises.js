@@ -17,8 +17,10 @@ const DEFAULT_DASHBOARD_DIR = path.join(DEFAULT_OUTPUT_DIR, 'dashboard');
 const DEFAULT_PROJECT_DB_PATH = path.join(REPO_ROOT, 'src', 'assets', 'sql', 'referentiel.sqlite');
 const DEFAULT_DOC_DB_PATH = path.join(REPO_ROOT, 'src', 'assets', 'sql', 'doc_referentiel.sqlite');
 const DEFAULT_TARGET_EXERCISE_COUNT = 230;
+const PYTHON_COMMAND = process.env.PYTHON || (process.platform === 'win32' ? 'python' : 'python3');
+const PYTHON_ENV = {...process.env, PYTHONIOENCODING: 'utf-8'};
 const BUILD_CACHE_FILE_NAME = '.build-exercises-cache.json';
-const BUILD_CACHE_VERSION = 5;
+const BUILD_CACHE_VERSION = 7;
 
 function fail(message) {
   process.stderr.write(`${message}\n`);
@@ -37,6 +39,7 @@ function parseArgs(rawArgs) {
     docDbPath: DEFAULT_DOC_DB_PATH,
     syncDb: true,
     buildDashboard: true,
+    includeAllStatuses: false,
     incremental: true,
     targetExerciseCount: DEFAULT_TARGET_EXERCISE_COUNT,
     chromiumPath: process.env.CHROMIUM_PATH || null,
@@ -64,6 +67,8 @@ function parseArgs(rawArgs) {
       options.syncDb = false;
     } else if (arg === '--skip-dashboard') {
       options.buildDashboard = false;
+    } else if (arg === '--include-all') {
+      options.includeAllStatuses = true;
     } else if (arg === '--no-incremental') {
       options.incremental = false;
     } else if (arg === '--target-exercise-count') {
@@ -91,6 +96,7 @@ Options:
   --doc-db FILE             Source referential SQLite database. Default: src/assets/sql/doc_referentiel.sqlite
   --skip-db                 Skip SQLite synchronization
   --skip-dashboard          Skip dashboard generation
+  --include-all             Include TODO and WIP exercises in format.json
   --no-incremental          Rebuild everything without using the exercise cache
   --target-exercise-count N Planned total number of exercises. Default: 230
   --chromium-path FILE      Chromium executable for SVG/JPG rendering
@@ -523,6 +529,12 @@ function stripImageFromHtml(html, imageSrc) {
 }
 
 const BLOCKLY_FENCE_LANGUAGES = new Set(['blockly', 'origamia', 'origamia-blockly', 'blockly-text', 'blockly-txt']);
+const ROBOT_GRID_FENCE_LANGUAGES = new Set(['robot-grid', 'robotgrid', 'grille-robot']);
+
+function looksLikeRobotGridDsl(language) {
+  const normalizedLanguage = stripDiacritics(String(language || '')).toLowerCase();
+  return ROBOT_GRID_FENCE_LANGUAGES.has(normalizedLanguage);
+}
 
 function looksLikeBlocklyDsl(language, code) {
   const normalizedLanguage = stripDiacritics(String(language || '')).toLowerCase();
@@ -660,6 +672,7 @@ function resolveAssetDirectory(exerciseNumber, exerciseFilePath, options) {
 
 const BUILD_SCRIPT_HASH = hashFile(__filename);
 const BLOCKLY_RENDERER_HASH = hashFile(path.join(__dirname, 'blockly_svg_cli.js'));
+const ROBOT_GRID_RENDERER_HASH = hashFile(path.join(REPO_ROOT, 'src', 'assets', 'scripts', 'generate_robot_grid.py'));
 
 function listTextAssets(assetDir) {
   if (!assetDir) {
@@ -695,6 +708,7 @@ function buildExerciseFingerprint(source, assetDir, exercisePath, options) {
     buildCacheVersion: BUILD_CACHE_VERSION,
     buildScriptHash: BUILD_SCRIPT_HASH,
     blocklyRendererHash: BLOCKLY_RENDERER_HASH,
+    robotGridRendererHash: ROBOT_GRID_RENDERER_HASH,
     assetHtmlPrefix: options.assetHtmlPrefix,
     exercisePath: toPosixPath(path.relative(REPO_ROOT, exercisePath)),
     source: normalizeLineEndings(source),
@@ -730,7 +744,14 @@ function renderFragment(markdown, assets = [], renderContext = null, target = nu
 
   let html = markdownToHtml(markdownWithTokens, {
     renderCodeBlock: ({language, code}) => {
-      if (!renderContext || !looksLikeBlocklyDsl(language, code)) {
+      if (!renderContext) {
+        return null;
+      }
+      if (looksLikeRobotGridDsl(language)) {
+        const asset = registerGeneratedRobotGridAsset(code, renderContext, target);
+        return createAssetMarkup(asset);
+      }
+      if (!looksLikeBlocklyDsl(language, code)) {
         return null;
       }
 
@@ -889,6 +910,52 @@ function registerGeneratedBlocklyAsset(source, renderContext, target) {
   renderContext.assetSequence += 1;
   const stem = `${targetToStem(target)}-inline${renderContext.assetSequence}`;
   const asset = renderBlocklySourceToAsset(
+    source,
+    renderContext.exerciseNumber,
+    stem,
+    target || {kind: 'unknown', target: 'inline'},
+    renderContext.options,
+  );
+  renderContext.inlineAssets.push(asset);
+  return asset;
+}
+
+function renderRobotGridSourceToAsset(source, exerciseNumber, stem, classification, options) {
+  const scriptPath = path.join(REPO_ROOT, 'src', 'assets', 'scripts', 'generate_robot_grid.py');
+  const exerciseImagesDir = getExerciseImagesDir(options, exerciseNumber);
+  const fileName = `${exerciseNumber}-${stem}.svg`;
+  const outputPath = path.join(exerciseImagesDir, fileName);
+  const args = [scriptPath, '--output', outputPath, '--spec', '-'];
+
+  fs.mkdirSync(exerciseImagesDir, {recursive: true});
+
+  try {
+    execFileSync(PYTHON_COMMAND, args, {
+      cwd: REPO_ROOT,
+      stdio: 'pipe',
+      encoding: 'utf8',
+      env: PYTHON_ENV,
+      input: Buffer.from(source.endsWith('\n') ? source : `${source}\n`, 'utf8'),
+    });
+  } catch (error) {
+    const details = (error.stderr || error.stdout || error.message || '').trim();
+    fail(`Failed to render robot-grid asset ${stem}: ${details}`);
+  }
+
+  return {
+    stem,
+    fileName,
+    outputPath,
+    htmlPath: joinPosix(getExerciseHtmlPrefix(options, exerciseNumber), fileName),
+    label: labelFromTarget(classification, stem),
+    ...classification,
+  };
+}
+
+function registerGeneratedRobotGridAsset(source, renderContext, target) {
+  renderContext.assetSequence += 1;
+  const stem = `${targetToStem(target)}-inline${renderContext.assetSequence}`;
+  const asset = renderRobotGridSourceToAsset(
     source,
     renderContext.exerciseNumber,
     stem,
@@ -1098,7 +1165,10 @@ function normalizeExerciseStatus(value) {
     .toLowerCase();
 }
 
-function shouldPublishExercise(status) {
+function shouldPublishExercise(status, options) {
+  if (options.includeAllStatuses) {
+    return true;
+  }
   const normalizedStatus = normalizeExerciseStatus(status);
   return normalizedStatus === 'testing' || normalizedStatus === 'done';
 }
@@ -1122,11 +1192,12 @@ function syncProjectDatabase(options, exercises) {
   ];
 
   try {
-    execFileSync('python3', args, {
+    execFileSync(PYTHON_COMMAND, args, {
       cwd: REPO_ROOT,
       stdio: 'pipe',
       encoding: 'utf8',
-      input: JSON.stringify({exercises}),
+      env: PYTHON_ENV,
+      input: Buffer.from(JSON.stringify({exercises}), 'utf8'),
     });
   } catch (error) {
     const details = (error.stderr || error.stdout || error.message || '').trim();
@@ -1149,10 +1220,11 @@ function buildProjectDashboard(options) {
   ];
 
   try {
-    execFileSync('python3', args, {
+    execFileSync(PYTHON_COMMAND, args, {
       cwd: REPO_ROOT,
       stdio: 'pipe',
       encoding: 'utf8',
+      env: PYTHON_ENV,
     });
   } catch (error) {
     const details = (error.stderr || error.stdout || error.message || '').trim();
@@ -1338,7 +1410,7 @@ async function main() {
 
     if (canReuseCachedExercise(cachedEntry, fingerprint)) {
       exerciseRows.push(cachedEntry.dbRow);
-      if (shouldPublishExercise(cachedEntry.dbRow?.statut)) {
+      if (shouldPublishExercise(cachedEntry.dbRow?.statut, options)) {
         output[String(exerciseNumber)] = cachedEntry.exercise;
       }
       nextCacheEntries[String(exerciseNumber)] = cachedEntry;
@@ -1399,7 +1471,7 @@ async function main() {
     }
 
     const dbRow = buildExerciseDbRow(exerciseNumber, exercisePath, frontMatter, exercise);
-    if (shouldPublishExercise(dbRow.statut)) {
+    if (shouldPublishExercise(dbRow.statut, options)) {
       output[String(exerciseNumber)] = exercise;
     }
     exerciseRows.push(dbRow);
