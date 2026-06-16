@@ -4,13 +4,17 @@
 	"title": "Origamia Exercise",
 	"type": "object",
 	"additionalProperties": false,
-	"required": ["number", "enonce", "type", "media", "link"],
+	"required": ["number", "contexte", "consigne", "type", "media", "link"],
 	"properties": {
 		"number": {
 			"type": "integer",
 			"minimum": 1
 		},
-		"enonce": {
+		"contexte": {
+			"type": "string",
+			"minLength": 1
+		},
+		"consigne": {
 			"type": "string",
 			"minLength": 1
 		},

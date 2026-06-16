@@ -23,8 +23,9 @@ link:
 
 1. Dupliquer un template.
 2. Remplir le frontmatter + sections.
-3. Garder la numerotation des reponses/solutions en chiffres.
-4. Pour `exercice-texte-a-trous.md`, utiliser `[[1]]`, `[[2]]`, etc. pour marquer les trous dans l'ordre.
-5. Dans un texte a trous, les etiquettes doivent etre du texte simple, directement inserable dans la phrase, pas des blocs ou du code.
+3. Separer toujours la situation dans `# Contexte` et l'action demandee dans `# Consigne`.
+4. Garder la numerotation des reponses/solutions en chiffres.
+5. Pour `exercice-texte-a-trous.md`, utiliser `[[1]]`, `[[2]]`, etc. pour marquer les trous dans l'ordre.
+6. Dans un texte a trous, les etiquettes doivent etre du texte simple, directement inserable dans la phrase, pas des blocs ou du code.
 
 Le format reste volontairement court pour faciliter l'ecriture.

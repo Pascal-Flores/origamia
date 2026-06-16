@@ -5,9 +5,13 @@ media: ""
 link: ""
 ---
 
-# Énoncé
+# Contexte
 
-L'énoncé de l'exercice, mis en page en Markdown.
+La situation de départ de l'exercice, mise en page en Markdown.
+
+# Consigne
+
+Ce que l'apprenant doit faire, mis en page en Markdown.
 
 # Solution
 

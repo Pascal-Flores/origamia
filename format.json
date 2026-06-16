@@ -1,7 +1,8 @@
 {
   "1": {
     "number": 1,
-    "enonce": "<p>La sonnerie de fin de récréation retentit. Remets les étapes dans l&#39;ordre pour rentrer correctement en classe.</p>",
+    "contexte": "<p>La sonnerie de fin de récréation retentit.</p>",
+    "consigne": "<p>Remets les étapes dans l&#39;ordre pour rentrer correctement en classe.</p>",
     "type": "dd",
     "media": "",
     "link": "",
@@ -19,7 +20,8 @@
   },
   "2": {
     "number": 2,
-    "enonce": "<p>Complète le texte avec les étiquettes dans le bon ordre.</p>",
+    "contexte": "<p>Un texte à trous doit être complété.</p>",
+    "consigne": "<p>Complète le texte avec les étiquettes dans le bon ordre.</p>",
     "type": "ddt",
     "media": "",
     "link": "",

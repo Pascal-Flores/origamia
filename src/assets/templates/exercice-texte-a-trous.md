@@ -5,7 +5,11 @@ media: ""
 link: ""
 ---
 
-# Énoncé
+# Contexte
+
+Un texte à trous doit être complété.
+
+# Consigne
 
 Complète le texte avec les étiquettes dans le bon ordre.
 

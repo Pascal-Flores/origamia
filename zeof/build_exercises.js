@@ -446,6 +446,23 @@ function markdownToPlainText(markdown) {
     .trim();
 }
 
+function extractPromptSections(sections, exercisePath) {
+  const contexteMarkdown = optionalSection(sections, ['contexte', 'context']);
+  const consigneMarkdown = optionalSection(sections, ['consigne', 'instruction', 'instructions']);
+
+  if (!contexteMarkdown) {
+    fail(`Missing section Contexte in ${exercisePath}`);
+  }
+  if (!consigneMarkdown) {
+    fail(`Missing section Consigne in ${exercisePath}`);
+  }
+
+  return {
+    contexteMarkdown,
+    consigneMarkdown,
+  };
+}
+
 const BLOCKLY_DSL_KINDS = new Set(['event', 'move', 'wait', 'say', 'set', 'if', 'repeat', 'controla', 'control', 'fin', 'end']);
 
 function extractBlocklyKind(line) {
@@ -796,8 +813,11 @@ function renderFragment(markdown, assets = [], renderContext = null, target = nu
 function classifyAssetStem(stem) {
   const normalized = stripDiacritics(stem).toLowerCase();
 
-  if (normalized === 'enonce') {
-    return {kind: 'section', target: 'enonce'};
+  if (normalized === 'contexte' || normalized === 'context') {
+    return {kind: 'section', target: 'contexte'};
+  }
+  if (normalized === 'consigne' || normalized === 'instruction' || normalized === 'instructions') {
+    return {kind: 'section', target: 'consigne'};
   }
   if (normalized === 'text' || normalized === 'texte') {
     return {kind: 'section', target: 'text'};
@@ -847,8 +867,11 @@ function labelFromTarget(target, fallbackStem) {
     return buildCompositeLabel(fallbackStem);
   }
   if (target.kind === 'section') {
-    if (target.target === 'enonce') {
-      return 'Énoncé';
+    if (target.target === 'contexte') {
+      return 'Contexte';
+    }
+    if (target.target === 'consigne') {
+      return 'Consigne';
     }
     if (target.target === 'text') {
       return 'Texte à trous';
@@ -1006,8 +1029,8 @@ function normalizeMediaImageLink(value) {
     .trim();
 }
 
-function resolveEnonceMediaAsset(allAssets) {
-  return allAssets.find((asset) => asset.kind === 'section' && asset.target === 'enonce') || null;
+function resolveSectionMediaAsset(allAssets, targets) {
+  return allAssets.find((asset) => asset.kind === 'section' && targets.includes(asset.target)) || null;
 }
 
 function canReuseCachedExercise(entry, fingerprint) {
@@ -1236,14 +1259,16 @@ function buildExerciseObject(exerciseNumber, exercisePath, sections, frontMatter
   const type = normalizeExerciseType(frontMatter.type || '');
   const base = {
     number: exerciseNumber,
-    enonce: '',
+    contexte: '',
+    consigne: '',
     type,
     media: frontMatter.media || '',
     link: frontMatter.link || '',
   };
 
-  const enonceMarkdown = requireSection(sections, ['enonce'], exercisePath);
-  base.enonce = renderFragment(enonceMarkdown, assetsByTarget.enonce || [], renderContext, {kind: 'section', target: 'enonce'});
+  const {contexteMarkdown, consigneMarkdown} = extractPromptSections(sections, exercisePath);
+  base.contexte = renderFragment(contexteMarkdown, assetsByTarget.contexte || [], renderContext, {kind: 'section', target: 'contexte'});
+  base.consigne = renderFragment(consigneMarkdown, assetsByTarget.consigne || [], renderContext, {kind: 'section', target: 'consigne'});
 
   if (type === 'qcu' || type === 'qcm' || type === 'dd') {
     const responsesMarkdown = requireSection(sections, ['reponses'], exercisePath);
@@ -1319,7 +1344,8 @@ function buildExerciseObject(exerciseNumber, exercisePath, sections, frontMatter
 
 function groupAssetsByTarget(generatedAssets) {
   const grouped = {
-    enonce: [],
+    contexte: [],
+    consigne: [],
     text: [],
     feedback: [],
     responses: new Map(),
@@ -1329,8 +1355,12 @@ function groupAssetsByTarget(generatedAssets) {
   };
 
   for (const asset of generatedAssets) {
-    if (asset.kind === 'section' && asset.target === 'enonce') {
-      grouped.enonce.push(asset);
+    if (asset.kind === 'section' && asset.target === 'contexte') {
+      grouped.contexte.push(asset);
+      continue;
+    }
+    if (asset.kind === 'section' && asset.target === 'consigne') {
+      grouped.consigne.push(asset);
       continue;
     }
     if (asset.kind === 'section' && asset.target === 'text') {
@@ -1437,13 +1467,14 @@ async function main() {
     if (exercise.media === 'image') {
       const normalizedImageLink = normalizeMediaImageLink(exercise.link);
 
-      if (normalizedImageLink === 'enonce') {
-        const enonceAsset = resolveEnonceMediaAsset(allAssets);
-        if (!enonceAsset) {
-          fail(`Exercise ${exerciseNumber} uses "link: enonce" but no Blockly image was generated in the Énoncé section`);
+      if (['contexte', 'consigne'].includes(normalizedImageLink)) {
+        const sectionAsset = resolveSectionMediaAsset(allAssets, [normalizedImageLink]);
+        if (!sectionAsset) {
+          fail(`Exercise ${exerciseNumber} uses "link: ${exercise.link}" but no Blockly image was generated in the targeted prompt section`);
         }
-        exercise.link = enonceAsset.htmlPath;
-        exercise.enonce = stripImageFromHtml(exercise.enonce, enonceAsset.htmlPath);
+        exercise.link = sectionAsset.htmlPath;
+        exercise.contexte = stripImageFromHtml(exercise.contexte, sectionAsset.htmlPath);
+        exercise.consigne = stripImageFromHtml(exercise.consigne, sectionAsset.htmlPath);
       } else {
         const compositeCandidates = allAssets
           .filter((asset) => asset.kind === 'indexed')
