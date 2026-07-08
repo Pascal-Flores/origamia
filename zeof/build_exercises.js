@@ -20,7 +20,8 @@ const DEFAULT_TARGET_EXERCISE_COUNT = 230;
 const PYTHON_COMMAND = process.env.PYTHON || (process.platform === 'win32' ? 'python' : 'python3');
 const PYTHON_ENV = {...process.env, PYTHONIOENCODING: 'utf-8'};
 const BUILD_CACHE_FILE_NAME = '.build-exercises-cache.json';
-const BUILD_CACHE_VERSION = 7;
+const BUILD_CACHE_VERSION = 8;
+const STATIC_ASSET_EXTENSIONS = new Set(['.svg', '.png', '.jpg', '.jpeg', '.webp']);
 
 function fail(message) {
   process.stderr.write(`${message}\n`);
@@ -706,9 +707,29 @@ function listTextAssets(assetDir) {
     }));
 }
 
+function listStaticImageAssets(assetDir) {
+  if (!assetDir) {
+    return [];
+  }
+
+  return fs.readdirSync(assetDir)
+    .filter((name) => STATIC_ASSET_EXTENSIONS.has(path.extname(name).toLowerCase()))
+    .sort((left, right) => left.localeCompare(right, 'fr', {numeric: true}))
+    .map((name) => {
+      const ext = path.extname(name);
+      return {
+        name,
+        ext,
+        stem: path.basename(name, ext),
+        inputPath: path.join(assetDir, name),
+      };
+    });
+}
+
 function buildAssetSourcesDigest(assetDir) {
   const textAssets = listTextAssets(assetDir);
-  if (textAssets.length === 0) {
+  const staticImageAssets = listStaticImageAssets(assetDir);
+  if (textAssets.length === 0 && staticImageAssets.length === 0) {
     return '';
   }
 
@@ -716,6 +737,10 @@ function buildAssetSourcesDigest(assetDir) {
   for (const asset of textAssets) {
     parts.push(`name:${asset.name}`);
     parts.push(`content:${normalizeLineEndings(fs.readFileSync(asset.inputPath, 'utf8'))}`);
+  }
+  for (const asset of staticImageAssets) {
+    parts.push(`name:${asset.name}`);
+    parts.push(`content-hash:${hashFile(asset.inputPath)}`);
   }
   return hashString(parts.join('\n---\n'));
 }
@@ -989,10 +1014,30 @@ function registerGeneratedRobotGridAsset(source, renderContext, target) {
   return asset;
 }
 
+function copyStaticImageAsset(asset, exerciseNumber, options) {
+  const classification = classifyAssetStem(asset.stem);
+  const exerciseImagesDir = getExerciseImagesDir(options, exerciseNumber);
+  const fileName = `${exerciseNumber}-${asset.stem}${asset.ext}`;
+  const outputPath = path.join(exerciseImagesDir, fileName);
+
+  fs.mkdirSync(exerciseImagesDir, {recursive: true});
+  fs.copyFileSync(asset.inputPath, outputPath);
+
+  return {
+    ...asset,
+    ...classification,
+    fileName,
+    outputPath,
+    htmlPath: joinPosix(getExerciseHtmlPrefix(options, exerciseNumber), fileName),
+    label: labelFromTarget(classification, asset.stem),
+  };
+}
+
 function generateSvgAssets(exerciseNumber, assetDir, options) {
   const textAssets = listTextAssets(assetDir);
+  const staticImageAssets = listStaticImageAssets(assetDir);
 
-  return textAssets.map((asset) => {
+  const generatedTextAssets = textAssets.map((asset) => {
     const classification = classifyAssetStem(asset.stem);
     const renderedAsset = renderBlocklySourceToAsset(fs.readFileSync(asset.inputPath, 'utf8'), exerciseNumber, asset.stem, classification, options);
     return {
@@ -1000,6 +1045,10 @@ function generateSvgAssets(exerciseNumber, assetDir, options) {
       ...renderedAsset,
     };
   });
+
+  const copiedImageAssets = staticImageAssets.map((asset) => copyStaticImageAsset(asset, exerciseNumber, options));
+
+  return [...generatedTextAssets, ...copiedImageAssets];
 }
 
 function buildCompositeLabel(stem) {

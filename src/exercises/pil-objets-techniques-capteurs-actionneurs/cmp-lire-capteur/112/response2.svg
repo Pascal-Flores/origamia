@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="126" viewBox="0 0 360 126">
+  <rect width="360" height="126" fill="none"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-weight="700">
+    <rect x="4" y="8" width="352" height="110" rx="55" fill="#9864f6" stroke="#6f43bd" stroke-width="4"/>
+    <text x="44" y="78" font-size="42" fill="#fff">luminosité</text>
+  </g>
+</svg>
