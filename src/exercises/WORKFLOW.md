@@ -13,6 +13,8 @@ La forme ne se limite pas au type technique (`qcu`, `qcm`, `ddc`, `ddu`, `texte-
 - la forme exacte de la consigne ;
 - la nature des categories ou des reponses ;
 - le format attendu des solutions ;
+- le nombre d'essais prevu ;
+- la progression des feedbacks en cas d'erreur ;
 - les representations autorisees, et celles qui doivent etre converties en image au build ;
 - les contraintes didactiques propres a l'attendu ;
 - les points a ne pas faire.
@@ -52,6 +54,22 @@ Ne pas inventer de statuts frontmatter intermediaires.
 Les sous-etapes du travail ne vont pas dans `statut`; elles vont dans le fichier `NN-wip.md`.
 
 Un statut non prevu ne casse pas forcement le build, mais il risque de sortir de la publication normale et d'apparaitre comme `other` dans le dashboard. Ne pas s'en servir comme workflow cache.
+
+## Metadonnees frontmatter
+
+Chaque exercice doit avoir un `nom` court et visible par l'eleve, sans mention de variante, ainsi qu'une `description` courte pour le suivi pedagogique.
+
+Le `nom` n'a pas besoin de decrire techniquement la tache. Il doit plutot servir d'accroche : concret, lisible, un peu vivant ou amusant quand le contexte s'y prete, tout en restant comprehensible par un eleve de cycle 3.
+
+La `description`, elle, doit expliciter le geste travaille : ce que l'eleve va faire, avec quel support, et quelle competence est mobilisee. Elle peut etre plus descriptive que le nom.
+
+Le champ `essais` indique le nombre maximal de tentatives autorisees pour l'exercice.
+
+- `essais: 1` : seul le feedback final est necessaire.
+- `essais: 2` : ajouter `# Feedback essai 1`, puis `# Feedback`.
+- `essais: 3` : ajouter `# Feedback essai 1`, `# Feedback essai 2`, puis `# Feedback`.
+
+Le feedback d'essai doit aider sans donner directement la solution. Le feedback final doit expliquer la solution apres echec complet. La section `# Feedback final` est acceptee comme alias de `# Feedback`.
 
 ## Trace de validation
 
@@ -121,7 +139,8 @@ Une validation est explicite seulement si elle est formulee par l'utilisateur da
    - la coherence des representations ;
    - les backticks et rendus image/texte attendus ;
    - la solution ;
-   - le feedback ;
+   - le nombre d'essais ;
+   - les feedbacks intermediaires et le feedback final ;
    - le build JSON.
 
    Un reviewer doit rendre un verdict parmi :

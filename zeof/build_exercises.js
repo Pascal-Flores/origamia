@@ -20,7 +20,7 @@ const DEFAULT_TARGET_EXERCISE_COUNT = 230;
 const PYTHON_COMMAND = process.env.PYTHON || (process.platform === 'win32' ? 'python' : 'python3');
 const PYTHON_ENV = {...process.env, PYTHONIOENCODING: 'utf-8'};
 const BUILD_CACHE_FILE_NAME = '.build-exercises-cache.json';
-const BUILD_CACHE_VERSION = 8;
+const BUILD_CACHE_VERSION = 9;
 const STATIC_ASSET_EXTENSIONS = new Set(['.svg', '.png', '.jpg', '.jpeg', '.webp']);
 
 function fail(message) {
@@ -1215,6 +1215,96 @@ function getFrontMatterValue(frontMatter, ...keys) {
   return null;
 }
 
+function parseMaxAttempts(frontMatter, exercisePath) {
+  const rawValue = getFrontMatterValue(
+    frontMatter,
+    'essais',
+    'tentatives',
+    'maxAttempts',
+    'max_attempts',
+    'attempts',
+  );
+
+  if (rawValue === null || rawValue === '') {
+    return 1;
+  }
+
+  const value = Number(rawValue);
+  if (!Number.isInteger(value) || value < 1) {
+    fail(`Invalid attempts count in ${exercisePath}: expected a positive integer`);
+  }
+
+  return value;
+}
+
+function getFeedbackSection(sections, aliases) {
+  for (const alias of aliases) {
+    const section = optionalSection(sections, [alias]);
+    if (section) {
+      return section;
+    }
+  }
+  return '';
+}
+
+function buildFeedbacks(sections, exercisePath, frontMatter, assetsByTarget, renderContext) {
+  const maxAttempts = parseMaxAttempts(frontMatter, exercisePath);
+  const feedbacks = {};
+
+  for (let attempt = 1; attempt < maxAttempts; attempt += 1) {
+    const feedbackMarkdown = getFeedbackSection(sections, [
+      `feedback essai ${attempt}`,
+      `feedback tentative ${attempt}`,
+      `feedback erreur ${attempt}`,
+      `feedback ${attempt}`,
+    ]);
+
+    if (!feedbackMarkdown) {
+      fail(`Missing section "Feedback essai ${attempt}" in ${exercisePath} for essais: ${maxAttempts}`);
+    }
+
+    feedbacks[String(attempt)] = renderFragment(
+      feedbackMarkdown,
+      assetsByTarget.feedback || [],
+      renderContext,
+      {kind: 'section', target: 'feedback'},
+    );
+  }
+
+  const finalFeedbackMarkdown = getFeedbackSection(sections, ['feedback final', 'feedback']);
+  if (!finalFeedbackMarkdown) {
+    fail(`Missing section "Feedback final" or "Feedback" in ${exercisePath}`);
+  }
+
+  feedbacks.final = renderFragment(
+    finalFeedbackMarkdown,
+    assetsByTarget.feedback || [],
+    renderContext,
+    {kind: 'section', target: 'feedback'},
+  );
+
+  return {
+    maxAttempts,
+    feedbacks,
+  };
+}
+
+function applyFeedbacks(base, sections, exercisePath, frontMatter, assetsByTarget, renderContext) {
+  const {maxAttempts, feedbacks} = buildFeedbacks(
+    sections,
+    exercisePath,
+    frontMatter,
+    assetsByTarget,
+    renderContext,
+  );
+
+  base.maxAttempts = maxAttempts;
+  base.feedbacks = feedbacks;
+  // Legacy field kept so existing consumers can continue reading the final
+  // explanation while the UI migrates to per-attempt feedback.
+  base.feedback = feedbacks.final;
+}
+
 function buildExerciseDbRow(exerciseNumber, exercisePath, frontMatter, exercise) {
   return {
     number: exerciseNumber,
@@ -1227,6 +1317,7 @@ function buildExerciseDbRow(exerciseNumber, exercisePath, frontMatter, exercise)
     mise_en_situation: getFrontMatterValue(frontMatter, 'mise_en_situation', 'mise en situation', 'situation'),
     media: exercise.media || '',
     link: exercise.link || '',
+    max_attempts: exercise.maxAttempts || 1,
     source_path: toPosixPath(path.relative(REPO_ROOT, exercisePath)),
     generated_json: JSON.stringify(exercise, null, 2),
   };
@@ -1330,7 +1421,7 @@ function buildExerciseObject(exerciseNumber, exercisePath, sections, frontMatter
       renderFragment(value, assetsByTarget.responses?.get(key) || [], renderContext, {kind: 'indexed', target: 'responses', index: key}),
     ]));
     base.correctAnswers = parseChoiceSolution(requireSection(sections, ['solution'], exercisePath), exercisePath);
-    base.feedback = renderFragment(requireSection(sections, ['feedback'], exercisePath), assetsByTarget.feedback || [], renderContext, {kind: 'section', target: 'feedback'});
+    applyFeedbacks(base, sections, exercisePath, frontMatter, assetsByTarget, renderContext);
     return base;
   }
 
@@ -1344,7 +1435,7 @@ function buildExerciseObject(exerciseNumber, exercisePath, sections, frontMatter
       renderFragment(value, assetsByTarget.responses?.get(key) || [], renderContext, {kind: 'indexed', target: 'responses', index: key}),
     ]));
     base.correctAnswers = parseChoiceSolution(requireSection(sections, ['solution'], exercisePath), exercisePath);
-    base.feedback = renderFragment(requireSection(sections, ['feedback'], exercisePath), assetsByTarget.feedback || [], renderContext, {kind: 'section', target: 'feedback'});
+    applyFeedbacks(base, sections, exercisePath, frontMatter, assetsByTarget, renderContext);
     return base;
   }
 
@@ -1363,7 +1454,7 @@ function buildExerciseObject(exerciseNumber, exercisePath, sections, frontMatter
       name: renderFragment(value, assetsByTarget.categories?.get(key) || [], renderContext, {kind: 'indexed', target: 'categories', index: key}),
       correctItems: solutions.get(key) || [],
     }]));
-    base.feedback = renderFragment(requireSection(sections, ['feedback'], exercisePath), assetsByTarget.feedback || [], renderContext, {kind: 'section', target: 'feedback'});
+    applyFeedbacks(base, sections, exercisePath, frontMatter, assetsByTarget, renderContext);
     return base;
   }
 
@@ -1372,7 +1463,7 @@ function buildExerciseObject(exerciseNumber, exercisePath, sections, frontMatter
     const displayAnswer = markdownToPlainText(rawSolution);
     base.correctAnswer = displayAnswer.toLowerCase();
     base.displayAnswer = displayAnswer;
-    base.feedback = renderFragment(requireSection(sections, ['feedback'], exercisePath), assetsByTarget.feedback || [], renderContext, {kind: 'section', target: 'feedback'});
+    applyFeedbacks(base, sections, exercisePath, frontMatter, assetsByTarget, renderContext);
     return base;
   }
 
@@ -1384,10 +1475,7 @@ function buildExerciseObject(exerciseNumber, exercisePath, sections, frontMatter
         base.link = linkMatch[1] || linkMatch[0];
       }
     }
-    const feedbackSection = optionalSection(sections, ['feedback']);
-    if (feedbackSection) {
-      base.feedback = renderFragment(feedbackSection, assetsByTarget.feedback || [], renderContext, {kind: 'section', target: 'feedback'});
-    }
+    applyFeedbacks(base, sections, exercisePath, frontMatter, assetsByTarget, renderContext);
     return base;
   }
 

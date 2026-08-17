@@ -1,6 +1,11 @@
 ---
-nom: Titre exercice
+nom: Nom visible par l'élève
+description: Courte description pédagogique visible dans les outils de suivi.
 type: ddt
+competence:
+attendu:
+statut: wip
+essais: 2
 media: ""
 link: ""
 ---
@@ -28,6 +33,10 @@ Pour envoyer un message sur l'ENT, il faut d'abord [[1]], puis [[2]]. À la fin,
 
 1, 2, 3
 
+# Feedback essai 1
+
+Indice affiché après le premier essai manqué, uniquement si `essais` vaut au moins 2.
+
 # Feedback
 
-Le texte se complète en suivant l'ordre logique des actions : ouvrir l'ENT, se connecter, puis envoyer le message. Les étiquettes doivent être de simples morceaux de phrase qui s'insèrent directement dans le texte.
+Explication finale affichée après le dernier essai manqué. Les étiquettes doivent être de simples morceaux de phrase qui s'insèrent directement dans le texte.

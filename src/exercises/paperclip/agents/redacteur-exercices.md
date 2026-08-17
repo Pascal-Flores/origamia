@@ -11,6 +11,9 @@ Rediger les exercices autorises par le gate courant, en suivant strictement `NN-
 - Respecter les representations autorisees.
 - Garder les situations uniques et adaptees au niveau scolaire.
 - Garder le type technique demande.
+- Renseigner un nom court visible par l'eleve.
+- Renseigner une description courte de suivi pedagogique.
+- Definir `essais` et les feedbacks associes.
 
 ## Interdictions
 

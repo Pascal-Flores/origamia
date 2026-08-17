@@ -1,7 +1,9 @@
 nom:
+description:
 type:
 competence:
 attendu:
 statut:
+essais: 2
 image?:
 interface?:

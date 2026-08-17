@@ -11,8 +11,11 @@ Verifier que les 3 variantes forment une serie coherentement declinee.
 - Les exercices sont-ils trop proches les uns des autres ?
 - Les formulations sont-elles trop proches ou trop differentes ?
 - La difficulte est-elle stable ou progressivement ajustee selon l'attendu ?
-- Le nom de chaque exercice decrit-il l'action generale commune aux 3 variantes ?
-- Le feedback reste-t-il utile sans donner une regle trop vague ?
+- Le nom de chaque exercice est-il court, visible par l'eleve, sans mention de variante ?
+- La description resume-t-elle le geste pedagogique sans repeter l'enonce ?
+- Le nombre d'essais est-il coherent avec la difficulte et le type d'exercice ?
+- Les feedbacks intermediaires aident-ils sans donner directement la solution ?
+- Le feedback final explique-t-il clairement la solution apres echec complet ?
 
 ## Sortie attendue
 

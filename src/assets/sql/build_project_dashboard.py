@@ -212,9 +212,12 @@ def build_distribution_data(conn: sqlite3.Connection, built_count: int, status_d
 
 def build_coverage_data(conn: sqlite3.Connection, built_count: int) -> tuple[list[dict], float]:
     fields = [
+        ("nom", "Nom"),
+        ("description", "Description"),
         ("competence", "Compétence"),
         ("attendu", "Attendu"),
         ("statut", "Statut"),
+        ("max_attempts", "Essais"),
         ("mise_en_situation", "Mise en situation"),
         ("media", "Média"),
         ("link", "Lien média"),
@@ -438,6 +441,7 @@ def build_exercise_rows(conn: sqlite3.Connection, output_dir: Path) -> list[dict
             COALESCE(NULLIF(TRIM(pilier_intitule), ''), NULLIF(TRIM(pilier_id_slug), ''), 'Non renseigné') AS pilier,
             COALESCE(NULLIF(TRIM(attendu_intitule), ''), NULLIF(TRIM(attendu), ''), 'Non renseigné') AS attendu,
             COALESCE(NULLIF(TRIM(mise_en_situation_nom), ''), NULLIF(TRIM(mise_en_situation), ''), 'Non renseigné') AS situation,
+            COALESCE(max_attempts, 1) AS max_attempts,
             source_path
         FROM exercices_enrichis
         ORDER BY number ASC
@@ -1251,6 +1255,7 @@ def build_html(data: dict) -> str:
               <th>Pilier</th>
               <th>Attendu</th>
               <th>Situation</th>
+              <th>Essais</th>
               <th>Source</th>
             </tr>
           </thead>
@@ -1757,6 +1762,9 @@ def build_html(data: dict) -> str:
         const situationCell = document.createElement('td');
         appendValueContent(situationCell, row.situation);
 
+        const attemptsCell = document.createElement('td');
+        attemptsCell.textContent = row.max_attempts || 1;
+
         const sourceCell = document.createElement('td');
         if (row.source_href) {{
           const link = document.createElement('a');
@@ -1777,6 +1785,7 @@ def build_html(data: dict) -> str:
           pillarCell,
           attenduCell,
           situationCell,
+          attemptsCell,
           sourceCell
         );
 
@@ -1815,6 +1824,7 @@ def build_html(data: dict) -> str:
           exercise.pilier,
           exercise.attendu,
           exercise.situation,
+          exercise.max_attempts,
           exercise.source_path,
         ].join(' ').toLowerCase();
 

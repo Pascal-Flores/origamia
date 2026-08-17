@@ -1,6 +1,11 @@
 ---
-nom: Titre exercice
+nom: Nom visible par l'élève
+description: Courte description pédagogique visible dans les outils de suivi.
 type: qcm
+competence:
+attendu:
+statut: wip
+essais: 2
 media: ""
 link: ""
 ---
@@ -23,6 +28,10 @@ Ce que l'apprenant doit faire, mis en page en Markdown.
 
 1, 3
 
+# Feedback essai 1
+
+Indice affiché après le premier essai manqué, uniquement si `essais` vaut au moins 2.
+
 # Feedback
 
-Une explication de la solution lorsque l'apprenant se trompe.
+Explication finale affichée après le dernier essai manqué. Ce texte reste aussi exporté dans le champ `feedback` historique.

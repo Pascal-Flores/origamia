@@ -165,6 +165,7 @@ def ensure_exercices_table(conn: sqlite3.Connection) -> None:
             mise_en_situation TEXT,
             media TEXT,
             link TEXT,
+            max_attempts INTEGER,
             source_path TEXT NOT NULL,
             generated_json TEXT NOT NULL,
             updated_at TEXT NOT NULL
@@ -172,6 +173,7 @@ def ensure_exercices_table(conn: sqlite3.Connection) -> None:
         """
     )
     ensure_column(conn, "exercices", "description", "description TEXT")
+    ensure_column(conn, "exercices", "max_attempts", "max_attempts INTEGER")
     conn.execute("DELETE FROM exercices")
     conn.execute("DROP INDEX IF EXISTS main.idx_exercices_competence")
     conn.execute("DROP INDEX IF EXISTS main.idx_exercices_attendu")
@@ -194,6 +196,7 @@ def insert_exercices(conn: sqlite3.Connection, exercices: list[dict]) -> None:
             exercice.get("mise_en_situation"),
             exercice.get("media"),
             exercice.get("link"),
+            exercice.get("max_attempts", 1),
             exercice["source_path"],
             exercice["generated_json"],
             now,
@@ -214,10 +217,11 @@ def insert_exercices(conn: sqlite3.Connection, exercices: list[dict]) -> None:
             mise_en_situation,
             media,
             link,
+            max_attempts,
             source_path,
             generated_json,
             updated_at
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         rows,
     )
@@ -255,6 +259,7 @@ def create_views(conn: sqlite3.Connection) -> None:
             r.categorie AS mise_en_situation_categorie,
             e.media,
             e.link,
+            e.max_attempts,
             e.source_path,
             e.generated_json,
             e.updated_at
