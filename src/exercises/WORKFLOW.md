@@ -158,6 +158,36 @@ Export publiable :
 
 Le wrapper `python origamia build` ajoute actuellement `--include-all`. Il est donc pratique pour controler le corpus, mais il ne doit pas etre confondu avec un export publiable filtre.
 
+## Representations autorisees
+
+Les seules representations algorithmiques autorisees dans les exercices sont :
+
+1. Langage naturel
+   - phrases courtes en francais ;
+   - consignes ou reformulations d'actions ;
+   - listes d'etapes redigees en francais.
+
+2. Pseudo-code du projet
+   - forme textuelle simple deja utilisee dans les exercices existants ;
+   - lignes de type `DÉBUT`, `FIN`, actions en majuscules ou formulations proches des exercices voisins ;
+   - aucune syntaxe tierce du type `action: ...`, `direction: ...`, `angle: ...`, objet JSON, tableau cle-valeur ou notation inventee.
+
+3. Blocs Blockly representes textuellement pour conversion en image au build
+   - uniquement avec les prefixes et conventions deja pris en charge par le build, par exemple `event:`, `move:`, `say:`, `repeat:`, `controla:`, `end:` ;
+   - les blocs doivent etre fournis a l'eleve comme des blocs deja produits, generalement convertis en images par le build ;
+   - l'eleve ne doit pas avoir a ecrire du Blockly ni a inventer une ligne Blockly ;
+   - si l'exercice manipule des blocs, il doit demander de choisir, classer, associer ou ordonner des blocs fournis.
+
+Toute autre representation est interdite sans validation explicite de l'utilisateur et verification prealable du support par le build.
+
+En particulier, ne pas introduire :
+
+- de syntaxe de transition creee pour l'exercice ;
+- de pseudo-JSON ;
+- de schema ou logigramme non pris en charge ;
+- de tableau de champs `action / objet / parametre` presente comme representation algorithmique ;
+- de blocs Blockly a completer par saisie libre.
+
 ## Garde-fous
 
 - Ne pas inventer de representation ou de format non defini par le projet.
@@ -165,6 +195,7 @@ Le wrapper `python origamia build` ajoute actuellement `--include-all`. Il est d
 - Verifier les attendus dans `src/doc` ou dans `doc_referentiel.sqlite` si necessaire.
 - Pour les textes a trous, les trous doivent contenir du texte, pas des images de blocs.
 - Les blocs Blockly doivent etre entre backticks/fences seulement lorsqu'ils doivent etre convertis en image.
+- Les blocs Blockly ne sont pas directement editables par l'eleve : ne pas demander d'en ecrire ou d'en completer une ligne. Fournir les blocs comme choix, etiquettes ou elements a ordonner.
 - Si la forme n'est pas claire, ecrire la question dans `NN-wip.md` plutot que modifier directement les exercices finaux.
 
 ## Orchestration

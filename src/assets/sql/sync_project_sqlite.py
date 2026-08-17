@@ -143,12 +143,21 @@ def ensure_project_meta(conn: sqlite3.Connection, target_count: int, built_count
     )
 
 
+def ensure_column(
+    conn: sqlite3.Connection, table: str, column: str, definition: str
+) -> None:
+    columns = {row[1] for row in conn.execute(f'PRAGMA table_info("{table}")')}
+    if column not in columns:
+        conn.execute(f'ALTER TABLE "{table}" ADD COLUMN {definition}')
+
+
 def ensure_exercices_table(conn: sqlite3.Connection) -> None:
     conn.execute(
         """
         CREATE TABLE IF NOT EXISTS exercices (
             number INTEGER PRIMARY KEY,
             nom TEXT NOT NULL,
+            description TEXT,
             competence TEXT,
             attendu TEXT,
             type TEXT NOT NULL,
@@ -162,6 +171,7 @@ def ensure_exercices_table(conn: sqlite3.Connection) -> None:
         )
         """
     )
+    ensure_column(conn, "exercices", "description", "description TEXT")
     conn.execute("DELETE FROM exercices")
     conn.execute("DROP INDEX IF EXISTS main.idx_exercices_competence")
     conn.execute("DROP INDEX IF EXISTS main.idx_exercices_attendu")
@@ -176,6 +186,7 @@ def insert_exercices(conn: sqlite3.Connection, exercices: list[dict]) -> None:
         (
             exercice["number"],
             exercice["nom"],
+            exercice.get("description"),
             exercice.get("competence"),
             exercice.get("attendu"),
             exercice["type"],
@@ -195,6 +206,7 @@ def insert_exercices(conn: sqlite3.Connection, exercices: list[dict]) -> None:
         INSERT INTO exercices (
             number,
             nom,
+            description,
             competence,
             attendu,
             type,
@@ -205,7 +217,7 @@ def insert_exercices(conn: sqlite3.Connection, exercices: list[dict]) -> None:
             source_path,
             generated_json,
             updated_at
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         rows,
     )
@@ -227,6 +239,7 @@ def create_views(conn: sqlite3.Connection) -> None:
         SELECT
             e.number,
             e.nom,
+            e.description,
             e.competence,
             c.nom AS competence_nom,
             c.description AS competence_description,

@@ -431,6 +431,7 @@ def build_exercise_rows(conn: sqlite3.Connection, output_dir: Path) -> list[dict
         SELECT
             number,
             nom,
+            COALESCE(NULLIF(TRIM(description), ''), '') AS description,
             COALESCE(NULLIF(TRIM(statut), ''), 'Non renseigné') AS statut,
             COALESCE(NULLIF(TRIM(type), ''), 'Non renseigné') AS type,
             COALESCE(NULLIF(TRIM(competence_nom), ''), NULLIF(TRIM(competence), ''), 'Non renseigné') AS competence,
@@ -1243,6 +1244,7 @@ def build_html(data: dict) -> str:
             <tr>
               <th>N°</th>
               <th>Nom</th>
+              <th>Description</th>
               <th>Statut</th>
               <th>Type</th>
               <th>Compétence</th>
@@ -1730,6 +1732,9 @@ def build_html(data: dict) -> str:
         const nameCell = document.createElement('td');
         nameCell.textContent = row.nom;
 
+        const descriptionCell = document.createElement('td');
+        appendValueContent(descriptionCell, row.description);
+
         const statusCell = document.createElement('td');
         const statusPill = createStatusPill(row.statut);
         statusCell.appendChild(statusPill);
@@ -1765,6 +1770,7 @@ def build_html(data: dict) -> str:
         tr.append(
           numberCell,
           nameCell,
+          descriptionCell,
           statusCell,
           typeCell,
           competenceCell,
@@ -1802,6 +1808,7 @@ def build_html(data: dict) -> str:
         const haystack = [
           exercise.number,
           exercise.nom,
+          exercise.description,
           exercise.statut,
           exercise.type,
           exercise.competence,

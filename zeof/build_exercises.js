@@ -1219,6 +1219,7 @@ function buildExerciseDbRow(exerciseNumber, exercisePath, frontMatter, exercise)
   return {
     number: exerciseNumber,
     nom: String(getFrontMatterValue(frontMatter, 'nom') || `Exercice ${exerciseNumber}`),
+    description: String(getFrontMatterValue(frontMatter, 'description') || ''),
     competence: getFrontMatterValue(frontMatter, 'competence'),
     attendu: getFrontMatterValue(frontMatter, 'attendu'),
     type: exercise.type,
@@ -1308,6 +1309,8 @@ function buildExerciseObject(exerciseNumber, exercisePath, sections, frontMatter
   const type = normalizeExerciseType(frontMatter.type || '');
   const base = {
     number: exerciseNumber,
+    nom: String(getFrontMatterValue(frontMatter, 'nom') || `Exercice ${exerciseNumber}`),
+    description: String(getFrontMatterValue(frontMatter, 'description') || ''),
     contexte: '',
     consigne: '',
     type,
