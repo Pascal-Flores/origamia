@@ -1,0 +1,20 @@
+"""
+Auteur: Origamia
+Interface: microbit
+Nom du projet: 115 - Concert sous controle
+Description: Observer les lectures du microphone, du thermometre et du capteur de luminosite.
+Toolbox: vittascience
+Mode: mixed
+
+Blocks: <xml xmlns="https://developers.google.com/blockly/xml"><block type="on_start" id="ex115_start_0" deletable="false" x="20" y="20" /><block type="forever" id="ex115_forever_0" x="350" y="20"><statement name="DO"><block type="communication_serialWrite" id="ex115_reading1_0"><mutation newlines="false" /><value name="TEXT"><block type="io_micro_getSoundLevel" id="ex115_sensor1_0" /></value><next><block type="communication_serialWrite" id="ex115_reading2_0"><mutation newlines="false" /><value name="TEXT"><block type="sensors_getTemperature" id="ex115_sensor2_0"><field name="UNIT">CELSIUS</field></block></value><next><block type="communication_serialWrite" id="ex115_reading3_0"><mutation newlines="false" /><value name="TEXT"><block type="sensors_getLight" id="ex115_sensor3_0" /></value><next><block type="io_pause" id="ex115_pause_0"><field name="UNIT">SEC</field><value name="TIME"><shadow type="math_number" id="ex115_pause_1"><field name="NUM">1</field></shadow></value></block></next></block></next></block></next></block></statement></block></xml>
+"""
+# Le programme est genere a partir des blocs du projet Vittascience.
+from microbit import *
+import utime
+
+while True:
+    print(str(microphone.sound_level()))
+    print(str(temperature()))
+    print(str(display.read_light_level()))
+    utime.sleep(1)
+
