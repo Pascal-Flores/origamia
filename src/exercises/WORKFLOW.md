@@ -48,6 +48,7 @@ Le fichier `NN-wip.md` doit etre supprime quand les 3 variantes passent en `test
 Ne pas inventer de statuts frontmatter intermediaires.
 
 - `wip` : utilise pendant tout le travail de cadrage, redaction, validation, declinaison et review.
+- `bug` : utilise lorsqu'un probleme technique identifie empeche la simulation, la correction automatique ou l'utilisation normale de l'exercice. Ce statut n'est pas publiable et doit etre retire quand le probleme est corrige.
 - `testing` : utilise uniquement apres validation explicite de l'utilisateur sur la serie complete.
 - `done`, `drop`, `todo` : utilises seulement si l'utilisateur le demande explicitement ou si le referentiel l'exige.
 
@@ -214,6 +215,7 @@ En particulier, ne pas introduire :
 - Verifier les attendus dans `src/doc` ou dans `doc_referentiel.sqlite` si necessaire.
 - Pour les textes a trous, les trous doivent contenir du texte, pas des images de blocs.
 - Les blocs Blockly doivent etre entre backticks/fences seulement lorsqu'ils doivent etre convertis en image.
+- Une reponse, une etiquette ou une categorie convertie en image doit contenir uniquement cette image. Ne pas ajouter de titre, de numero, d'explication ou de consigne dans le meme element ; placer ces informations dans le contexte, la consigne ou un element textuel distinct.
 - Les blocs Blockly ne sont pas directement editables par l'eleve : ne pas demander d'en ecrire ou d'en completer une ligne. Fournir les blocs comme choix, etiquettes ou elements a ordonner.
 - Si la forme n'est pas claire, ecrire la question dans `NN-wip.md` plutot que modifier directement les exercices finaux.
 

@@ -97,7 +97,7 @@ Options:
   --doc-db FILE             Source referential SQLite database. Default: src/assets/sql/doc_referentiel.sqlite
   --skip-db                 Skip SQLite synchronization
   --skip-dashboard          Skip dashboard generation
-  --include-all             Include TODO and WIP exercises in format.json
+  --include-all             Include all statuses, including TODO, WIP and BUG
   --no-incremental          Rebuild everything without using the exercise cache
   --target-exercise-count N Planned total number of exercises. Default: 230
   --chromium-path FILE      Chromium executable for SVG/JPG rendering

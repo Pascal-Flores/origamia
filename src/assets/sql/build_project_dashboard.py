@@ -18,6 +18,7 @@ DEFAULT_ATTENDU_TARGET = 3
 STATUS_CONFIG = {
     "todo": {"label": "TODO", "tone": "todo"},
     "wip": {"label": "WIP", "tone": "wip"},
+    "bug": {"label": "BUG", "tone": "bug"},
     "testing": {"label": "TESTING", "tone": "testing"},
     "done": {"label": "DONE", "tone": "done"},
     "drop": {"label": "DROP", "tone": "drop"},
@@ -25,7 +26,7 @@ STATUS_CONFIG = {
     "other": {"label": "Autre", "tone": "other"},
     "remaining": {"label": "Non créé", "tone": "remaining"},
 }
-STATUS_ORDER = ["todo", "wip", "testing", "done", "drop", "other", "unspecified"]
+STATUS_ORDER = ["todo", "wip", "bug", "testing", "done", "drop", "other", "unspecified"]
 
 
 def parse_args() -> argparse.Namespace:
@@ -144,7 +145,7 @@ def build_status_data(conn: sqlite3.Connection, built_count: int, target_count: 
         )
 
     completed_count = counts["done"] + counts["drop"]
-    active_count = counts["todo"] + counts["wip"] + counts["testing"]
+    active_count = counts["todo"] + counts["wip"] + counts["bug"] + counts["testing"]
 
     return {
         "counts": counts,
@@ -632,6 +633,10 @@ def build_html(data: dict) -> str:
       background: #e59a52;
     }}
 
+    .progress-segment.bug {{
+      background: #d95f59;
+    }}
+
     .progress-segment.testing {{
       background: #4c97ff;
     }}
@@ -691,6 +696,11 @@ def build_html(data: dict) -> str:
     .status-wip {{
       background: #f4debf;
       color: #8d5d29;
+    }}
+
+    .status-bug {{
+      background: #f7d0cc;
+      color: #963a35;
     }}
 
     .status-testing {{
@@ -882,6 +892,10 @@ def build_html(data: dict) -> str:
       background: #e59a52;
     }}
 
+    .bar-fill.bug {{
+      background: #d95f59;
+    }}
+
     .bar-fill.testing {{
       background: #4c97ff;
     }}
@@ -1028,6 +1042,12 @@ def build_html(data: dict) -> str:
     .legend-item.status-wip {{
       background: #f4debf;
       color: #8d5d29;
+    }}
+
+    .pill.status-bug,
+    .legend-item.status-bug {{
+      background: #f7d0cc;
+      color: #963a35;
     }}
 
     .pill.status-testing,
@@ -1276,6 +1296,7 @@ def build_html(data: dict) -> str:
     const statusToneMap = {{
       'TODO': 'todo',
       'WIP': 'wip',
+      'BUG': 'bug',
       'TESTING': 'testing',
       'DONE': 'done',
       'DROP': 'drop',
@@ -1526,7 +1547,7 @@ def build_html(data: dict) -> str:
           formatNumber(summary.target_count)
         }}, dont ${{formatNumber(summary.completed_count)}} clôturé(s).`;
       document.getElementById('hero-progress-note').textContent =
-        `${{formatNumber(summary.active_count)}} encore actif(s) (TODO, WIP, TESTING) et ${{
+        `${{formatNumber(summary.active_count)}} encore actif(s) (TODO, WIP, BUG, TESTING) et ${{
           formatNumber(summary.remaining_count)
         }} encore non créé(s) pour atteindre l’objectif global.`;
       renderHeroProgress();
