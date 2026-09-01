@@ -1,13 +1,22 @@
-# Solution de l'exercice 11 - La frise ondulée
+# Solution de l'exercice 11 - La ligne pointillée
 # Le programme reste développé : aucune boucle.
+# Les blocs utilisent uniquement leurs valeurs par défaut.
 
 from turtle import *
 
-circle(30, 180)
-right(180)
-circle(30, 180)
-right(180)
-circle(30, 180)
-right(180)
-circle(30, 180)
-right(180)
+forward(50)
+penup()
+forward(50)
+pendown()
+forward(50)
+penup()
+forward(50)
+pendown()
+forward(50)
+penup()
+forward(50)
+pendown()
+forward(50)
+penup()
+forward(50)
+pendown()
