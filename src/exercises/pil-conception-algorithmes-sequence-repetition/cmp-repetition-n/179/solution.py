@@ -1,15 +1,17 @@
-# Solution de l'exercice 179 - Le pentagone sans boucle
-# Le programme doit rester développé : aucune boucle dans la version montrée à l'élève.
+# Solution de l'exercice 179 - La rosace du compas
+# Le programme reste développé : aucune boucle.
 
 from turtle import *
 
-forward(70)
-right(72)
-forward(70)
-right(72)
-forward(70)
-right(72)
-forward(70)
-right(72)
-forward(70)
-right(72)
+circle(30)
+right(60)
+circle(30)
+right(60)
+circle(30)
+right(60)
+circle(30)
+right(60)
+circle(30)
+right(60)
+circle(30)
+right(60)

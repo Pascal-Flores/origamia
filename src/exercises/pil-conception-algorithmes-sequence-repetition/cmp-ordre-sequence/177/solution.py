@@ -1,14 +1,13 @@
-# Solution de l'exercice 177 - Parcours en spirale
-# Les 8 blocs sont déjà paramétrés dans l'exercice Vittascience.
-# L'élève doit uniquement les assembler dans cet ordre.
+# Solution de l'exercice 177 - Trois salles et la sortie
+# Tous les paramètres correspondent aux valeurs par défaut des blocs Vittascience.
 
 from turtle import *
 
-forward(120)
+circle(50)
 right(90)
-forward(90)
+circle(50)
 right(90)
-forward(60)
+circle(50)
 right(90)
-forward(30)
-right(90)
+forward(50)
+forward(50)

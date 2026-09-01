@@ -1,14 +1,13 @@
-# Solution de l'exercice 178 - Fanion de départ
-# Les 8 blocs sont déjà paramétrés dans l'exercice Vittascience.
-# L'élève doit uniquement les assembler dans cet ordre.
+# Solution de l'exercice 178 - Parcours aux virages arrondis
+# Tous les paramètres correspondent aux valeurs par défaut des blocs Vittascience.
 
 from turtle import *
 
-left(90)
-forward(120)
+forward(50)
+circle(50, 90)
 right(90)
-forward(80)
-right(120)
-forward(80)
-right(120)
-forward(80)
+forward(50)
+circle(50, 90)
+right(90)
+forward(50)
+circle(50, 90)
