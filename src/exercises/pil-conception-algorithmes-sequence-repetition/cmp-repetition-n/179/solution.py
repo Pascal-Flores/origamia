@@ -1,17 +1,26 @@
-# Solution de l'exercice 179 - La rosace du compas
+# Solution de l'exercice 179 - Les quatre hublots
 # Le programme reste développé : aucune boucle.
+# Les blocs utilisent uniquement leurs valeurs par défaut.
 
 from turtle import *
 
-circle(30)
-right(60)
-circle(30)
-right(60)
-circle(30)
-right(60)
-circle(30)
-right(60)
-circle(30)
-right(60)
-circle(30)
-right(60)
+circle(50)
+penup()
+forward(50)
+forward(50)
+pendown()
+circle(50)
+penup()
+forward(50)
+forward(50)
+pendown()
+circle(50)
+penup()
+forward(50)
+forward(50)
+pendown()
+circle(50)
+penup()
+forward(50)
+forward(50)
+pendown()
