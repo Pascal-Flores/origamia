@@ -1,11 +1,18 @@
-# Solution de l'exercice 10 - Les perforations du billet
-# Le programme reste développé : aucune boucle.
+# Solution de l'exercice 10 - L'escalier vers l'étage
+# Programme développé sans boucle : le même motif de 4 instructions est répété 3 fois.
+# Tous les paramètres correspondent aux valeurs par défaut des blocs Turtle Vittascience.
 
 from turtle import *
 
-circle(15)
-forward(40)
-circle(15)
-forward(40)
-circle(15)
-forward(40)
+forward(50)
+left(90)
+forward(50)
+right(90)
+forward(50)
+left(90)
+forward(50)
+right(90)
+forward(50)
+left(90)
+forward(50)
+right(90)
