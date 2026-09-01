@@ -34,8 +34,10 @@
 - 2026-09-01 : lorsqu'un projet Vittascience est fourni, il doit reprendre la structure réelle des exports/projets existants du dépôt et les types/champs officiels des blocs Vittascience ; ne pas inventer le format.
 - 2026-09-01 : l'appellation « trèfle à quatre feuilles » ne correspond pas assez précisément au tracé de 177 ; utiliser une référence exacte ou expliciter précisément l'analogie.
 - 2026-09-01 : pour 177, conserver la rosace et adapter la mise en situation ; une situation pertinente peut être inventée si nécessaire.
+- 2026-09-01 : 177 validé ; passage à la variante 178.
+- 2026-09-01 : les mises en situation peuvent être inventées si cela permet une meilleure cohérence avec la figure, sans introduire de compétence parasite.
 
-## Correction de 177
+## Correction de 177 - validée
 
 - Cible : une rosace à quatre cercles.
 - Mise en situation : `rit-decorer-affiche-rosace` — la classe prépare une affiche d'exposition et souhaite la décorer avec un motif géométrique.
@@ -44,10 +46,21 @@
 - Toutes les valeurs sont les valeurs par défaut des blocs Turtle Vittascience.
 - Projet `177/vittascience.py` fourni avec un workspace Blockly cohérent et le code Python correspondant.
 
+## Proposition de 178
+
+- Cible : un pictogramme de clé immédiatement identifiable.
+- Mise en situation : `rit-reperer-casier-cles` — un casier de classe sert à ranger les clés du matériel ; une étiquette avec un pictogramme permet de le repérer.
+- Description exacte : un anneau rond, une longue tige, puis un panneton simplifié en angle droit.
+- 8 blocs : `cercle 50`, `droite 90`, `avancer 50`, `avancer 50`, `gauche 90`, `avancer 50`, `droite 90`, `avancer 50`.
+- Toutes les valeurs sont les valeurs par défaut des blocs Turtle Vittascience.
+- Figure volontairement très différente de la rosace 177 et des polygones historiques 7 à 9.
+- Projet `178/vittascience.py` fourni avec le workspace Blockly et le code Python correspondant.
+
 ## Validations utilisateur
 
 - Cadrage : à revoir
-- Variante pilote : à revoir
+- Variante 177 : validée
+- Variante 178 : à revoir
 - Déclinaison : à revoir
 - Review finale : non valide
 - Passage testing : non valide
