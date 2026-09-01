@@ -1,8 +1,8 @@
 """
 Auteur: Origamia
 Interface: python
-Nom du projet: 177 - Trèfle à quatre feuilles
-Description: Solution Turtle de l'exercice 177.
+Nom du projet: 177 - Rosace à quatre cercles
+Description: Solution Turtle de l'exercice 177 : quatre cercles identiques partant du même point dans quatre directions.
 Toolbox: vittascience
 Mode: mixed
 
