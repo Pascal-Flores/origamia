@@ -12,15 +12,15 @@
 
 - Compétence : `cmp-ordre-sequence`
 - Attendu : `att-ordre-sequence-6e`
-- Geste : construire un programme Turtle en ordonnant exactement 8 blocs fournis et déjà paramétrés.
+- Geste : construire un programme Turtle en ordonnant des blocs fournis et déjà paramétrés pour obtenir une figure cible.
 
 ## Forme invariante
 
 - Type : `interface`.
 - Canvas élève vide en mode exercice.
 - Les blocs utiles sont fournis dans la toolbox ; l'élève les assemble uniquement.
-- Les paramètres sont déjà corrects.
-- Exactement 8 instructions dans la solution.
+- Les paramètres sont déjà corrects et utilisent les valeurs par défaut des blocs Vittascience.
+- Le nombre de blocs peut dépasser 8 si cela permet d'obtenir une figure nettement plus reconnaissable ; le nombre d'instructions ne doit pas être réduit au détriment de la lisibilité de la cible.
 - La figure cible doit être immédiatement reconnaissable et nommée dans l'énoncé.
 - Les variantes doivent produire des figures réellement différentes.
 - La mise en situation doit expliquer naturellement pourquoi cette figure est tracée ; ne pas plaquer un rituel sans rapport avec le dessin.
@@ -36,6 +36,7 @@
 - 2026-09-01 : pour 177, conserver la rosace et adapter la mise en situation ; une situation pertinente peut être inventée si nécessaire.
 - 2026-09-01 : 177 validé ; passage à la variante 178.
 - 2026-09-01 : les mises en situation peuvent être inventées si cela permet une meilleure cohérence avec la figure, sans introduire de compétence parasite.
+- 2026-09-01 : la première proposition de 178 ne ressemble pas suffisamment à une clé ; il est possible d'utiliser davantage d'instructions pour obtenir une forme clairement reconnaissable.
 
 ## Correction de 177 - validée
 
@@ -46,14 +47,14 @@
 - Toutes les valeurs sont les valeurs par défaut des blocs Turtle Vittascience.
 - Projet `177/vittascience.py` fourni avec un workspace Blockly cohérent et le code Python correspondant.
 
-## Proposition de 178
+## Proposition révisée de 178
 
-- Cible : un pictogramme de clé immédiatement identifiable.
-- Mise en situation : `rit-reperer-casier-cles` — un casier de classe sert à ranger les clés du matériel ; une étiquette avec un pictogramme permet de le repérer.
-- Description exacte : un anneau rond, une longue tige, puis un panneton simplifié en angle droit.
-- 8 blocs : `cercle 50`, `droite 90`, `avancer 50`, `avancer 50`, `gauche 90`, `avancer 50`, `droite 90`, `avancer 50`.
+- Cible : un drapeau de départ rectangulaire fixé en haut d'un mât.
+- Mise en situation : `rit-preparer-parcours-sport` — préparation d'un petit parcours sportif avec un drapeau pour matérialiser le départ sur le plan.
+- Description exacte : un mât vertical de trois segments, puis un rectangle horizontal de deux segments de large et un segment de haut.
+- 12 blocs : `gauche 90`, trois `avancer 50`, `droite 90`, deux `avancer 50`, `droite 90`, `avancer 50`, `droite 90`, deux `avancer 50`.
 - Toutes les valeurs sont les valeurs par défaut des blocs Turtle Vittascience.
-- Figure volontairement très différente de la rosace 177 et des polygones historiques 7 à 9.
+- Figure immédiatement identifiable comme un drapeau et très différente de la rosace 177.
 - Projet `178/vittascience.py` fourni avec le workspace Blockly et le code Python correspondant.
 
 ## Validations utilisateur
