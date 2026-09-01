@@ -61,13 +61,13 @@
 
 ## Variante 180
 
-- Cible : échelle simplifiée à six barreaux.
-- Situation : `rit-dessiner-pictogramme-echelle`.
-- Motif : `avancer 50` → `reculer 50` → `gauche 90°` → `avancer 50` → `droite 90°`.
+- Cible : guirlande de six perles rondes alignées le long d'un fil.
+- Situation : `rit-dessiner-guirlande-six-perles`.
+- Motif : `cercle 20` → `avancer 50`.
 - Répétitions : 6.
-- Après les six répétitions, Turtle lève le stylo, rejoint le haut du montant droit, rebaisse le stylo, tourne vers le bas puis avance six fois de 50 pour terminer le second montant.
-- Programme : 40 blocs au total.
-- `solution.py` et `vittascience.py` ont été réalignés sur les 6 répétitions le 2026-09-02.
+- Programme : 12 blocs.
+- `vittascience.py` reconstruit le 2026-09-02 uniquement à partir de structures de blocs déjà présentes dans des projets importés avec succès : `turtle_circle` depuis 179 et `turtle_direction` depuis 12.
+- Le fichier final a été validé avec l'extraction d'en-tête utilisée par `project_panel.js`, `xml.etree.ElementTree` et un `DOMParser` Chromium : 0 `parsererror`.
 
 ## Retours utilisateur pris en compte
 
@@ -77,12 +77,13 @@
 - Les mises en situation peuvent être inventées si cela évite de plaquer un rituel sans rapport avec le dessin.
 - 2026-09-02 : utilisateur autorise explicitement la déclinaison des variantes 11, 12, 179 et 180 à partir du pilote 10.
 - 2026-09-02 : utilisateur modifie les nombres de répétitions et certains paramètres de tracé afin d’éviter une série trop homogène ; conserver ces modifications.
-- 2026-09-02 : le projet 180 ne fonctionnait plus car les fichiers de solution étaient restés sur 4 répétitions alors que l’exercice en demandait 6 ; correction demandée.
+- 2026-09-02 : les premières générations de `180/vittascience.py` échouent dans Vittascience avec `textToDom was unable to parse` ; ne plus fabriquer ce projet à partir d'un XML écrit à la main. Utiliser les structures des projets fonctionnels du dépôt comme prototypes.
 
 ## Validations utilisateur
 
 - Cadrage : validé pour la déclinaison
 - Variante pilote 10 : validée
 - Déclinaison 11-12/179-180 : à reviewer
+- Variante 180 : à revalider après correction technique
 - Review finale : non validée
 - Passage testing : non validé
