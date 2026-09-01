@@ -4,7 +4,11 @@ Ce workflow est obligatoire pour chaque ensemble de 3 variantes correspondant a 
 
 ## Regle generale
 
-Avant d'ecrire ou de modifier les exercices finaux, on valide d'abord la forme exacte de l'exercice.
+Pour une nouvelle serie, le cadrage et la variante pilote sont produits dans la meme passe : creer d'abord le fichier `NN-wip.md`, puis rediger `NN.md` comme exemple concret de la forme proposee.
+
+Le pilote reste en `statut: wip`. Il sert a tester et discuter le cadrage ; il ne vaut ni validation de la serie ni passage en `testing`. Les deux autres variantes ne sont redigees qu'apres validation explicite du pilote.
+
+Si `NN.md` existe deja, ne pas le recreer ni l'ecraser automatiquement. Le lire, le prendre comme pilote existant et indiquer dans le WIP les modifications eventuellement proposees.
 
 La forme ne se limite pas au type technique (`qcu`, `qcm`, `ddc`, `ddu`, `texte-a-trous`, etc.). Elle doit preciser :
 
@@ -40,6 +44,8 @@ Le fichier `NN-wip.md` doit contenir :
 - les decisions validees ;
 - les points en attente de validation ;
 - le plan de redaction de la variante pilote.
+
+Lors de la creation d'un nouveau WIP, rediger aussi la variante pilote `NN.md`, sauf si ce fichier existe deja. Le WIP doit alors indiquer si le pilote a ete cree ou s'il etait deja present.
 
 Le fichier `NN-wip.md` doit etre supprime quand les 3 variantes passent en `testing`.
 
@@ -105,22 +111,22 @@ Une validation est explicite seulement si elle est formulee par l'utilisateur da
    - Date de relecture : AAAA-MM-JJ
    - Representation(s) autorisee(s) pour cette serie : ...
    - Representation(s) interdites pour cette serie : ...
-   - Decision : cadrage seulement / variante pilote autorisee / declinaison autorisee / review autorisee
+   - Decision : cadrage et variante pilote / declinaison autorisee / review autorisee
    ```
 
    Si cette section est absente ou incomplete, ne pas modifier les exercices finaux. Se limiter a mettre a jour le WIP.
 
-1. Cadrage
+1. Cadrage et variante pilote
 
    Creer ou mettre a jour `NN-wip.md`.
 
-   Decrire precisement la forme proposee de l'exercice avant d'ecrire les exercices finaux. Attendre la validation ou les corrections de l'utilisateur.
+   Decrire precisement la forme proposee, puis rediger dans la meme passe uniquement la premiere variante (`NN.md`) avec `statut: wip` afin de rendre le cadrage concret et testable.
 
-2. Variante pilote
+   Si `NN.md` existe deja, ne pas le recreer ni l'ecraser automatiquement. Le relire et noter dans le WIP qu'il sert de pilote existant.
 
-   Apres validation du cadrage, rediger uniquement la premiere variante (`NN.md`).
+2. Validation de la variante pilote
 
-   Ne pas decliner les deux autres variantes avant validation explicite de cette variante pilote.
+   Soumettre ensemble le cadrage et la variante pilote a la review utilisateur. Ne pas decliner les deux autres variantes avant validation explicite de cette variante pilote.
 
 3. Declinaison
 
