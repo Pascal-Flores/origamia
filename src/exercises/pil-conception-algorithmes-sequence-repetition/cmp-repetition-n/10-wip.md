@@ -6,7 +6,7 @@
 - Date de relecture : 2026-09-01
 - Représentation(s) autorisée(s) pour cette série : programme Turtle Vittascience entièrement développé, sans boucle, présenté à l’élève comme support d’observation ; valeurs par défaut des blocs Turtle.
 - Représentation(s) interdites pour cette série : demander à l’élève de paramétrer les blocs ; introduire une boucle dans le programme observé ; utiliser cinq polygones réguliers ou des formes abstraites difficiles à reconnaître.
-- Décision : cadrage et variante pilote 10. Les variantes 11, 12, 179 et 180 ne sont pas modifiées avant validation explicite du pilote.
+- Décision : déclinaison autorisée après validation explicite du pilote 10 par l’utilisateur.
 
 ## Attendu
 
@@ -15,7 +15,7 @@
 - Geste travaillé : déterminer combien de fois un motif d’instructions est répété dans un programme.
 - Série concernée : 10, 11, 12, 179, 180.
 
-## Forme invariante proposée
+## Forme invariante
 
 - Type : `free`.
 - Support : interface Turtle montrant un programme entièrement développé, sans boucle.
@@ -27,24 +27,63 @@
 - Feedback essai 1 : aide à repérer les limites du motif sans donner le nombre.
 - Feedback final : indique le nombre de répétitions et montre le motif répété.
 - Les blocs Turtle utilisent leurs valeurs par défaut ; l’élève n’a rien à paramétrer.
+- Les variantes changent de dessin et de motif, mais pas de geste cognitif ni de format de réponse.
+- Une mise en situation spécifique peut être inventée quand aucun rituel existant ne correspond au tracé, à condition qu’elle reste concrète et n’ajoute aucune compétence parasite.
 
-## Pilote 10 proposé
+## Variante 10 — validée comme pilote
 
-- Cible visuelle : un escalier simplifié de trois marches.
-- Mise en situation : `rit-dessiner-pictogramme-escalier` — dessiner un pictogramme simple d’escalier pour signaler l’accès à l’étage.
-- Motif : `avancer 50` → `tourner à gauche de 90°` → `avancer 50` → `tourner à droite de 90°`.
+- Cible : escalier simplifié de trois marches.
+- Situation : `rit-dessiner-pictogramme-escalier`.
+- Motif : `avancer 50` → `gauche 90°` → `avancer 50` → `droite 90°`.
 - Répétitions : 3.
-- Programme développé : 12 blocs.
-- Valeurs : uniquement `50` et `90°`, valeurs par défaut Vittascience.
+- Programme : 12 blocs.
 
-## Pistes pour les quatre variantes suivantes
+## Variante 11
 
-Les formes devront rester reconnaissables et différentes, tout en conservant exactement la même interaction pédagogique : observer un programme développé et compter le motif répété. Exemples à valider après le pilote : frise de créneaux, rangée de ronds, peigne, motif de marches inversées. Les formes définitives ne sont pas encore rédigées.
+- Cible : ligne pointillée de quatre traits.
+- Situation : `rit-tracer-ligne-pointillee-affiche`.
+- Motif : `avancer 50` → `lever le stylo` → `avancer 50` → `baisser le stylo`.
+- Répétitions : 4.
+- Programme : 16 blocs.
+
+## Variante 12
+
+- Cible : peigne simplifié à cinq dents.
+- Situation : `rit-dessiner-pictogramme-peigne`.
+- Motif : `avancer 50` → `droite 90°` → `avancer 50` → `reculer 50` → `gauche 90°`.
+- Répétitions : 5.
+- Programme : 25 blocs.
+
+## Variante 179
+
+- Cible : quatre hublots ronds alignés.
+- Situation : `rit-dessiner-hublots-sous-marin`.
+- Motif : `cercle 50` → `lever le stylo` → `avancer 50` → `avancer 50` → `baisser le stylo`.
+- Répétitions : 4.
+- Programme : 20 blocs.
+
+## Variante 180
+
+- Cible : échelle simplifiée à quatre barreaux.
+- Situation : `rit-dessiner-pictogramme-echelle`.
+- Motif : `avancer 50` → `reculer 50` → `gauche 90°` → `avancer 50` → `droite 90°`.
+- Répétitions : 4.
+- Après les quatre répétitions, Turtle lève le stylo pour rejoindre le haut du montant droit sans ajouter de cinquième barreau, puis dessine ce montant.
+- Programme : 28 blocs au total.
+
+## Retours utilisateur pris en compte
+
+- Les anciens triangle/carré/hexagone/pentagone/octogone étaient trop répétitifs.
+- Les formes doivent être immédiatement reconnaissables.
+- Les blocs Turtle doivent conserver leurs valeurs par défaut.
+- Les projets `.py` Vittascience doivent reprendre la structure réelle d’un export importable et les types/champs officiels des blocs.
+- Les mises en situation peuvent être inventées si cela évite de plaquer un rituel sans rapport avec le dessin.
+- 2026-09-02 : utilisateur autorise explicitement la déclinaison des variantes 11, 12, 179 et 180 à partir du pilote 10.
 
 ## Validations utilisateur
 
-- Cadrage : à revoir
-- Variante pilote 10 : à revoir
-- Déclinaison 11-12/179-180 : non validée
+- Cadrage : validé pour la déclinaison
+- Variante pilote 10 : validée
+- Déclinaison 11-12/179-180 : rédigée, à reviewer
 - Review finale : non validée
 - Passage testing : non validé
