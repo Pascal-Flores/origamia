@@ -23,6 +23,8 @@
 - Exactement 8 instructions dans la solution.
 - La figure cible doit être immédiatement reconnaissable et nommée dans l'énoncé.
 - Les variantes doivent produire des figures réellement différentes.
+- La mise en situation doit expliquer naturellement pourquoi cette figure est tracée ; ne pas plaquer un rituel sans rapport avec le dessin.
+- Si aucun rituel existant n'est pertinent, une mise en situation spécifique peut être créée pour l'exercice, à condition qu'elle reste concrète et n'introduise aucune compétence externe nécessaire à la réussite.
 
 ## Retours utilisateur
 
@@ -31,10 +33,12 @@
 - 2026-09-01 : les figures doivent être reconnaissables ; l'ancienne variante 177 n'était pas assez explicite.
 - 2026-09-01 : lorsqu'un projet Vittascience est fourni, il doit reprendre la structure réelle des exports/projets existants du dépôt et les types/champs officiels des blocs Vittascience ; ne pas inventer le format.
 - 2026-09-01 : l'appellation « trèfle à quatre feuilles » ne correspond pas assez précisément au tracé de 177 ; utiliser une référence exacte ou expliciter précisément l'analogie.
+- 2026-09-01 : pour 177, conserver la rosace et adapter la mise en situation ; une situation pertinente peut être inventée si nécessaire.
 
 ## Correction de 177
 
-- Nouvelle cible : une rosace à quatre cercles.
+- Cible : une rosace à quatre cercles.
+- Mise en situation : `rit-decorer-affiche-rosace` — la classe prépare une affiche d'exposition et souhaite la décorer avec un motif géométrique.
 - Description exacte : quatre cercles identiques partent du même point ; après chaque cercle complet, Turtle tourne de 90° avant de tracer le suivant.
 - 8 blocs : quatre `cercle rayon 50` et quatre `tourner à droite de 90°`.
 - Toutes les valeurs sont les valeurs par défaut des blocs Turtle Vittascience.
