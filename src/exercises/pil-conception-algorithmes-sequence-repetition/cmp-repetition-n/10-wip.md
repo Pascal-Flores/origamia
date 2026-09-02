@@ -61,15 +61,17 @@
 
 ## Variante 180
 
-- Cible : échelle clairement reconnaissable avec deux montants verticaux qui dépassent au-dessus et au-dessous des barreaux.
+- Cible : échelle clairement reconnaissable à six barreaux avec deux montants verticaux qui dépassent au-dessus et au-dessous des barreaux.
 - Situation : `rit-dessiner-pictogramme-echelle`.
-- Motif observé : `avancer 80` → `reculer 80`.
+- Motif : `avancer 80` → `reculer 80` → `gauche 90°` → `avancer 35` → `droite 90°`.
 - Répétitions : 6.
-- Le programme trace d’abord séparément les deux montants, de `y = -110` à `y = 110`, aux abscisses `x = 0` et `x = 80`.
-- Les six barreaux sont placés aux hauteurs `-80`, `-48`, `-16`, `16`, `48` et `80`.
-- Entre deux barreaux, Turtle lève le stylo, se replace au montant gauche puis rebaisse le stylo : aucun segment parasite n’est tracé pendant le repositionnement.
-- Programme : 38 blocs au total.
-- `vittascience.py` utilise uniquement des structures déjà présentes dans les projets fonctionnels de la série : `turtle_direction`, `turtle_goto` et `turtle_pen`. Aucun nouveau format de bloc n’est inventé.
+- Avant les six répétitions, quatre blocs tracent une extension de 20 pixels sous le premier barreau du montant gauche puis remettent Turtle face à droite.
+- Chaque répétition trace un barreau de 80 pixels, revient au montant gauche puis monte de 35 pixels : le montant gauche est donc construit progressivement en même temps que les barreaux.
+- Après les six répétitions, Turtle lève le stylo, rejoint le haut du montant droit, rebaisse le stylo, tourne vers le bas puis trace ce montant sur 230 pixels.
+- Programme : 39 blocs au total.
+- `vittascience.py` utilise exclusivement les structures de blocs déjà présentes dans des projets fonctionnels du dépôt : `turtle_direction` et `turtle_turn` tels qu’utilisés dans 10, 12 et 178 ; `turtle_pen` tel qu’utilisé dans 11 et 179.
+- Aucun bloc `turtle_goto` n’est utilisé et aucun nouveau type ou champ Blockly n’est inventé.
+- Le XML du champ `Blocks:` est généré comme un arbre XML puis reparsé avant commit afin de vérifier sa bonne formation syntaxique.
 
 ## Retours utilisateur pris en compte
 
@@ -81,13 +83,14 @@
 - 2026-09-02 : utilisateur modifie les nombres de répétitions et certains paramètres de tracé afin d’éviter une série trop homogène ; conserver ces modifications.
 - 2026-09-02 : les premières générations de `180/vittascience.py` échouent dans Vittascience avec `textToDom was unable to parse` ; ne plus fabriquer ce projet à partir d'un XML écrit à la main sans reprendre les structures de blocs validées dans les projets fonctionnels du dépôt.
 - 2026-09-02 : la variante « six perles » est refusée car trop proche des hublots ; conserver l’échelle comme cible visuelle.
-- 2026-09-02 : le premier rendu de l’échelle ressemblait à une colonne de rectangles empilés. Correction demandée : tracer les montants séparément, déplacer Turtle stylo levé entre les barreaux et faire dépasser les montants en haut et en bas afin que la silhouette soit immédiatement identifiable comme une échelle.
+- 2026-09-02 : le premier rendu de l’échelle ressemblait à une colonne de rectangles empilés. Correction demandée : faire apparaître deux montants distincts et une silhouette immédiatement identifiable comme une échelle.
+- 2026-09-02 : une nouvelle tentative fondée sur `turtle_goto` échoue encore avec `textToDom was unable to parse`. L’utilisateur demande explicitement d’utiliser les nombreux exercices déjà fonctionnels comme modèles. Correction : suppression complète de `turtle_goto`, reprise stricte des structures `turtle_direction`, `turtle_turn` et `turtle_pen` des exercices 10, 11, 12, 178 et 179, et validation syntaxique du XML avant commit.
 
 ## Validations utilisateur
 
 - Cadrage : validé pour la déclinaison
 - Variante pilote 10 : validée
 - Déclinaison 11-12/179-180 : à reviewer
-- Variante 180 : à revalider après nouveau projet Turtle
+- Variante 180 : à revalider après import du projet corrigé dans Vittascience
 - Review finale : non validée
 - Passage testing : non validé
