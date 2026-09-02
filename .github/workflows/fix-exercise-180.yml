@@ -1,0 +1,30 @@
+name: One-shot fix exercise 180
+
+on:
+  push:
+    branches:
+      - exos-pilier-conception
+    paths:
+      - .github/workflows/fix-exercise-180.yml
+      - .github/fix_exercise_180.py
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: exos-pilier-conception
+      - name: Generate and validate exercise 180
+        run: python .github/fix_exercise_180.py
+      - name: Commit generated files and remove one-shot helpers
+        run: |
+          rm .github/fix_exercise_180.py .github/workflows/fix-exercise-180.yml
+          git config user.name "Origamia automation"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -m "fix exercise 180 ladder geometry and Vittascience project"
+          git push origin HEAD:exos-pilier-conception
