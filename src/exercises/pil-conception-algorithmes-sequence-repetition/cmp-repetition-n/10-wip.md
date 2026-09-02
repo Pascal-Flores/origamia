@@ -61,13 +61,15 @@
 
 ## Variante 180
 
-- Cible : échelle simplifiée à six barreaux.
+- Cible : échelle clairement reconnaissable avec deux montants verticaux qui dépassent au-dessus et au-dessous des barreaux.
 - Situation : `rit-dessiner-pictogramme-echelle`.
-- Motif : `avancer 50` → `reculer 50` → `gauche 90°` → `avancer 30` → `droite 90°`.
+- Motif observé : `avancer 80` → `reculer 80`.
 - Répétitions : 6.
-- Après les six répétitions, Turtle lève le stylo, rejoint le haut du montant droit, rebaisse le stylo, tourne vers le bas et trace le montant droit avec `avancer 180`.
-- Programme : 35 blocs au total.
-- `vittascience.py` reconstruit à partir des structures de blocs déjà présentes dans les projets fonctionnels de la série : `turtle_direction` et `turtle_turn` depuis 12, `turtle_pen` depuis 179. Aucun nouveau format de bloc n’est inventé.
+- Le programme trace d’abord séparément les deux montants, de `y = -110` à `y = 110`, aux abscisses `x = 0` et `x = 80`.
+- Les six barreaux sont placés aux hauteurs `-80`, `-48`, `-16`, `16`, `48` et `80`.
+- Entre deux barreaux, Turtle lève le stylo, se replace au montant gauche puis rebaisse le stylo : aucun segment parasite n’est tracé pendant le repositionnement.
+- Programme : 38 blocs au total.
+- `vittascience.py` utilise uniquement des structures déjà présentes dans les projets fonctionnels de la série : `turtle_direction`, `turtle_goto` et `turtle_pen`. Aucun nouveau format de bloc n’est inventé.
 
 ## Retours utilisateur pris en compte
 
@@ -77,14 +79,15 @@
 - Les mises en situation peuvent être inventées si cela évite de plaquer un rituel sans rapport avec le dessin.
 - 2026-09-02 : utilisateur autorise explicitement la déclinaison des variantes 11, 12, 179 et 180 à partir du pilote 10.
 - 2026-09-02 : utilisateur modifie les nombres de répétitions et certains paramètres de tracé afin d’éviter une série trop homogène ; conserver ces modifications.
-- 2026-09-02 : les premières générations de `180/vittascience.py` échouent dans Vittascience avec `textToDom was unable to parse` ; ne plus fabriquer ce projet à partir d'un XML écrit à la main. Utiliser les structures des projets fonctionnels du dépôt comme prototypes.
+- 2026-09-02 : les premières générations de `180/vittascience.py` échouent dans Vittascience avec `textToDom was unable to parse` ; ne plus fabriquer ce projet à partir d'un XML écrit à la main sans reprendre les structures de blocs validées dans les projets fonctionnels du dépôt.
 - 2026-09-02 : la variante « six perles » est refusée car trop proche des hublots ; conserver l’échelle comme cible visuelle.
+- 2026-09-02 : le premier rendu de l’échelle ressemblait à une colonne de rectangles empilés. Correction demandée : tracer les montants séparément, déplacer Turtle stylo levé entre les barreaux et faire dépasser les montants en haut et en bas afin que la silhouette soit immédiatement identifiable comme une échelle.
 
 ## Validations utilisateur
 
 - Cadrage : validé pour la déclinaison
 - Variante pilote 10 : validée
 - Déclinaison 11-12/179-180 : à reviewer
-- Variante 180 : à revalider après restauration de l’échelle
+- Variante 180 : à revalider après nouveau projet Turtle
 - Review finale : non validée
 - Passage testing : non validé

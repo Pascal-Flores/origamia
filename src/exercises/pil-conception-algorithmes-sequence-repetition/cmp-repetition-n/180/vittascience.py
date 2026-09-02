@@ -2,11 +2,11 @@
 Auteur: Origamia
 Interface: python
 Nom du projet: 180 - L'échelle de la cabane
-Description: Programme Turtle développé sans boucle : le motif avancer puis reculer est répété six fois pour tracer six barreaux d'une échelle.
+Description: Programme Turtle développé sans boucle : les deux montants sont tracés séparément puis le motif avancer 80 / reculer 80 est répété six fois pour tracer les barreaux.
 Toolbox: vittascience
 Mode: mixed
 
-Blocks: <xml xmlns="https://developers.google.com/blockly/xml"><block type="turtle_direction" id="b1a" x="30" y="30"><field name="DIR">FORWARD</field><value name="DISTANCE"><shadow type="math_number" id="b1an"><field name="NUM">50</field></shadow></value><next><block type="turtle_direction" id="b1b"><field name="DIR">BACKWARD</field><value name="DISTANCE"><shadow type="math_number" id="b1bn"><field name="NUM">50</field></shadow></value><next><block type="turtle_goto" id="g1"><value name="X"><shadow type="math_number" id="g1xn"><field name="NUM">0</field></shadow></value><value name="Y"><shadow type="math_number" id="g1yn"><field name="NUM">30</field></shadow></value><next><block type="turtle_direction" id="b2a"><field name="DIR">FORWARD</field><value name="DISTANCE"><shadow type="math_number" id="b2an"><field name="NUM">50</field></shadow></value><next><block type="turtle_direction" id="b2b"><field name="DIR">BACKWARD</field><value name="DISTANCE"><shadow type="math_number" id="b2bn"><field name="NUM">50</field></shadow></value><next><block type="turtle_goto" id="g2"><value name="X"><shadow type="math_number" id="g2xn"><field name="NUM">0</field></shadow></value><value name="Y"><shadow type="math_number" id="g2yn"><field name="NUM">60</field></shadow></value><next><block type="turtle_direction" id="b3a"><field name="DIR">FORWARD</field><value name="DISTANCE"><shadow type="math_number" id="b3an"><field name="NUM">50</field></shadow></value><next><block type="turtle_direction" id="b3b"><field name="DIR">BACKWARD</field><value name="DISTANCE"><shadow type="math_number" id="b3bn"><field name="NUM">50</field></shadow></value><next><block type="turtle_goto" id="g3"><value name="X"><shadow type="math_number" id="g3xn"><field name="NUM">0</field></shadow></value><value name="Y"><shadow type="math_number" id="g3yn"><field name="NUM">90</field></shadow></value><next><block type="turtle_direction" id="b4a"><field name="DIR">FORWARD</field><value name="DISTANCE"><shadow type="math_number" id="b4an"><field name="NUM">50</field></shadow></value><next><block type="turtle_direction" id="b4b"><field name="DIR">BACKWARD</field><value name="DISTANCE"><shadow type="math_number" id="b4bn"><field name="NUM">50</field></shadow></value><next><block type="turtle_goto" id="g4"><value name="X"><shadow type="math_number" id="g4xn"><field name="NUM">0</field></shadow></value><value name="Y"><shadow type="math_number" id="g4yn"><field name="NUM">120</field></shadow></value><next><block type="turtle_direction" id="b5a"><field name="DIR">FORWARD</field><value name="DISTANCE"><shadow type="math_number" id="b5an"><field name="NUM">50</field></shadow></value><next><block type="turtle_direction" id="b5b"><field name="DIR">BACKWARD</field><value name="DISTANCE"><shadow type="math_number" id="b5bn"><field name="NUM">50</field></shadow></value><next><block type="turtle_goto" id="g5"><value name="X"><shadow type="math_number" id="g5xn"><field name="NUM">0</field></shadow></value><value name="Y"><shadow type="math_number" id="g5yn"><field name="NUM">150</field></shadow></value><next><block type="turtle_direction" id="b6a"><field name="DIR">FORWARD</field><value name="DISTANCE"><shadow type="math_number" id="b6an"><field name="NUM">50</field></shadow></value><next><block type="turtle_direction" id="b6b"><field name="DIR">BACKWARD</field><value name="DISTANCE"><shadow type="math_number" id="b6bn"><field name="NUM">50</field></shadow></value><next><block type="turtle_goto" id="gtop"><value name="X"><shadow type="math_number" id="gtopxn"><field name="NUM">50</field></shadow></value><value name="Y"><shadow type="math_number" id="gtopyn"><field name="NUM">150</field></shadow></value><next><block type="turtle_goto" id="gbot"><value name="X"><shadow type="math_number" id="gbotxn"><field name="NUM">50</field></shadow></value><value name="Y"><shadow type="math_number" id="gbotyn"><field name="NUM">0</field></shadow></value></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>
+Blocks: <xml xmlns="https://developers.google.com/blockly/xml"><block type="turtle_pen" id="b1" x="30" y="30"><field name="PEN">UP</field><next><block type="turtle_goto" id="b2"><value name="X"><shadow type="math_number" id="b2x"><field name="NUM">0</field></shadow></value><value name="Y"><shadow type="math_number" id="b2y"><field name="NUM">-110</field></shadow></value><next><block type="turtle_pen" id="b3"><field name="PEN">DOWN</field><next><block type="turtle_goto" id="b4"><value name="X"><shadow type="math_number" id="b4x"><field name="NUM">0</field></shadow></value><value name="Y"><shadow type="math_number" id="b4y"><field name="NUM">110</field></shadow></value><next><block type="turtle_pen" id="b5"><field name="PEN">UP</field><next><block type="turtle_goto" id="b6"><value name="X"><shadow type="math_number" id="b6x"><field name="NUM">80</field></shadow></value><value name="Y"><shadow type="math_number" id="b6y"><field name="NUM">-110</field></shadow></value><next><block type="turtle_pen" id="b7"><field name="PEN">DOWN</field><next><block type="turtle_goto" id="b8"><value name="X"><shadow type="math_number" id="b8x"><field name="NUM">80</field></shadow></value><value name="Y"><shadow type="math_number" id="b8y"><field name="NUM">110</field></shadow></value><next><block type="turtle_pen" id="b9"><field name="PEN">UP</field><next><block type="turtle_goto" id="b10"><value name="X"><shadow type="math_number" id="b10x"><field name="NUM">0</field></shadow></value><value name="Y"><shadow type="math_number" id="b10y"><field name="NUM">-80</field></shadow></value><next><block type="turtle_pen" id="b11"><field name="PEN">DOWN</field><next><block type="turtle_direction" id="b12"><field name="DIR">FORWARD</field><value name="DISTANCE"><shadow type="math_number" id="b12n"><field name="NUM">80</field></shadow></value><next><block type="turtle_direction" id="b13"><field name="DIR">BACKWARD</field><value name="DISTANCE"><shadow type="math_number" id="b13n"><field name="NUM">80</field></shadow></value><next><block type="turtle_pen" id="b14"><field name="PEN">UP</field><next><block type="turtle_goto" id="b15"><value name="X"><shadow type="math_number" id="b15x"><field name="NUM">0</field></shadow></value><value name="Y"><shadow type="math_number" id="b15y"><field name="NUM">-48</field></shadow></value><next><block type="turtle_pen" id="b16"><field name="PEN">DOWN</field><next><block type="turtle_direction" id="b17"><field name="DIR">FORWARD</field><value name="DISTANCE"><shadow type="math_number" id="b17n"><field name="NUM">80</field></shadow></value><next><block type="turtle_direction" id="b18"><field name="DIR">BACKWARD</field><value name="DISTANCE"><shadow type="math_number" id="b18n"><field name="NUM">80</field></shadow></value><next><block type="turtle_pen" id="b19"><field name="PEN">UP</field><next><block type="turtle_goto" id="b20"><value name="X"><shadow type="math_number" id="b20x"><field name="NUM">0</field></shadow></value><value name="Y"><shadow type="math_number" id="b20y"><field name="NUM">-16</field></shadow></value><next><block type="turtle_pen" id="b21"><field name="PEN">DOWN</field><next><block type="turtle_direction" id="b22"><field name="DIR">FORWARD</field><value name="DISTANCE"><shadow type="math_number" id="b22n"><field name="NUM">80</field></shadow></value><next><block type="turtle_direction" id="b23"><field name="DIR">BACKWARD</field><value name="DISTANCE"><shadow type="math_number" id="b23n"><field name="NUM">80</field></shadow></value><next><block type="turtle_pen" id="b24"><field name="PEN">UP</field><next><block type="turtle_goto" id="b25"><value name="X"><shadow type="math_number" id="b25x"><field name="NUM">0</field></shadow></value><value name="Y"><shadow type="math_number" id="b25y"><field name="NUM">16</field></shadow></value><next><block type="turtle_pen" id="b26"><field name="PEN">DOWN</field><next><block type="turtle_direction" id="b27"><field name="DIR">FORWARD</field><value name="DISTANCE"><shadow type="math_number" id="b27n"><field name="NUM">80</field></shadow></value><next><block type="turtle_direction" id="b28"><field name="DIR">BACKWARD</field><value name="DISTANCE"><shadow type="math_number" id="b28n"><field name="NUM">80</field></shadow></value><next><block type="turtle_pen" id="b29"><field name="PEN">UP</field><next><block type="turtle_goto" id="b30"><value name="X"><shadow type="math_number" id="b30x"><field name="NUM">0</field></shadow></value><value name="Y"><shadow type="math_number" id="b30y"><field name="NUM">48</field></shadow></value><next><block type="turtle_pen" id="b31"><field name="PEN">DOWN</field><next><block type="turtle_direction" id="b32"><field name="DIR">FORWARD</field><value name="DISTANCE"><shadow type="math_number" id="b32n"><field name="NUM">80</field></shadow></value><next><block type="turtle_direction" id="b33"><field name="DIR">BACKWARD</field><value name="DISTANCE"><shadow type="math_number" id="b33n"><field name="NUM">80</field></shadow></value><next><block type="turtle_pen" id="b34"><field name="PEN">UP</field><next><block type="turtle_goto" id="b35"><value name="X"><shadow type="math_number" id="b35x"><field name="NUM">0</field></shadow></value><value name="Y"><shadow type="math_number" id="b35y"><field name="NUM">80</field></shadow></value><next><block type="turtle_pen" id="b36"><field name="PEN">DOWN</field><next><block type="turtle_direction" id="b37"><field name="DIR">FORWARD</field><value name="DISTANCE"><shadow type="math_number" id="b37n"><field name="NUM">80</field></shadow></value><next><block type="turtle_direction" id="b38"><field name="DIR">BACKWARD</field><value name="DISTANCE"><shadow type="math_number" id="b38n"><field name="NUM">80</field></shadow></value></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>
 
 Projet généré pour import dans Vittascience.
 Ce fichier contient le code textuel ainsi que le code blocs. Il peut être importé de nouveau
@@ -16,22 +16,41 @@ sur l'interface http://vittascience.com/python
 
 import turtle
 
-turtle.forward(50)
-turtle.backward(50)
-turtle.goto(0,30)
-turtle.forward(50)
-turtle.backward(50)
-turtle.goto(0,60)
-turtle.forward(50)
-turtle.backward(50)
-turtle.goto(0,90)
-turtle.forward(50)
-turtle.backward(50)
-turtle.goto(0,120)
-turtle.forward(50)
-turtle.backward(50)
-turtle.goto(0,150)
-turtle.forward(50)
-turtle.backward(50)
-turtle.goto(50,150)
-turtle.goto(50,0)
+turtle.penup()
+turtle.goto(0,-110)
+turtle.pendown()
+turtle.goto(0,110)
+turtle.penup()
+turtle.goto(80,-110)
+turtle.pendown()
+turtle.goto(80,110)
+turtle.penup()
+turtle.goto(0,-80)
+turtle.pendown()
+turtle.forward(80)
+turtle.backward(80)
+turtle.penup()
+turtle.goto(0,-48)
+turtle.pendown()
+turtle.forward(80)
+turtle.backward(80)
+turtle.penup()
+turtle.goto(0,-16)
+turtle.pendown()
+turtle.forward(80)
+turtle.backward(80)
+turtle.penup()
+turtle.goto(0,16)
+turtle.pendown()
+turtle.forward(80)
+turtle.backward(80)
+turtle.penup()
+turtle.goto(0,48)
+turtle.pendown()
+turtle.forward(80)
+turtle.backward(80)
+turtle.penup()
+turtle.goto(0,80)
+turtle.pendown()
+turtle.forward(80)
+turtle.backward(80)
