@@ -61,17 +61,17 @@
 
 ## Variante 180
 
-- Cible : échelle clairement reconnaissable à six barreaux avec deux montants verticaux qui dépassent au-dessus et au-dessous des barreaux.
+- Cible : échelle fermée de 70 × 150 pixels, entièrement contenue dans la zone de dessin, avec deux montants de même longueur et six barreaux alignés.
 - Situation : `rit-dessiner-pictogramme-echelle`.
-- Motif : `avancer 80` → `reculer 80` → `gauche 90°` → `avancer 35` → `droite 90°`.
-- Répétitions : 6.
-- Avant les six répétitions, quatre blocs tracent une extension de 20 pixels sous le premier barreau du montant gauche puis remettent Turtle face à droite.
-- Chaque répétition trace un barreau de 80 pixels, revient au montant gauche puis monte de 35 pixels : le montant gauche est donc construit progressivement en même temps que les barreaux.
-- Après les six répétitions, Turtle lève le stylo, rejoint le haut du montant droit, rebaisse le stylo, tourne vers le bas puis trace ce montant sur 230 pixels.
-- Programme : 39 blocs au total.
-- `vittascience.py` utilise exclusivement les structures de blocs déjà présentes dans des projets fonctionnels du dépôt : `turtle_direction` et `turtle_turn` tels qu’utilisés dans 10, 12 et 178 ; `turtle_pen` tel qu’utilisé dans 11 et 179.
-- Aucun bloc `turtle_goto` n’est utilisé et aucun nouveau type ou champ Blockly n’est inventé.
-- Le XML du champ `Blocks:` est généré comme un arbre XML puis reparsé avant commit afin de vérifier sa bonne formation syntaxique.
+- Le programme trace d’abord un cadre rectangulaire : les deux montants, le barreau du bas et le barreau du haut.
+- Motif : `lever le stylo` → `avancer 30` → `droite 90°` → `baisser le stylo` → `avancer 70` → `reculer 70` → `gauche 90°`.
+- Répétitions : 4.
+- Chaque répétition ajoute exactement un barreau intermédiaire ; aucun montant ni barreau ne dépasse du cadre.
+- À la fin, Turtle est déplacée stylo levé à droite de l’échelle pour ne pas masquer le dessin.
+- Programme : 40 blocs au total.
+- `vittascience.py` utilise exclusivement `turtle_direction`, `turtle_turn` et `turtle_pen`, déjà présents dans les projets fonctionnels de la série.
+- Aucun bloc `turtle_goto` n’est utilisé.
+- Le XML extrait du fichier final complet est reparsé avant écriture.
 
 ## Retours utilisateur pris en compte
 
@@ -85,6 +85,8 @@
 - 2026-09-02 : la variante « six perles » est refusée car trop proche des hublots ; conserver l’échelle comme cible visuelle.
 - 2026-09-02 : le premier rendu de l’échelle ressemblait à une colonne de rectangles empilés. Correction demandée : faire apparaître deux montants distincts et une silhouette immédiatement identifiable comme une échelle.
 - 2026-09-02 : une nouvelle tentative fondée sur `turtle_goto` échoue encore avec `textToDom was unable to parse`. L’utilisateur demande explicitement d’utiliser les nombreux exercices déjà fonctionnels comme modèles. Correction : suppression complète de `turtle_goto`, reprise stricte des structures `turtle_direction`, `turtle_turn` et `turtle_pen` des exercices 10, 11, 12, 178 et 179, et validation syntaxique du XML avant commit.
+
+- 2026-09-02 : le rendu suivant présente une échelle cassée : le montant droit s’arrête avant le dernier barreau et le montant gauche dépasse sous celui-ci. Refonte géométrique : cadre fermé de 70 × 150 pixels, quatre barreaux intermédiaires ajoutés par le motif répété, aucun segment au-delà du cadre.
 
 ## Validations utilisateur
 
