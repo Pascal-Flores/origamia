@@ -196,3 +196,5 @@ rit-convoyeur-remplir-caisse,Convoyeur programmable qui remplit une caisse de co
 rit-arrosage-potager-programmable,Système d’arrosage programmable pour un potager,Objets programmables,
 rit-casier-retrait-programmable,Casier de retrait programmable qui range un badge,Objets programmables,
 rit-scene-programmable-demarrer,Dispositif programmable qui prépare le début d’un spectacle,Objets programmables,
+rit-feu-pieton-programmable,Maquette de feu piéton programmable avec feux routier et piéton et signal sonore,Objets programmables,
+rit-barriere-parking-programmable,Barrière de parking programmable avec compteur de places libres et voyant de sortie,Objets programmables,
