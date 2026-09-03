@@ -35,9 +35,21 @@ Les exercices respectaient formellement « quatre états initiaux + même progra
 
 ## Nouvelle reprise de 213–214
 
-- 213 : maquette de feu piéton programmable. Le programme force le feu voitures au rouge et le feu piétons au vert, mais ne modifie pas le signal sonore. La mission exige les trois états corrects. Deux situations initiales réussissent parce que le signal sonore est déjà activé.
-- 214 : barrière de parking programmable avec compteur de places libres. Lorsqu'une voiture sort, le programme ajoute une place libre, ouvre la barrière et allume le voyant SORTIE. La mission impose un nombre final précis de places libres et les états de sortie. Deux situations initiales réussissent car elles commencent avec le bon nombre de places.
-- Deux nouveaux rituels sont ajoutés au référentiel des situations afin d'éviter de réutiliser une mise en situation existante.
+- 213 : `rit-feu-pieton-programmable`. Le programme force le feu voitures au rouge et le feu piétons au vert, mais ne modifie pas le signal sonore. La mission exige les trois états corrects. Réussites : tests 1 et 4.
+- 214 : `rit-barriere-parking-programmable`. Le programme ajoute une place libre, ouvre la barrière et allume le voyant `SORTIE`. La mission impose exactement 5 places libres avec la sortie ouverte. Réussites : tests 1 et 4.
+- Les deux situations sont de nouveaux rituels ajoutés au référentiel afin de ne pas réutiliser une mise en situation existante.
+
+## Review
+
+Verdict : **OK**.
+
+- Même structure que 62–63 : mission finale explicite, programme unique, quatre états initiaux, deux réussites.
+- Les programmes correspondent à des dispositifs réellement programmables.
+- 213 vérifie la compréhension d'un état que le programme ne modifie pas, comme 63.
+- 214 combine une évolution numérique avec deux états forcés par le programme, comme 62.
+- Les solutions et feedbacks ont été vérifiés manuellement.
+- Les exercices restent en `wip`.
+- Aucun build ni import SQLite n'est revendiqué.
 
 ## Validations utilisateur
 
