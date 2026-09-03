@@ -28,9 +28,20 @@ Les variantes 58–60 utilisent toutes la même mécanique :
 
 ## Reprise de 211–212
 
-- 211 conserve le contexte du lavage des mains mais devient une simulation du **temps écoulé** pendant trois étapes ; le programme représente la procédure, il ne prétend pas laver les mains de l'élève.
-- 212 conserve le contexte du pansement mais devient une simulation du **temps écoulé** pendant trois étapes ; le programme représente la procédure, il ne prétend pas réaliser le soin.
+- 211 utilise désormais `rit-preparer-coucher`, situation non utilisée ailleurs dans le corpus vérifié. La simulation suit le **temps écoulé** pendant trois étapes de préparation au coucher.
+- 212 conserve `rit-mettre-pansement`, dont le slug exact n'apparaît dans aucun autre exercice du corpus de `main`. La simulation suit également le **temps écoulé** pendant trois étapes.
+- Le contexte initial de lavage des mains a été abandonné pour 211 car il recoupait sémantiquement l'exercice 22 du premier pilier.
 - Les deux exercices reprennent exactement le format `ddu Vrai/Faux`, cinq affirmations et trois essais.
+
+## Review
+
+Verdict : **OK**.
+
+- 211 : trace `0 → 3 → 9 → 10` minutes ; solution Vrai = 1, 2, 3.
+- 212 : trace `0 → 15 → 25 → 30` secondes ; solution Vrai = 1, 2, 3.
+- Les feedbacks intermédiaires guident le calcul sans donner immédiatement le classement complet.
+- Les deux exercices restent en `wip`.
+- Aucun build ni import SQLite n'est revendiqué.
 
 ## Validations utilisateur
 
