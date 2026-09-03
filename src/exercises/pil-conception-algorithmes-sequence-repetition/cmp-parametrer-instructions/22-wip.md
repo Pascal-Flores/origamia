@@ -21,8 +21,8 @@
 - Les anciennes variantes CM2 reposaient sur un QCU vrai/faux à un seul paramètre.
 - Le plus souvent, l'élève comparait directement deux valeurs déjà visibles dans l'énoncé.
 - Cette tâche était plus simple que les variantes CM1, où l'élève doit identifier la bonne information parmi plusieurs données puis renseigner un paramètre manquant.
-- La première refonte du 22, fondée sur trois instructions isolées à classer et sur des durées de lavage des mains, augmentait bien le nombre de paramètres mais restait artificielle : la situation avait été construite pour justifier les paramètres au lieu de partir de paramètres naturellement présents dans le rituel.
-- La seconde refonte améliorait les paramètres avec une partie de ballon, mais formulait encore le programme comme s'il « organisait » réellement la partie. Ce statut du programme n'était pas vraisemblable dans une situation scolaire ordinaire.
+- La première refonte du 22 augmentait bien le nombre de paramètres mais introduisait des valeurs peu naturelles et formulait mal le rôle du programme.
+- La variante autour de la partie de ballon améliorait la vraisemblance des paramètres mais n'était pas le contexte souhaité par l'utilisateur.
 
 ## Règle de vraisemblance ajoutée
 
@@ -35,41 +35,42 @@
 
 - Type : `qcu`.
 - `essais: 3`.
-- Le contexte décrit une situation dans laquelle trois paramètres existent naturellement et sont explicitement décidés.
-- Le programme est ensuite introduit comme une représentation de ces consignes, pas comme un outil réellement nécessaire pour accomplir l'activité.
+- Le contexte fournit trois paramètres explicites liés à une procédure réelle.
+- Le programme est présenté comme une représentation de cette procédure, pas comme un outil utilisé pour accomplir le geste quotidien.
 - Quatre programmes complets sont proposés.
-- Chaque programme contient les trois mêmes instructions, avec des valeurs de paramètres différentes.
-- Un seul programme respecte simultanément les trois contraintes.
-- L'élève doit donc vérifier plusieurs paramètres dans un même programme, et non répondre à trois micro-questions indépendantes.
-- Les distracteurs changent uniquement les valeurs des paramètres ; les actions et leur ordre restent identiques afin de ne pas glisser vers `cmp-ordre-sequence` ou `cmp-identifier-erreurs`.
-- Aucun calcul n'est nécessaire.
-- Les cinq variantes conserveront cette structure ; seuls la situation et les paramètres changeront.
+- Chaque programme contient les mêmes actions dans le même ordre, avec des valeurs de paramètres différentes.
+- Un seul programme respecte simultanément les trois informations fournies.
+- L'élève doit donc vérifier plusieurs paramètres dans un même programme.
+- Les distracteurs changent uniquement les valeurs des paramètres afin de ne pas glisser vers `cmp-ordre-sequence` ou `cmp-identifier-erreurs`.
+- Aucun calcul ni savoir extérieur n'est nécessaire.
 
 ## Nouveau pilote 22
 
-- Rituel : `rit-organiser-partie-ballon`.
-- Situation concrète : pendant une récréation, le groupe décide de jouer avec `2` équipes, `4` joueurs dans chaque équipe et pendant `10 minutes`.
-- Statut du programme : en classe, cet exemple est repris pour apprendre à représenter des consignes sous forme de programme. Le programme ne « gère » ni n'« organise » réellement la partie.
-- Quatre propositions traduisent ces trois règles avec les mêmes trois instructions.
-- Un seul programme reprend correctement les trois paramètres.
+- Rituel rétabli à la demande de l'utilisateur : `rit-laver-mains-avant-manger`.
+- Situation : près du lavabo, une affiche indique la procédure à suivre avant d'aller manger.
+- Trois informations de l'affiche sont reprises comme paramètres : `1` dose de savon, `20 secondes` de frottage et `1` feuille d'essuie-mains pour se sécher.
+- Statut du programme : en classe, on cherche à représenter cette procédure avec des blocs. Le programme ne lave pas les mains ; il décrit la procédure affichée.
+- Quatre propositions contiennent les mêmes étapes ; une seule reprend correctement les trois paramètres.
 
 ## Déclinaison prévue après validation
 
-- 23, 24, 187 et 188 devront chacun partir d'une situation où plusieurs paramètres sont déjà naturels dans l'activité, pas d'une liste de valeurs fabriquée pour l'exercice.
+- 23, 24, 187 et 188 devront chacun partir d'une situation où plusieurs paramètres sont naturels dans l'activité.
 - Avant chaque choix de rituel : vérifier le slug exact et les doublons sémantiques avec les exercices existants.
 - Pour chaque variante, expliciter pourquoi un programme apparaît dans la situation : représentation d'une procédure, exercice de traduction algorithmique ou programme réellement exécutable si le contexte le permet.
 
 ## Retours utilisateur pris en compte
 
-- 2026-09-03 : les exercices 22–24, 187 et 188 sont jugés peu intéressants pédagogiquement et plus faciles que les exercices CM1. Demande : soit les rendre réellement CM2, soit les basculer en CM1 avec une refonte pédagogique.
+- 2026-09-03 : les exercices 22–24, 187 et 188 sont jugés peu intéressants pédagogiquement et plus faciles que les exercices CM1.
 - 2026-09-03 : la première refonte du 22 est jugée trop artificielle et peu signifiante.
-- 2026-09-03 : précision utilisateur sur le problème de formulation : dans une situation comme le lavage des mains, le programme ne doit pas être présenté comme un programme réellement utilisé pour laver les mains ; il peut en revanche représenter ou montrer la procédure. Cette règle de vraisemblance doit désormais guider les mises en situation.
+- 2026-09-03 : précision utilisateur sur le problème de formulation : dans une situation comme le lavage des mains, le programme ne doit pas être présenté comme un programme réellement utilisé pour laver les mains ; il peut en revanche représenter ou montrer la procédure.
+- 2026-09-03 : demande explicite de revenir au lavage des mains pour le pilote 22, qui était le contexte d'origine.
 
 ## Validations utilisateur
 
 - Diagnostic : issu du retour utilisateur
 - Nouvelle forme CM2 : à reviewer
-- Nouveau pilote 22 : à reviewer après reformulation du statut du programme
+- Contexte lavage des mains : retenu explicitement par l'utilisateur
+- Nouveau pilote 22 : à reviewer après réécriture dans ce contexte
 - Déclinaison 23-24/187-188 : non validée
 - Review finale : non validée
 - Passage testing : non validé
