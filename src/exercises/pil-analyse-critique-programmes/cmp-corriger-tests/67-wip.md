@@ -6,13 +6,15 @@
 - Date de relecture : 2026-09-03
 - Représentation(s) autorisée(s) pour cette série : programme fourni en blocs textuels pris en charge par le projet (`event:`, `move:`, `say:`, `end:`), résultats de plusieurs tests en langage naturel, corrections proposées sous forme de modifications explicites.
 - Représentation(s) interdites : simple choix d'un programme corrigé à partir d'un seul essai, classement binaire `corrige / ne corrige pas` sans comparaison de plusieurs tests, écriture libre de programme.
-- Décision : cadrage et pilote validés ; déclinaison autorisée sur 68, 69, 217 et 218.
+- Décision : cadrage et pilote validés ; déclinaison réalisée sur 68, 69, 217 et 218 ; review finale effectuée.
 
 ## Attendu
 
 - Compétence : `cmp-corriger-tests`.
 - Attendu concerné : `att-corriger-tests-cm2`.
 - Variantes concernées : 67, 68, 69, 217 et 218.
+
+Le référentiel a été mis à jour pour formuler explicitement la non-régression : `Classer des corrections selon qu’elles réparent un test en échec sans provoquer de régression sur un test déjà réussi.`
 
 ## Problème identifié
 
@@ -47,23 +49,25 @@ Chaque variante comporte :
 
 Cette forme introduit explicitement l'idée de **régression** : une correction locale n'est pas suffisante si elle dégrade un comportement qui fonctionnait auparavant.
 
-## Variante pilote 67
+## Déclinaison réalisée
 
-Le contexte `rit-robot-trier-batterie-recyclage` est conservé.
+- 67 — `rit-robot-trier-batterie-recyclage` : l'inversion de la trappe réussit si elle est ouverte au départ mais échoue si elle est déjà fermée ; la correction robuste ferme explicitement la trappe.
+- 68 — `rit-lampe-liseuse-regler` : une augmentation relative de `20 points` atteint `70 %` depuis `50 %` mais monte à `90 %` depuis `70 %` ; la correction robuste règle directement l'intensité à `70 %`.
+- 69 — `rit-convoyeur-remplir-caisse` : ajouter systématiquement `2 colis` atteint la cible depuis `4` mais surcharge une caisse qui en contient déjà `6` ; la correction robuste complète la caisse jusqu'à `6 colis`.
+- 217 — `rit-preparer-sac-piscine` : l'inversion du voyant réussit lorsqu'il est rouge au départ mais échoue lorsqu'il est déjà vert ; la correction robuste impose le voyant vert.
+- 218 — `rit-lire-cartel-oeuvre` : une augmentation relative de `2 points` atteint la taille `18` depuis `16` mais monte à `20` depuis `18` ; la correction robuste règle directement la taille à `18 points`.
 
-Le robot doit terminer avec la batterie déposée, la trappe du bac fermée et le voyant vert. Le programme actuel inverse l'état de la trappe :
+## Review
 
-- si elle est ouverte au départ, le test réussit ;
-- si elle est déjà fermée au départ, le même programme la rouvre et le test échoue.
+Verdict : **OK**.
 
-La correction robuste remplace l'inversion par une fermeture explicite. D'autres propositions réparent uniquement le second test et provoquent une régression sur le premier.
-
-## Plan de déclinaison
-
-- 68 : lampe programmable ; un réglage relatif d'intensité réussit depuis une valeur initiale mais dépasse la cible depuis une autre. La correction robuste fixe directement l'intensité attendue.
-- 69 : convoyeur programmable ; l'ajout d'un nombre fixe de colis remplit correctement une caisse partiellement remplie mais surcharge une caisse déjà au niveau attendu. La correction robuste complète jusqu'à la quantité cible.
-- 217 : robot de préparation d'un sac de piscine ; l'inversion de la fermeture réussit si le sac est ouvert mais échoue s'il est déjà fermé. La correction robuste ferme explicitement le sac.
-- 218 : borne de musée ; une augmentation relative de taille de texte réussit depuis une petite taille mais dépasse la taille attendue depuis une autre. La correction robuste règle directement la taille cible.
+- Les cinq variantes utilisent le même geste cognitif et les mêmes trois catégories.
+- Chaque exercice contient un test 1 réussi et un test 2 en échec.
+- Chaque exercice possède une seule correction robuste, deux corrections qui réparent le test 2 mais provoquent une régression, et deux corrections qui ne réparent pas le test 2.
+- Les solutions sont donc uniformes : catégorie 1 = correction `1`, catégorie 2 = corrections `3` et `4`, catégorie 3 = corrections `2` et `5`.
+- Les feedbacks obligent explicitement à rejouer chaque correction sur les deux états initiaux.
+- 67, 68 et 69 ont été placés en `wip` puisque leur contenu a changé après leurs tests précédents. 217 et 218 restent en `wip`.
+- Aucun passage en `testing`, build publiable ou import SQLite n'est revendiqué.
 
 ## Décisions utilisateur
 
@@ -75,5 +79,5 @@ La correction robuste remplace l'inversion par une fermeture explicite. D'autres
 - Cadrage : validé
 - Variante pilote : validée
 - Déclinaison : validée
-- Review finale : à faire
+- Review finale : à valider par l'utilisateur
 - Passage testing : non validé
