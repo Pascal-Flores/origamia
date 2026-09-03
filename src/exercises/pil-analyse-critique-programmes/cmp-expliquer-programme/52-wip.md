@@ -31,6 +31,17 @@ Pour 207 et 208 :
 
 La variante 52 sert de référence de niveau et n'est pas modifiée dans cette passe.
 
+## Review de la reprise
+
+Verdict : **OK**.
+
+- 207 explique désormais comment une information lue sert de critère de classement, comment elle guide le choix de la pochette et comment le résultat est contrôlé.
+- 208 distingue la préparation, la transformation principale de la banane et le traitement du résultat obtenu.
+- Les trous ne recopient plus directement les verbes du programme.
+- Les deux variantes utilisent désormais la même profondeur d'explication que 52 : rôle des étapes + résultat global.
+- 207 et 208 restent en `wip` en attente de validation utilisateur.
+- Aucun build ni import SQLite n'est revendiqué.
+
 ## Validations utilisateur
 
 - Cadrage : validé par la demande de reprise
