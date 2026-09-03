@@ -26,16 +26,29 @@ Les variantes 70–72 utilisent toutes :
 5. six étiquettes environ, avec trois réponses correctes et des distracteurs ;
 6. `type: ddt`, `essais: 3`, puis deux feedbacks progressifs et un feedback final explicatif.
 
-## Reprise prévue
+## Reprise réalisée
 
-- 219 : minuteur d'échauffement programmable. La durée et le message final sont incorrects tandis que le voyant est déjà adapté. Le texte à trous demande les deux modifications puis le résultat final obtenu.
+- 219 conserve `rit-sechauffer-avant-activite`, rituel existant et non utilisé ailleurs dans le corpus vérifié, mais le programme pilote désormais un minuteur d'échauffement réel.
+- La mission demande `5 minutes`, le message `PRÊT` et un voyant bleu. Dans le programme fautif, la durée et le message sont incorrects tandis que le voyant est déjà correct.
+- Le texte à trous demande successivement la durée corrigée, le message corrigé et le résultat global obtenu.
+- L'ancienne version centrée sur `3` ou `4` répétitions et le placement d'une pause dans une boucle a été supprimée : elle glissait vers la compétence sur les répétitions.
 
-L'ancienne version centrée sur `3` ou `4` répétitions et le placement d'une pause dans une boucle est abandonnée : elle était plus proche d'un exercice sur les boucles que des variantes 70–72 de correction de programme.
+## Review
+
+Verdict : **OK**.
+
+- La structure correspond aux 70–72 : deux corrections nécessaires, un élément déjà correct, trois trous et six étiquettes.
+- Solution = `1, 2, 3`.
+- `type: ddt`, `essais: 3`, deux feedbacks progressifs puis feedback final explicatif.
+- Le programme est réellement exécutable par le dispositif décrit et la correction est reliée au résultat final.
+- 219 reste en `wip`.
+- 220 n'a pas été modifié.
+- Aucun build ni import SQLite n'est revendiqué.
 
 ## Validations utilisateur
 
 - Cadrage : validé par la demande de reprise
 - Variante pilote : 70 sert de référence existante
 - Déclinaison : autorisée pour 219
-- Review finale : à faire
+- Review finale : à valider par l'utilisateur
 - Passage testing : non validé
