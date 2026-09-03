@@ -28,9 +28,20 @@ Les variantes 61–63 utilisent la même mécanique :
 
 ## Reprise de 213–214
 
-- 213 conserve la crème solaire mais devient une **simulation** : le programme ajoute deux zones couvertes et referme le tube ; la mission impose un nombre final de zones couvertes et un tube fermé.
-- 214 conserve le contexte du parc mais devient une **simulation de planning** : le programme consomme trois minutes et marque l'activité comme terminée ; la réussite dépend aussi d'une information initiale que le programme ne modifie pas.
-- Les deux exercices reprennent quatre états initiaux complets et deux réussites.
+- 213 utilise désormais `rit-respecter-niveau-sonore`, situation non utilisée ailleurs dans le corpus vérifié. La simulation diminue le niveau sonore de 10 points et allume le voyant `CALME`; la mission impose un niveau final inférieur ou égal à 30 et le voyant allumé.
+- L'ancien contexte de crème solaire a été abandonné car `rit-mettre-creme-solaire` est déjà utilisé par l'exercice 186 du premier pilier.
+- 214 conserve `rit-choisir-activite-parc`, dont le slug exact n'apparaît dans aucun autre exercice du corpus de `main`. La simulation consomme trois minutes et marque l'activité comme terminée ; la réussite dépend aussi du point de rendez-vous, que le programme ne modifie pas.
+- Les deux exercices reprennent quatre états initiaux complets, deux réussites et deux échecs.
+
+## Review
+
+Verdict : **OK**.
+
+- 213 : réussites = tests 1 et 4 (`35 → 25`, `40 → 30`), le voyant étant toujours allumé par le programme.
+- 214 : réussites = tests 1 et 4 (`8 → 5`, `9 → 6`) avec point de rendez-vous déjà repéré.
+- Les feedbacks demandent de simuler séparément les composantes modifiées et celles qui restent inchangées.
+- Les deux exercices restent en `wip`.
+- Aucun build ni import SQLite n'est revendiqué.
 
 ## Validations utilisateur
 
