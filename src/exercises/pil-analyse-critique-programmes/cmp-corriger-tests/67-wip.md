@@ -1,52 +1,76 @@
-# Reprise des variantes CM2 — corriger un programme
+# Reprise de la progression CM2 — corriger un programme
 
 ## Gate 0 - Workflow
 
 - Workflow relu : oui
 - Date de relecture : 2026-09-03
-- Représentation(s) autorisée(s) pour cette série : programme fautif complet, cinq versions corrigées complètes fournies en blocs textuels pris en charge par le projet, classement `Corrige la mission` / `Ne corrige pas la mission`.
-- Représentation(s) interdites : corrections résumées par de simples phrases, moins de cinq propositions, tâche réduite à repérer un ordre sans tester le résultat final.
-- Décision : review et harmonisation de 217 et 218 autorisées à la demande explicite de l'utilisateur.
+- Représentation(s) autorisée(s) pour cette série : programme fourni en blocs textuels pris en charge par le projet (`event:`, `move:`, `say:`, `end:`), résultats de plusieurs tests en langage naturel, corrections proposées sous forme de modifications explicites.
+- Représentation(s) interdites : simple choix d'un programme corrigé à partir d'un seul essai, classement binaire `corrige / ne corrige pas` sans comparaison de plusieurs tests, écriture libre de programme.
+- Décision : nouveau cadrage et variante pilote `67.md`. Ne pas décliner 68, 69, 217 et 218 avant validation explicite du pilote.
 
 ## Attendu
 
 - Compétence : `cmp-corriger-tests`.
-- Attendu : `att-corriger-tests-cm2`.
-- Variantes de référence : 67, 68, 69.
-- Variantes reprises : 217, 218.
+- Attendu concerné : `att-corriger-tests-cm2`.
+- Variantes concernées : 67, 68, 69, 217 et 218.
+- Le libellé exact de l'attendu dans le CSV sera mis à jour après validation du nouveau cadrage.
 
-## Forme de référence
+## Problème identifié
 
-Les variantes 67–69 utilisent toutes :
+La forme précédente distinguait surtout le CM1 et le CM2 par le nombre de corrections à examiner :
 
-1. une mission concrète réalisée par un dispositif programmable ;
-2. un programme fautif complet ;
-3. cinq propositions montrant chacune le programme après une correction ;
-4. un classement en deux catégories : correction efficace / inefficace ;
-5. plusieurs corrections possibles ;
-6. `type: ddu`, `essais: 3` et deux feedbacks progressifs avant le feedback final.
+- CM1 : choisir un programme corrigé parmi trois ;
+- CM2 : classer plusieurs programmes corrigés en `Corrige / Ne corrige pas`.
 
-## Reprise réalisée
+Le geste cognitif restait donc très proche : dans les deux cas, l'élève vérifiait une correction sur une seule situation.
 
-- 217 utilise `rit-preparer-sac-piscine`, rituel existant et non utilisé ailleurs dans le corpus vérifié. Un petit robot de démonstration prépare le sac et le défaut vient du retrait de la serviette avant la fermeture.
-- 218 conserve `rit-lire-cartel-oeuvre`, rituel existant et non utilisé ailleurs dans le corpus vérifié. Une borne numérique oublie la ligne de l'auteur.
-- Les quatre corrections textuelles des anciennes versions ont été remplacées par cinq programmes complets pour chaque exercice.
+## Progression proposée
 
-## Review
+- **CM1** : un essai échoue ; choisir la correction qui permet d'obtenir le comportement attendu.
+- **CM2** : plusieurs tests existent ; une correction doit réparer le test qui échoue **sans faire échouer un test qui réussissait déjà**.
+- **6e** : à partir des écarts observés, compléter une explication structurée des modifications nécessaires et du résultat obtenu.
 
-Verdict : **OK**.
+## Forme CM2 proposée
 
-- 217 : programmes corrects = `1`, `2`, `5`; programmes incorrects = `3`, `4`. Chaque proposition est évaluée sur le contenu du sac, sa fermeture et le voyant final.
-- 218 : programmes corrects = `1`, `2`; programmes incorrects = `3`, `4`, `5`. Le programme `2` ajoute seulement une attente après l'affichage complet, sans modifier le résultat attendu.
-- Les deux exercices suivent la structure `ddu` des variantes 67–69, avec cinq programmes, plusieurs corrections valides et `essais: 3`.
-- Les feedbacks intermédiaires font tester l'état final au lieu de donner immédiatement la catégorie.
-- Les deux exercices restent en `wip`.
-- Aucun build ni import SQLite n'est revendiqué.
+Chaque variante comporte :
+
+1. une mission concrète sur un dispositif programmable ;
+2. un programme de départ ;
+3. au moins deux tests réalisés avec des états initiaux différents ;
+4. un test déjà réussi et un test en échec ;
+5. cinq corrections proposées ;
+6. trois catégories :
+   - `Corrige le test en échec sans casser le test réussi` ;
+   - `Corrige le test en échec mais casse le test réussi` ;
+   - `Ne corrige pas le test en échec` ;
+7. l'élève doit donc vérifier l'effet d'une correction sur **plusieurs tests**, et pas seulement sur le cas qui a révélé le bug ;
+8. `type: ddu`, `essais: 3`, avec deux feedbacks progressifs puis une explication finale.
+
+Cette forme introduit explicitement l'idée de **régression** : une correction locale n'est pas suffisante si elle dégrade un comportement qui fonctionnait auparavant.
+
+## Variante pilote 67
+
+Le contexte `rit-robot-trier-batterie-recyclage` est conservé.
+
+Le robot doit terminer avec la batterie déposée, la trappe du bac fermée et le voyant vert. Le programme actuel inverse l'état de la trappe :
+
+- si elle est ouverte au départ, le test réussit ;
+- si elle est déjà fermée au départ, le même programme la rouvre et le test échoue.
+
+Les corrections proposées permettent de distinguer :
+
+- une correction robuste qui ferme la trappe quel que soit son état initial ;
+- des corrections qui réparent uniquement le second test mais font régresser le premier ;
+- des corrections qui ne réparent même pas le test en échec.
+
+## Décisions utilisateur
+
+- 2026-09-03 : l'utilisateur juge les variantes CM2 67–69 et 217–218 insuffisamment différenciées du niveau CM1.
 
 ## Validations utilisateur
 
-- Cadrage : validé par la demande de reprise
-- Variante pilote : 67 sert de référence existante
-- Déclinaison : autorisée pour 217–218
-- Review finale : à valider par l'utilisateur
+- Cadrage : à valider sur le nouveau pilote
+- Variante pilote : à valider
+- Déclinaison : non validée
+- Review finale : non validée
 - Passage testing : non validé
