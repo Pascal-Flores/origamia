@@ -26,17 +26,26 @@ Les variantes 64–66 utilisent toutes :
 5. une seule correction qui permet d'obtenir le résultat attendu ;
 6. `essais: 2`, avec un feedback d'aide puis un feedback final qui relie la correction au résultat.
 
-## Reprise prévue
+## Reprise réalisée
 
-- 215 : robot d'entraînement qui doit ranger un ballon sur la bonne case ; la correction porte sur un virage.
-- 216 : douche automatique de piscine qui doit fonctionner pendant une durée donnée puis couper l'eau ; la correction porte sur l'état final du dispositif.
+- 215 utilise `rit-ranger-materiel-sport`, rituel existant et non utilisé ailleurs dans le corpus vérifié. Un robot d'entraînement dépose un ballon sur la mauvaise case ; les trois réponses sont désormais trois programmes complets.
+- 216 conserve `rit-douche-avant-bassin`, mais la situation est représentée par une douche automatique dans une maquette de centre aquatique. Le programme réellement exécuté par le dispositif doit couper l'eau après 20 secondes.
+- Les anciennes corrections réduites à `inverser les deux instructions` ont été supprimées.
 
-Les anciennes situations humaines `rit-organiser-partie-ballon` et `rit-douche-avant-bassin` sont abandonnées pour ces variantes : elles forçaient un statut artificiel du programme et ne correspondaient pas à la matrice des variantes de référence.
+## Review
+
+Verdict : **OK**.
+
+- 215 suit la matrice de 64 : grille, essai raté, trois programmes complets, une seule correction valide. Le trajet correct mène bien de `C4` à `E2`.
+- 216 suit la matrice de 65–66 : trois critères finaux explicites, un seul élément fautif dans le programme initial et trois programmes corrigés complets.
+- Les deux exercices utilisent `type: qcu`, `essais: 2`, un feedback intermédiaire et un feedback final explicatif.
+- Les deux exercices restent en `wip`.
+- Aucun build ni import SQLite n'est revendiqué.
 
 ## Validations utilisateur
 
 - Cadrage : validé par la demande de reprise
 - Variante pilote : 64 sert de référence existante
 - Déclinaison : autorisée pour 215–216
-- Review finale : à faire
+- Review finale : à valider par l'utilisateur
 - Passage testing : non validé
