@@ -21,6 +21,14 @@ REFERENTIAL_TABLES = [
     "attendus_variables_pedagogiques",
 ]
 
+EXCLUDED_PILLARS = {"pil-programmation-outil"}
+EXCLUDED_COMPETENCES = {
+    "cmp-programmer-traces-deplacements",
+    "cmp-programmer-mesures",
+    "cmp-programmer-simulations",
+    "cmp-mise-en-forme-resultats",
+}
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
@@ -42,7 +50,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--target-exercise-count",
         type=int,
-        default=230,
+        default=240,
         help="Planned total number of exercises",
     )
     return parser.parse_args()
@@ -90,36 +98,68 @@ def copy_referential_tables(conn: sqlite3.Connection) -> None:
             SELECT sql
             FROM doc.sqlite_master
             WHERE type = 'table' AND name = 'pillars'
-            """
+            """,
         ).fetchone()
         if not row or not row[0]:
             raise RuntimeError("Missing source table schema for pillars")
         conn.execute(row[0])
         conn.execute('INSERT INTO "pillars" SELECT * FROM doc."pillars"')
-        return
-
-    conn.execute(
-        """
-        CREATE TABLE "pillars" (
-            id_slug TEXT PRIMARY KEY,
-            intitule TEXT,
-            description TEXT,
-            place TEXT
+    else:
+        conn.execute(
+            """
+            CREATE TABLE "pillars" (
+                id_slug TEXT PRIMARY KEY,
+                intitule TEXT,
+                description TEXT,
+                place TEXT
+            )
+            """
         )
-        """
-    )
-    conn.execute(
-        """
-        INSERT INTO "pillars" (id_slug, intitule, description, place)
-        SELECT DISTINCT
-            pilier AS id_slug,
-            pilier AS intitule,
-            '' AS description,
-            '' AS place
-        FROM competences_referentiel
-        WHERE pilier IS NOT NULL AND TRIM(pilier) <> ''
-        """
-    )
+        conn.execute(
+            """
+            INSERT INTO "pillars" (id_slug, intitule, description, place)
+            SELECT DISTINCT
+                pilier AS id_slug,
+                pilier AS intitule,
+                '' AS description,
+                '' AS place
+            FROM competences_referentiel
+            WHERE pilier IS NOT NULL AND TRIM(pilier) <> ''
+            """
+        )
+
+    remove_excluded_pillars(conn)
+
+
+def remove_excluded_pillars(conn: sqlite3.Connection) -> None:
+    """Defensively remove competencies/attendus from retired pillars.
+
+    This keeps sync correct even if an older doc_referentiel.sqlite is used.
+    """
+    for competence in EXCLUDED_COMPETENCES:
+        conn.execute(
+            "DELETE FROM attendus_variables_pedagogiques WHERE attendu_id_slug IN "
+            "(SELECT id_slug FROM attendus_referentiel WHERE competence = ?)",
+            [competence],
+        )
+        conn.execute(
+            "DELETE FROM attendus_referentiel WHERE competence = ?",
+            [competence],
+        )
+        conn.execute(
+            "DELETE FROM competences_referentiel WHERE id_slug = ?",
+            [competence],
+        )
+
+    for pillar in EXCLUDED_PILLARS:
+        conn.execute(
+            "DELETE FROM competences_referentiel WHERE pilier = ?",
+            [pillar],
+        )
+        conn.execute(
+            "DELETE FROM pillars WHERE id_slug = ?",
+            [pillar],
+        )
 
 
 def ensure_project_meta(conn: sqlite3.Connection, target_count: int, built_count: int) -> None:
