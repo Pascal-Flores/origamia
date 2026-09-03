@@ -28,16 +28,17 @@ Les variantes 58–60 utilisent toutes la même mécanique :
 
 ## Reprise de 211–212
 
-- 211 utilise désormais `rit-preparer-coucher`, situation non utilisée ailleurs dans le corpus vérifié. La simulation suit le **temps écoulé** pendant trois étapes de préparation au coucher.
-- 212 conserve `rit-mettre-pansement`, dont le slug exact n'apparaît dans aucun autre exercice du corpus de `main`. La simulation suit également le **temps écoulé** pendant trois étapes.
+- 211 utilise `rit-preparer-coucher`, situation non utilisée ailleurs dans le corpus vérifié. Après retour utilisateur, la première version fondée sur un « compteur de temps écoulé » a été abandonnée car l'énoncé était difficile à comprendre.
+- 211 part désormais de **15 minutes restantes avant l'heure du coucher**. Chaque étape consomme explicitement une durée : `15 → 11 → 8 → 2`. L'état suivi et l'opération à effectuer sont donnés directement dans l'énoncé.
+- 212 conserve `rit-mettre-pansement`, dont le slug exact n'apparaît dans aucun autre exercice du corpus de `main`. La simulation suit le temps écoulé pendant trois étapes.
 - Le contexte initial de lavage des mains a été abandonné pour 211 car il recoupait sémantiquement l'exercice 22 du premier pilier.
-- Les deux exercices reprennent exactement le format `ddu Vrai/Faux`, cinq affirmations et trois essais.
+- Les deux exercices reprennent le format `ddu Vrai/Faux`, cinq affirmations et trois essais.
 
 ## Review
 
-Verdict : **OK**.
+Verdict : **OK avec réserve utilisateur sur 211 levée par réécriture**.
 
-- 211 : trace `0 → 3 → 9 → 10` minutes ; solution Vrai = 1, 2, 3.
+- 211 : trace `15 → 11 → 8 → 2` minutes restantes ; solution Vrai = 1, 2, 3.
 - 212 : trace `0 → 15 → 25 → 30` secondes ; solution Vrai = 1, 2, 3.
 - Les feedbacks intermédiaires guident le calcul sans donner immédiatement le classement complet.
 - Les deux exercices restent en `wip`.
