@@ -4,9 +4,9 @@
 
 - Workflow relu : oui
 - Date de relecture : 2026-09-03
-- Représentation(s) autorisée(s) pour cette série : mission explicite, même programme fourni en blocs textuels (`event:`, `move:`, `say:`, `end:`), quatre états initiaux en langage naturel.
-- Représentation(s) interdites : programme réduit à une opération isolée, syntaxe de variable inventée, tâche qui ne teste qu'une valeur sans état initial complet.
-- Décision : review et harmonisation autorisées à la demande explicite de l'utilisateur.
+- Représentation(s) autorisée(s) pour cette série : mission explicite, même programme fourni en blocs textuels (`event:`, `move:`, `say:`, `end:`), quatre états initiaux en langage naturel ou sur grille.
+- Représentation(s) interdites : programme réduit à une opération isolée, syntaxe de variable inventée, situation quotidienne artificiellement transformée en programme, tâche qui ne teste qu'une valeur sans état initial complet.
+- Décision : review et harmonisation de 213–214 autorisées à la demande explicite de l'utilisateur.
 
 ## Attendu
 
@@ -21,32 +21,28 @@ Les variantes 61–63 utilisent la même mécanique :
 
 1. une mission définie par un état final précis ;
 2. un même programme exécuté dans quatre états initiaux différents ;
-3. l'élève simule séparément chaque test ;
-4. il sélectionne tous les états initiaux qui conduisent à la réussite (`type: qcm`) ;
-5. deux tests réussissent et deux échouent ;
-6. trois essais avec deux feedbacks progressifs puis un feedback final.
+3. un véritable robot, appareil ou dispositif programmable ;
+4. l'élève simule séparément chaque test ;
+5. il sélectionne tous les états initiaux qui conduisent à la réussite (`type: qcm`) ;
+6. deux tests réussissent et deux échouent ;
+7. trois essais avec deux feedbacks progressifs puis un feedback final.
 
-## Reprise de 213–214
+Dans 62–63, le programme modifie seulement une partie de l'état du dispositif : au moins une information reste inchangée et doit donc être correcte dès le départ. Ce mécanisme oblige l'élève à tenir compte de l'état initial complet.
 
-- 213 utilise désormais `rit-respecter-niveau-sonore`, situation non utilisée ailleurs dans le corpus vérifié. La simulation diminue le niveau sonore de 10 points et allume le voyant `CALME`; la mission impose un niveau final inférieur ou égal à 30 et le voyant allumé.
-- L'ancien contexte de crème solaire a été abandonné car `rit-mettre-creme-solaire` est déjà utilisé par l'exercice 186 du premier pilier.
-- 214 conserve `rit-choisir-activite-parc`, dont le slug exact n'apparaît dans aucun autre exercice du corpus de `main`. La simulation consomme trois minutes et marque l'activité comme terminée ; la réussite dépend aussi du point de rendez-vous, que le programme ne modifie pas.
-- Les deux exercices reprennent quatre états initiaux complets, deux réussites et deux échecs.
+## Problème des versions précédentes de 213–214
 
-## Review
+Les exercices respectaient formellement « quatre états initiaux + même programme », mais les situations `niveau sonore` et `activité au parc` étaient des situations ordinaires transformées artificiellement en simulations. Elles ne ressemblaient donc pas réellement aux variantes 61–63, qui portent sur des systèmes programmables concrets.
 
-Verdict : **OK**.
+## Nouvelle reprise de 213–214
 
-- 213 : réussites = tests 1 et 4 (`35 → 25`, `40 → 30`), le voyant étant toujours allumé par le programme.
-- 214 : réussites = tests 1 et 4 (`8 → 5`, `9 → 6`) avec point de rendez-vous déjà repéré.
-- Les feedbacks demandent de simuler séparément les composantes modifiées et celles qui restent inchangées.
-- Les deux exercices restent en `wip`.
-- Aucun build ni import SQLite n'est revendiqué.
+- 213 : maquette de feu piéton programmable. Le programme force le feu voitures au rouge et le feu piétons au vert, mais ne modifie pas le signal sonore. La mission exige les trois états corrects. Deux situations initiales réussissent parce que le signal sonore est déjà activé.
+- 214 : barrière de parking programmable avec compteur de places libres. Lorsqu'une voiture sort, le programme ajoute une place libre, ouvre la barrière et allume le voyant SORTIE. La mission impose un nombre final précis de places libres et les états de sortie. Deux situations initiales réussissent car elles commencent avec le bon nombre de places.
+- Deux nouveaux rituels sont ajoutés au référentiel des situations afin d'éviter de réutiliser une mise en situation existante.
 
 ## Validations utilisateur
 
 - Cadrage : validé par la demande d'alignement sur les autres variantes
-- Variante pilote : 61 déjà existante et sert de référence
+- Variante pilote : 61–63 servent de références établies
 - Déclinaison : autorisée pour 213–214
 - Review finale : à valider par l'utilisateur
 - Passage testing : non validé pour 213–214
