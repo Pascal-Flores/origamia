@@ -26,6 +26,15 @@ HEX32_SUFFIX_RE = re.compile(r"\s+[0-9a-f]{32}_all$", re.IGNORECASE)
 CSV_COMPETENCES_NAME = "competences_referentiel"
 CSV_ATTENDUS_NAME = "attendus_referentiel"
 
+# The former fifth pillar is deliberately excluded from the adaptive referential.
+EXCLUDED_PILLARS = {"pil-programmation-outil"}
+EXCLUDED_COMPETENCES = {
+    "cmp-programmer-traces-deplacements",
+    "cmp-programmer-mesures",
+    "cmp-programmer-simulations",
+    "cmp-mise-en-forme-resultats",
+}
+
 # Columns kept in CSV but excluded from `competences_referentiel` table.
 COMPETENCES_EXCLUDED_COLUMNS = {
     "Compétences du programme scolaire",
@@ -145,7 +154,6 @@ def split_variables_pedagogiques(raw: str) -> list[str]:
     if not text:
         return []
 
-    # Cells are comma-separated (either labels, links, or "label (link)").
     parts = [p.strip() for p in re.split(r"\s*,\s*", text) if p.strip()]
     if not parts:
         return [text]
@@ -160,8 +168,6 @@ def parse_variable_label_and_link(entry: str) -> tuple[str, str]:
     if re.match(r"^https?://", text):
         return "", text
 
-    # Extract trailing notion link if present in the common format:
-    # "Nom variable (https://... )"
     m = re.match(r"^(.*?)\s*\((https?://[^)]*)\)\s*$", text)
     if m:
         return m.group(1).strip(), m.group(2).strip()
@@ -174,7 +180,6 @@ def notion_link_key(url: str) -> str:
     if not text:
         return ""
 
-    # Match the canonical 32-hex Notion page identifier used across URL variants.
     m = re.search(r"([0-9a-f]{32})", text, re.IGNORECASE)
     if m:
         return m.group(1).lower()
@@ -197,7 +202,6 @@ def create_variables_pedagogiques_table(
 
     insert_var_sql = f'INSERT INTO "{variables_table}" ("id_slug", "nom") VALUES (?, ?)'
 
-    # Deduplicate globally by variable name; each variable gets a unique slug from its name.
     slug_by_name: dict[str, str] = {}
     used_slugs: set[str] = set()
     competence_to_variables: dict[str, list[str]] = {}
@@ -256,6 +260,16 @@ def create_attendus_variables_pedagogiques_table(
             conn.execute(insert_link_sql, [attendu_slug, var_slug])
 
 
+def row_is_excluded(table: str, row: dict[str, str], row_slug: str) -> bool:
+    if table == "pillars":
+        return row_slug in EXCLUDED_PILLARS
+    if table == CSV_COMPETENCES_NAME:
+        return (row.get("Pilier") or "").strip() in EXCLUDED_PILLARS or row_slug in EXCLUDED_COMPETENCES
+    if table == CSV_ATTENDUS_NAME:
+        return (row.get("Compétence") or "").strip() in EXCLUDED_COMPETENCES
+    return False
+
+
 def import_csv_to_table(
     conn: sqlite3.Connection, csv_path: Path
 ) -> tuple[list[tuple[str, str]], list[tuple[str, str]]]:
@@ -290,6 +304,9 @@ def import_csv_to_table(
         for row_num, row in enumerate(reader, start=2):
             slug_source = choose_slug_source(row, headers)
             row_slug = slug_source if explicit_slug else slugify(slug_source)
+
+            if row_is_excluded(table, row, row_slug):
+                continue
 
             row_slug = unique_slug_or_fail(row_slug, seen, table, row_num)
 
