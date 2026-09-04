@@ -29,7 +29,13 @@ Les variantes 82–84 comportent toutes :
 
 Les versions initiales de 227 et 228 ne contenaient que quatre propositions, soit deux fois moins que les variantes de référence. Elles sont étendues à huit propositions chacune.
 
-À la demande de l'utilisateur, le nombre de propositions valides et invalides n'est pas équilibré artificiellement et n'est pas annoncé à l'élève. Les deux exercices utilisent en outre des répartitions différentes, afin qu'aucun quota implicite ne puisse être déduit d'une variante à l'autre.
+À la demande de l'utilisateur, le nombre de propositions valides et invalides n'est pas équilibré artificiellement et n'est pas annoncé à l'élève. Les deux exercices utilisent des répartitions différentes, afin qu'aucun quota implicite ne puisse être déduit d'une variante à l'autre.
+
+Contrôle des situations :
+
+- 227 conserve `rit-passer-individuel-binome`, dont le slug exact n'est utilisé par aucun autre exercice de `main`.
+- 228 abandonne `rit-pause-active`, déjà utilisé par l'exercice 203.
+- 228 utilise désormais `rit-utiliser-checklist-copie`, dont le slug exact n'est utilisé par aucun autre exercice de `main`.
 
 ## Review
 
