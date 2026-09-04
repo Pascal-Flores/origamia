@@ -27,11 +27,21 @@ Chaque variante comporte :
 6. les distracteurs modifient l'action, l'objet, le paramètre ou l'ordre ;
 7. `type: qcu`, `essais: 2`, un feedback d'aide puis un feedback final qui relie la partie manquante à la source.
 
-## Reprise prévue
+## Reprise réalisée
 
-- 235 conserve `rit-poser-affaires-bon-endroit`, non utilisé ailleurs dans le corpus vérifié.
-- 236 conserve `rit-preparer-vetements-demain`, non utilisé ailleurs dans le corpus vérifié.
-- Les anciennes variantes en texte à deux trous sont remplacées par une conversion partielle à une seule lacune et quatre choix, comme dans 94–96.
+- 235 conserve `rit-poser-affaires-bon-endroit`, non utilisé ailleurs dans le corpus vérifié. La source comporte trois actions en langage naturel et le pseudo-code à compléter n'a qu'une ligne manquante.
+- 236 conserve `rit-preparer-vetements-demain`, non utilisé ailleurs dans le corpus vérifié. La source est fournie en blocs et la conversion en langage naturel contient une seule partie manquante.
+- Les anciennes variantes en texte à deux trous ont été remplacées par des QCU à quatre choix, comme dans 94–96.
+
+## Review
+
+Verdict : **OK**.
+
+- 235 et 236 reprennent exactement la mécanique `source complète → conversion commencée → une partie manquante → 4 choix`.
+- Une seule réponse conserve l'action, l'objet, le lieu et l'ordre attendus.
+- `type: qcu`, `essais: 2`, avec un feedback d'aide puis un feedback final explicatif.
+- Les deux exercices restent en `wip`.
+- Aucun build ni import SQLite n'est revendiqué.
 
 ## Validations utilisateur
 
