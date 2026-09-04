@@ -27,11 +27,21 @@ Chaque variante comporte :
 6. lorsque les réponses sont en blocs, elles sont fournies comme séquences complètes avec début et fin ;
 7. `type: qcu`, `essais: 2`, un feedback d'aide puis un feedback final explicatif.
 
-## Reprise prévue
+## Reprise réalisée
 
-- 233 conserve `rit-petit-dejeuner-debarrasser`, non utilisé ailleurs dans le corpus vérifié.
-- 234 abandonne `rit-preparer-gourde-collation`, déjà utilisé par l'exercice 76, et utilise `rit-ranger-instrument`, non utilisé ailleurs dans le corpus vérifié.
-- Les anciennes variantes à trois choix sont remplacées par quatre propositions comme dans 91–93.
+- 233 conserve `rit-petit-dejeuner-debarrasser`, non utilisé ailleurs dans le corpus vérifié. Les réponses sont désormais quatre programmes Blockly complets ; les distracteurs changent l'objet, le lieu ou l'action.
+- 234 abandonne `rit-preparer-gourde-collation`, déjà utilisé par l'exercice 76, et utilise `rit-ranger-instrument`, non utilisé ailleurs dans le corpus vérifié. La source est un programme Blockly complet et les quatre phrases distinguent instrument, housse et position.
+
+## Review
+
+Verdict : **OK**.
+
+- 233 et 234 reprennent la matrice `qcu`, 4 choix, 2 essais des variantes 91–93.
+- Une seule conversion est exacte dans chaque exercice.
+- Les distracteurs sont proches et chacun modifie un élément identifiable du sens.
+- Les feedbacks demandent de comparer les informations conservées plutôt que de reconnaître seulement le verbe principal.
+- Les deux exercices restent en `wip`.
+- Aucun build ni import SQLite n'est revendiqué.
 
 ## Validations utilisateur
 
