@@ -6,7 +6,7 @@
 - Date de relecture : 2026-09-03
 - Représentation(s) autorisée(s) pour cette série : consigne en langage naturel et instructions Blockly textuelles déjà prises en charge par le build (`move:`), fournies à l'élève comme éléments déjà écrits puis rendues visuellement sous forme de blocs Blockly.
 - Représentation(s) interdites pour cette série : saisie libre de blocs, calcul nécessaire pour retrouver un paramètre, information implicite à connaître, syntaxe inventée, valeurs artificiellement ajoutées à un rituel uniquement pour fabriquer des paramètres, mise en situation où un programme est présenté comme exécutant réellement un geste ordinaire alors qu'il sert seulement à représenter une procédure.
-- Décision : déclinaison autorisée après validation explicite du pilote 22. Réécrire 23, 24, 187 et 188 selon la même forme didactique.
+- Décision : déclinaison autorisée après validation explicite du pilote 22. Réécrire 23, 24, 159 et 160 selon la même forme didactique.
 
 ## Attendu
 
@@ -14,7 +14,7 @@
 - Attendu : `att-parametrer-instructions-cm2`.
 - Intitulé du référentiel : « Vérifier si un paramètre proposé dans un programme respecte la consigne. »
 - Indicateur acquis : gérer correctement 2 à 3 paramètres et respecter les contraintes données.
-- Exercices concernés : 22, 23, 24, 187 et 188.
+- Exercices concernés : 22, 23, 24, 159 et 160.
 
 ## Diagnostic des exercices précédents
 
@@ -75,7 +75,7 @@
 - Trois blocs indépendants ; le bloc sur la durée porte une mauvaise valeur.
 - Solution prévue : 1, 2.
 
-### 187 — carnet de lecture
+### 159 — carnet de lecture
 
 - Nouveau rituel : `rit-tenir-carnet-lecture`.
 - Vérification d'usage : aucun autre exercice trouvé avec ce slug lors de la recherche ; seule la ligne du référentiel est retournée.
@@ -83,7 +83,7 @@
 - Trois blocs indépendants ; le bloc sur l'avis porte une mauvaise valeur.
 - Solution prévue : 1, 3.
 
-### 188 — devoirs avec pause
+### 160 — devoirs avec pause
 
 - Nouveau rituel : `rit-faire-devoirs-avec-pause`.
 - Vérification d'usage : aucun autre exercice trouvé avec ce slug lors de la recherche ; seule la ligne du référentiel est retournée.
@@ -93,7 +93,7 @@
 
 ## Retours utilisateur pris en compte
 
-- 2026-09-03 : les exercices 22–24, 187 et 188 sont jugés peu intéressants pédagogiquement et plus faciles que les exercices CM1.
+- 2026-09-03 : les exercices 22–24, 159 et 160 sont jugés peu intéressants pédagogiquement et plus faciles que les exercices CM1.
 - 2026-09-03 : dans une situation comme le lavage des mains, le programme ne doit pas être présenté comme un programme réellement utilisé pour accomplir le geste ; il peut représenter ou montrer la procédure.
 - 2026-09-03 : les programmes complets sont jugés trop proches d'une tâche de comparaison de représentations ; préférence pour des instructions uniques afin de cibler directement la vérification des paramètres.
 - 2026-09-03 : les blocs étant rendus sous forme de blocs Blockly, ne pas parler aux élèves de « parenthèses » présentes uniquement dans la syntaxe source.
@@ -105,6 +105,6 @@
 - Contexte lavage des mains : validé
 - Forme « instructions indépendantes » : validée
 - Variante pilote 22 : validée
-- Déclinaison 23-24/187-188 : autorisée, à reviewer après rédaction
+- Déclinaison 23-24/159-160 : autorisée, à reviewer après rédaction
 - Review finale : non validée
 - Passage testing : non validé

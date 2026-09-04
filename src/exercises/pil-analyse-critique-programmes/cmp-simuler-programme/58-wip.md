@@ -13,7 +13,7 @@
 - Compétence : `cmp-simuler-programme`.
 - Attendu : `att-simuler-programme-cm2`.
 - Variantes de référence : 58, 59, 60.
-- Variantes reprises : 211, 212.
+- Variantes reprises : 183, 184.
 
 ## Forme de référence
 
@@ -26,20 +26,20 @@ Les variantes 58–60 utilisent toutes la même mécanique :
 5. classement des affirmations dans `Vrai` ou `Faux` (`type: ddu`) ;
 6. trois essais avec deux feedbacks progressifs puis un feedback final donnant la trace complète.
 
-## Reprise de 211–212
+## Reprise de 183–184
 
-- 211 utilise `rit-preparer-coucher`, situation non utilisée ailleurs dans le corpus vérifié. Après retour utilisateur, la première version fondée sur un « compteur de temps écoulé » a été abandonnée car l'énoncé était difficile à comprendre.
-- 211 part désormais de **15 minutes restantes avant l'heure du coucher**. Chaque étape consomme explicitement une durée : `15 → 11 → 8 → 2`. L'état suivi et l'opération à effectuer sont donnés directement dans l'énoncé.
-- 212 conserve `rit-mettre-pansement`, dont le slug exact n'apparaît dans aucun autre exercice du corpus de `main`. La simulation suit le temps écoulé pendant trois étapes.
-- Le contexte initial de lavage des mains a été abandonné pour 211 car il recoupait sémantiquement l'exercice 22 du premier pilier.
+- 183 utilise `rit-preparer-coucher`, situation non utilisée ailleurs dans le corpus vérifié. Après retour utilisateur, la première version fondée sur un « compteur de temps écoulé » a été abandonnée car l'énoncé était difficile à comprendre.
+- 183 part désormais de **15 minutes restantes avant l'heure du coucher**. Chaque étape consomme explicitement une durée : `15 → 11 → 8 → 2`. L'état suivi et l'opération à effectuer sont donnés directement dans l'énoncé.
+- 184 conserve `rit-mettre-pansement`, dont le slug exact n'apparaît dans aucun autre exercice du corpus de `main`. La simulation suit le temps écoulé pendant trois étapes.
+- Le contexte initial de lavage des mains a été abandonné pour 183 car il recoupait sémantiquement l'exercice 22 du premier pilier.
 - Les deux exercices reprennent le format `ddu Vrai/Faux`, cinq affirmations et trois essais.
 
 ## Review
 
-Verdict : **OK avec réserve utilisateur sur 211 levée par réécriture**.
+Verdict : **OK avec réserve utilisateur sur 183 levée par réécriture**.
 
-- 211 : trace `15 → 11 → 8 → 2` minutes restantes ; solution Vrai = 1, 2, 3.
-- 212 : trace `0 → 15 → 25 → 30` secondes ; solution Vrai = 1, 2, 3.
+- 183 : trace `15 → 11 → 8 → 2` minutes restantes ; solution Vrai = 1, 2, 3.
+- 184 : trace `0 → 15 → 25 → 30` secondes ; solution Vrai = 1, 2, 3.
 - Les feedbacks intermédiaires guident le calcul sans donner immédiatement le classement complet.
 - Les deux exercices restent en `wip`.
 - Aucun build ni import SQLite n'est revendiqué.
@@ -48,6 +48,6 @@ Verdict : **OK avec réserve utilisateur sur 211 levée par réécriture**.
 
 - Cadrage : validé par la demande d'alignement sur les autres variantes
 - Variante pilote : 58 déjà existante et sert de référence
-- Déclinaison : autorisée pour 211–212
+- Déclinaison : autorisée pour 183–184
 - Review finale : à valider par l'utilisateur
-- Passage testing : non validé pour 211–212
+- Passage testing : non validé pour 183–184

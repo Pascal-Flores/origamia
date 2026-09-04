@@ -1,0 +1,57 @@
+# Reprise des variantes CM1 — vérifier la forme d'une instruction
+
+## Gate 0 - Workflow
+
+- Workflow relu : oui
+- Date de relecture : 2026-09-04
+- Représentation(s) autorisée(s) pour cette série : langage naturel et blocs textuels Blockly pris en charge par le projet (`move:`).
+- Représentation(s) interdites : syntaxe inventée, écriture libre de blocs, tâche différente du classement valide / invalide.
+- Décision : déclinaison et review de 199–200 autorisées à la demande explicite de l'utilisateur, à partir de la forme déjà validée des variantes 82–84.
+
+## Attendu
+
+- Compétence : `cmp-verifier-forme-representation`.
+- Attendu : `att-verifier-forme-representation-cm1`.
+- Variantes de référence : 82, 83 et 84 (`testing`).
+- Variantes reprises : 199 et 200.
+
+## Forme de référence
+
+Les variantes 82–84 comportent toutes :
+
+1. deux catégories : `Instructions valides` / `Instructions invalides` ;
+2. huit propositions à classer ;
+3. un mélange de phrases et de blocs ;
+4. des erreurs variées : action sans objet, objet sans action, formulation trop vague ;
+5. `type: ddc`, `essais: 3`, deux feedbacks progressifs puis un feedback final explicatif.
+
+## Reprise de 199–200
+
+Les versions initiales de 199 et 200 ne contenaient que quatre propositions, soit deux fois moins que les variantes de référence. Elles sont étendues à huit propositions chacune.
+
+À la demande de l'utilisateur, le nombre de propositions valides et invalides n'est pas équilibré artificiellement et n'est pas annoncé à l'élève. Les deux exercices utilisent des répartitions différentes, afin qu'aucun quota implicite ne puisse être déduit d'une variante à l'autre.
+
+Contrôle des situations :
+
+- 199 conserve `rit-passer-individuel-binome`, dont le slug exact n'est utilisé par aucun autre exercice de `main`.
+- 200 abandonne `rit-pause-active`, déjà utilisé par l'exercice 175.
+- 200 utilise désormais `rit-utiliser-checklist-copie`, dont le slug exact n'est utilisé par aucun autre exercice de `main`.
+
+## Review
+
+Verdict : **OK**.
+
+- 199 : huit propositions, mélange de phrases et de blocs ; les erreurs portent sur une action sans objet ou sur un groupe nominal sans action.
+- 200 : huit propositions, mélange de phrases et de blocs ; les erreurs couvrent objet manquant, action absente et formulation trop vague.
+- Les deux exercices utilisent des répartitions valide/invalide différentes et aucun nombre attendu n'est indiqué dans la consigne ou les feedbacks.
+- Les feedbacks demandent d'évaluer chaque proposition indépendamment et ne permettent pas de déduire un quota.
+- 199 et 200 restent en `wip`.
+- Aucun build ni import SQLite n'est revendiqué.
+
+## Validations utilisateur
+
+- Cadrage : validé par la demande d'étoffement
+- Variante pilote : forme 82–84 déjà validée
+- Déclinaison : autorisée pour 199–200
+- Review finale : à valider par l'utilisateur
+- Passage testing : non validé

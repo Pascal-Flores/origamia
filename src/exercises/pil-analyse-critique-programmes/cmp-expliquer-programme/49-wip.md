@@ -12,7 +12,7 @@
 
 - Compétence : `cmp-expliquer-programme`.
 - Attendu : `att-expliquer-programme-cm2`.
-- Variantes concernées : 49, 50, 51, 205 et 206.
+- Variantes concernées : 49, 50, 51, 177 et 178.
 
 ## Problème identifié
 
@@ -42,8 +42,8 @@ Le type retenu est `ddc`. Les catégories sont volontairement présentées dans 
 - 49 : préparer un poste de dessin ;
 - 50 : télécharger puis retrouver un document ;
 - 51 : préparer une valise pour un week-end ;
-- 205 : ranger de la vaisselle dans le lave-vaisselle ;
-- 206 : séparer le linge dans deux paniers.
+- 177 : ranger de la vaisselle dans le lave-vaisselle ;
+- 178 : séparer le linge dans deux paniers.
 
 ## Décisions utilisateur
 
