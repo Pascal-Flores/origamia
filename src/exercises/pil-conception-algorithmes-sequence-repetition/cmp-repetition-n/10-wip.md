@@ -1,19 +1,19 @@
-# Reprise de la série cmp-repetition-n — exercices 10 à 12, 179 et 180
+# Reprise de la série cmp-repetition-n — exercices 10 à 12, 151 et 152
 
 ## Gate 0 - Workflow
 
 - Workflow relu : oui
 - Date de relecture : 2026-09-02
-- Représentation(s) autorisée(s) pour cette série : programme Turtle entièrement développé, sans boucle, présenté à l’élève comme support d’observation. Pour la variante 180, le support est du code Python Turtle brut, sans projet Vittascience.
-- Représentation(s) interdites pour cette série : demander à l’élève de paramétrer les instructions ; introduire une boucle dans le programme observé ; utiliser des formes abstraites difficiles à reconnaître ; générer un projet Vittascience pour la variante 180.
-- Décision : déclinaison autorisée après validation explicite du pilote 10 par l’utilisateur ; réécriture de 180 autorisée après abandon explicite de l’échelle.
+- Représentation(s) autorisée(s) pour cette série : programme Turtle entièrement développé, sans boucle, présenté à l’élève comme support d’observation. Pour la variante 152, le support est du code Python Turtle brut, sans projet Vittascience.
+- Représentation(s) interdites pour cette série : demander à l’élève de paramétrer les instructions ; introduire une boucle dans le programme observé ; utiliser des formes abstraites difficiles à reconnaître ; générer un projet Vittascience pour la variante 152.
+- Décision : déclinaison autorisée après validation explicite du pilote 10 par l’utilisateur ; réécriture de 152 autorisée après abandon explicite de l’échelle.
 
 ## Attendu
 
 - Compétence : `cmp-repetition-n`
 - Attendu : `att-repetition-n-cm1`
 - Geste travaillé : déterminer combien de fois un motif d’instructions est répété dans un programme.
-- Série concernée : 10, 11, 12, 179, 180.
+- Série concernée : 10, 11, 12, 151, 152.
 
 ## Forme invariante
 
@@ -53,14 +53,14 @@
 - Motif : `avancer 10` → `droite 90°` → `avancer 50` → `reculer 50` → `gauche 90°`.
 - Répétitions : 5.
 
-## Variante 179
+## Variante 151
 
 - Cible : hublots ronds alignés.
 - Situation : `rit-dessiner-hublots-sous-marin`.
 - Motif : `cercle 20` → `lever le stylo` → `avancer 50` → `baisser le stylo`.
 - Répétitions : 3.
 
-## Variante 180
+## Variante 152
 
 - Cible : serpent stylisé / ligne ondulée continue.
 - Situation : atelier de dessin, sans compétence externe requise.
@@ -76,19 +76,19 @@
 - Les anciens triangle/carré/hexagone/pentagone/octogone étaient trop répétitifs.
 - Les formes doivent être immédiatement reconnaissables.
 - Les mises en situation peuvent être inventées si cela évite de plaquer un rituel sans rapport avec le dessin.
-- 2026-09-02 : utilisateur autorise explicitement la déclinaison des variantes 11, 12, 179 et 180 à partir du pilote 10.
+- 2026-09-02 : utilisateur autorise explicitement la déclinaison des variantes 11, 12, 151 et 152 à partir du pilote 10.
 - 2026-09-02 : utilisateur modifie les nombres de répétitions et certains paramètres de tracé afin d’éviter une série trop homogène ; conserver ces modifications.
 - 2026-09-02 : la variante « six perles » est refusée car trop proche des hublots.
 - 2026-09-02 : plusieurs tentatives d’échelle sont refusées : soit le rendu ressemble à des rectangles, soit le programme devient trop long et difficile à se représenter mentalement.
 - 2026-09-02 : utilisateur précise que des instructions peuvent être placées avant/après le motif répété ; l’élève peut avoir à distinguer ce qui appartient au motif de ce qui reste hors répétition.
-- 2026-09-02 : utilisateur demande d’abandonner les projets Vittascience pour 180 et de fournir uniquement le code Python.
-- 2026-09-02 : variante « vague / serpent » validée comme nouvelle direction pour 180 ; motif `circle(25, 180)` → `circle(-25, 180)` répété quatre fois.
+- 2026-09-02 : utilisateur demande d’abandonner les projets Vittascience pour 152 et de fournir uniquement le code Python.
+- 2026-09-02 : variante « vague / serpent » validée comme nouvelle direction pour 152 ; motif `circle(25, 180)` → `circle(-25, 180)` répété quatre fois.
 
 ## Validations utilisateur
 
 - Cadrage : validé pour la déclinaison
 - Variante pilote 10 : validée
-- Déclinaison 11-12/179-180 : à reviewer
-- Variante 180 : à revalider après réécriture en serpent ondulé
+- Déclinaison 11-12/151-152 : à reviewer
+- Variante 152 : à revalider après réécriture en serpent ondulé
 - Review finale : non validée
 - Passage testing : non validé
