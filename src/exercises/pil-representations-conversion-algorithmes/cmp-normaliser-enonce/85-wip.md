@@ -32,6 +32,16 @@ Chaque variante comporte :
 - 230 conserve `rit-preparer-plan-travail`, non réutilisé exactement dans `main`. Le plan précise les tâches à placer dans `Maintenant` et `Ensuite`, puis un bloc `COMMENCER` incomplet doit être corrigé.
 - Les anciennes versions à trois réponses et au contexte très réduit sont remplacées par des séquences plus complètes et quatre réponses comme dans 85–87.
 
+## Review
+
+Verdict : **OK**.
+
+- 229 reprend la matrice de 87 : une procédure complète en pseudo-code, une action trop vague, quatre corrections de natures différentes et une seule réponse qui complète l'information tout en gardant la représentation.
+- 230 reprend la matrice de 85 : une séquence complète en blocs, un bloc incomplet, quatre propositions dont une seule conserve à la fois la forme et le paramètre attendu.
+- Les distracteurs ne se limitent plus au préfixe visuel : ils testent aussi l'information manquante et le sens de la correction.
+- Les deux exercices restent en `wip`.
+- Aucun build ni import SQLite n'est revendiqué.
+
 ## Validations utilisateur
 
 - Cadrage : validé par la demande de reprise
