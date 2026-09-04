@@ -26,11 +26,21 @@ Chaque variante comporte :
 5. six à sept étiquettes avec des distracteurs proches ;
 6. `type: ddt`, `essais: 3`, deux feedbacks progressifs puis un feedback final explicatif.
 
-## Reprise prévue
+## Reprise réalisée
 
-- 237 abandonne `rit-preparer-coucher`, déjà utilisé par l'exercice 211, et utilise `rit-melanger-cartes-distribuer`, non utilisé ailleurs dans le corpus vérifié.
-- 238 abandonne `rit-ranger-chambre-10-min`, déjà utilisé par l'exercice 202, et utilise `rit-preparer-exposition-maison`, non utilisé ailleurs dans le corpus vérifié.
-- Les nouvelles variantes vérifient à la fois le nombre, le contenu répété et l'action hors répétition.
+- 237 abandonne `rit-preparer-coucher`, déjà utilisé par l'exercice 211, et utilise `rit-melanger-cartes-distribuer`, non utilisé ailleurs dans le corpus vérifié. La conversion proposée garde les actions mais utilise une mauvaise répétition ; le texte corrigé vérifie nombre, action répétée et action finale.
+- 238 abandonne `rit-ranger-chambre-10-min`, déjà utilisé par l'exercice 202, et utilise `rit-preparer-exposition-maison`, non utilisé ailleurs dans le corpus vérifié. La conversion proposée modifie le nombre de répétitions et place l'ouverture de l'exposition dans la répétition ; le texte de correction rétablit nombre, deux actions répétées et action hors boucle.
+
+## Review
+
+Verdict : **OK**.
+
+- 237 utilise 3 trous et 6 étiquettes, dans la forme de 97 et 99.
+- 238 utilise 4 trous et 7 étiquettes, dans la forme plus développée de 98.
+- Les deux exercices distinguent explicitement le nombre de répétitions, le contenu du motif répété et l'action exécutée une seule fois après la répétition.
+- `type: ddt`, `essais: 3`, avec deux feedbacks progressifs et un feedback final explicatif.
+- Les deux exercices restent en `wip`.
+- Aucun build ni import SQLite n'est revendiqué.
 
 ## Validations utilisateur
 
