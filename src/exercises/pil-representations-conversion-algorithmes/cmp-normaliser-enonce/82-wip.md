@@ -21,14 +21,20 @@ Les variantes 82–84 comportent toutes :
 
 1. deux catégories : `Instructions valides` / `Instructions invalides` ;
 2. huit propositions à classer ;
-3. quatre propositions valides et quatre invalides ;
-4. un mélange de phrases et de blocs ;
-5. des erreurs variées : action sans objet, objet sans action, formulation trop vague ;
-6. `type: ddc`, `essais: 3`, deux feedbacks progressifs puis un feedback final explicatif.
+3. un mélange de phrases et de blocs ;
+4. des erreurs variées : action sans objet, objet sans action, formulation trop vague ;
+5. `type: ddc`, `essais: 3`, deux feedbacks progressifs puis un feedback final explicatif.
 
 ## Reprise de 227–228
 
-Les versions initiales de 227 et 228 ne contenaient que quatre propositions, soit deux fois moins que les variantes de référence. Elles sont étendues à huit propositions chacune, avec le même équilibre 4 valides / 4 invalides et le même mélange phrase / bloc.
+Les versions initiales de 227 et 228 ne contenaient que quatre propositions, soit deux fois moins que les variantes de référence. Elles sont étendues à huit propositions chacune.
+
+À la demande de l'utilisateur, le nombre de propositions valides et invalides n'est pas équilibré artificiellement et n'est pas annoncé à l'élève :
+
+- 227 : cinq valides et trois invalides ;
+- 228 : trois valides et cinq invalides.
+
+Ce choix évite qu'un élève utilise un quota implicite pour terminer le classement au lieu d'évaluer chaque proposition.
 
 ## Validations utilisateur
 
