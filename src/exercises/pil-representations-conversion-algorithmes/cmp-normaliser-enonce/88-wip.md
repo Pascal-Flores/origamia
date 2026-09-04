@@ -34,6 +34,16 @@ Chaque variante comporte :
 - 232 abandonne `rit-reparer-couverture-cahier`, déjà utilisé par l'exercice 197, et utilise `rit-fin-seance-verifier-table`, non utilisé ailleurs dans le corpus vérifié.
 - Les formulations télégraphiques sont remplacées par un contexte qui explique la procédure représentée et par des défauts explicitement repérables dans une séquence complète.
 
+## Review
+
+Verdict : **OK**.
+
+- 231 contient une séquence pseudo-code de cinq actions encadrée par `Début` / `Fin`, avec une rupture vers la forme bloc et une instruction `écrire` incomplète. Cinq affirmations sont proposées, comme dans 88–90.
+- 232 contient une séquence de blocs avec une phrase en langage naturel et un bloc `POUSSER` incomplet. Cinq affirmations permettent de distinguer ces problèmes de défauts absents sur le début, la fin et la précision d'un autre bloc.
+- Les feedbacks demandent d'abord de contrôler la représentation, la complétude et l'encadrement, puis ciblent les lignes réellement problématiques.
+- 231 et 232 restent en `wip`.
+- Aucun build ni import SQLite n'est revendiqué.
+
 ## Validations utilisateur
 
 - Cadrage : validé par la demande de reprise
