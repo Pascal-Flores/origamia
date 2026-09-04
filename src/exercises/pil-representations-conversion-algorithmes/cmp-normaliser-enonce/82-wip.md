@@ -29,12 +29,18 @@ Les variantes 82–84 comportent toutes :
 
 Les versions initiales de 227 et 228 ne contenaient que quatre propositions, soit deux fois moins que les variantes de référence. Elles sont étendues à huit propositions chacune.
 
-À la demande de l'utilisateur, le nombre de propositions valides et invalides n'est pas équilibré artificiellement et n'est pas annoncé à l'élève :
+À la demande de l'utilisateur, le nombre de propositions valides et invalides n'est pas équilibré artificiellement et n'est pas annoncé à l'élève. Les deux exercices utilisent en outre des répartitions différentes, afin qu'aucun quota implicite ne puisse être déduit d'une variante à l'autre.
 
-- 227 : cinq valides et trois invalides ;
-- 228 : trois valides et cinq invalides.
+## Review
 
-Ce choix évite qu'un élève utilise un quota implicite pour terminer le classement au lieu d'évaluer chaque proposition.
+Verdict : **OK**.
+
+- 227 : huit propositions, mélange de phrases et de blocs ; les erreurs portent sur une action sans objet ou sur un groupe nominal sans action.
+- 228 : huit propositions, mélange de phrases et de blocs ; les erreurs couvrent objet manquant, action absente et formulation trop vague.
+- Les deux exercices utilisent des répartitions valide/invalide différentes et aucun nombre attendu n'est indiqué dans la consigne ou les feedbacks.
+- Les feedbacks demandent d'évaluer chaque proposition indépendamment et ne permettent pas de déduire un quota.
+- 227 et 228 restent en `wip`.
+- Aucun build ni import SQLite n'est revendiqué.
 
 ## Validations utilisateur
 
