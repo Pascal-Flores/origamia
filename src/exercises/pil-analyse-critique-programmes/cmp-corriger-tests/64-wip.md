@@ -6,14 +6,14 @@
 - Date de relecture : 2026-09-03
 - Représentation(s) autorisée(s) pour cette série : grille robot lorsque pertinente, programme fourni en blocs textuels pris en charge par le projet (`event:`, `move:`, `say:`, `end:`), programmes corrigés complets fournis comme réponses.
 - Représentation(s) interdites : correction décrite uniquement par une phrase, pseudo-programme appliqué artificiellement à une action humaine, écriture libre de programme.
-- Décision : review et harmonisation de 215 et 216 autorisées à la demande explicite de l'utilisateur.
+- Décision : review et harmonisation de 187 et 188 autorisées à la demande explicite de l'utilisateur.
 
 ## Attendu
 
 - Compétence : `cmp-corriger-tests`.
 - Attendu : `att-corriger-tests-cm1`.
 - Variantes de référence : 64, 65, 66.
-- Variantes reprises : 215, 216.
+- Variantes reprises : 187, 188.
 
 ## Forme de référence
 
@@ -28,16 +28,16 @@ Les variantes 64–66 utilisent toutes :
 
 ## Reprise réalisée
 
-- 215 utilise `rit-ranger-materiel-sport`, rituel existant et non utilisé ailleurs dans le corpus vérifié. Un robot d'entraînement dépose un ballon sur la mauvaise case ; les trois réponses sont désormais trois programmes complets.
-- 216 conserve `rit-douche-avant-bassin`, mais la situation est représentée par une douche automatique dans une maquette de centre aquatique. Le programme réellement exécuté par le dispositif doit couper l'eau après 20 secondes.
+- 187 utilise `rit-ranger-materiel-sport`, rituel existant et non utilisé ailleurs dans le corpus vérifié. Un robot d'entraînement dépose un ballon sur la mauvaise case ; les trois réponses sont désormais trois programmes complets.
+- 188 conserve `rit-douche-avant-bassin`, mais la situation est représentée par une douche automatique dans une maquette de centre aquatique. Le programme réellement exécuté par le dispositif doit couper l'eau après 20 secondes.
 - Les anciennes corrections réduites à `inverser les deux instructions` ont été supprimées.
 
 ## Review
 
 Verdict : **OK**.
 
-- 215 suit la matrice de 64 : grille, essai raté, trois programmes complets, une seule correction valide. Le trajet correct mène bien de `C4` à `E2`.
-- 216 suit la matrice de 65–66 : trois critères finaux explicites, un seul élément fautif dans le programme initial et trois programmes corrigés complets.
+- 187 suit la matrice de 64 : grille, essai raté, trois programmes complets, une seule correction valide. Le trajet correct mène bien de `C4` à `E2`.
+- 188 suit la matrice de 65–66 : trois critères finaux explicites, un seul élément fautif dans le programme initial et trois programmes corrigés complets.
 - Les deux exercices utilisent `type: qcu`, `essais: 2`, un feedback intermédiaire et un feedback final explicatif.
 - Les deux exercices restent en `wip`.
 - Aucun build ni import SQLite n'est revendiqué.
@@ -46,6 +46,6 @@ Verdict : **OK**.
 
 - Cadrage : validé par la demande de reprise
 - Variante pilote : 64 sert de référence existante
-- Déclinaison : autorisée pour 215–216
+- Déclinaison : autorisée pour 187–188
 - Review finale : à valider par l'utilisateur
 - Passage testing : non validé
