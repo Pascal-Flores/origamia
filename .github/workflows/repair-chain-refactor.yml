@@ -1,0 +1,92 @@
+name: Repair chain refactor
+
+'on':
+  push:
+    branches:
+      - exos-pilier-objets-techniques
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: exos-pilier-objets-techniques
+          fetch-depth: 0
+      - name: Apply prepared refactor
+        shell: bash
+        run: |
+          set -euo pipefail
+          awk '/^H4sI/{print; exit}' .github/workflows/materialize-chain-refactor.yml > /tmp/chain_refactor_payload.b64
+          test -s /tmp/chain_refactor_payload.b64
+          base64 -d /tmp/chain_refactor_payload.b64 > /tmp/chain_refactor_payload.tgz
+          rm -rf /tmp/chain_refactor_payload
+          mkdir -p /tmp/chain_refactor_payload
+          tar -xzf /tmp/chain_refactor_payload.tgz -C /tmp/chain_refactor_payload
+          cp -a /tmp/chain_refactor_payload/src/. src/
+          rm -f src/exercises/pil-objets-techniques-capteurs-actionneurs/cmp-cartographier-chaine-capteur/136/contexte.svg
+          rm -f src/exercises/pil-objets-techniques-capteurs-actionneurs/cmp-cartographier-chaine-capteur/136/schema.json
+          rm -f tmp/test.txt tmp/another-test.txt
+          rmdir tmp 2>/dev/null || true
+          python - <<'PYCSV'
+          import csv
+          from pathlib import Path
+
+          comp = Path("src/doc/Compétences référentiel 2a5e829b367e809d9940d14b66cdfeb5_all.csv")
+          with comp.open('r', encoding='utf-8', newline='') as f:
+              rows = list(csv.DictReader(f))
+              fields = list(rows[0].keys())
+          for row in rows:
+              if row['Slug'] == 'cmp-cartographier-chaine-capteur':
+                  row['Nom'] = "Identifier et compléter la chaîne d’information et d’action d’un objet programmable"
+                  row['Description'] = "Lire une chaîne fonctionnelle fournie d’un objet programmable, repérer le trajet de l’information et de l’action, puis choisir le maillon manquant parmi des propositions fournies, sans produire librement de schéma."
+                  row['Variables pédagogiques'] = "Nombre de maillons, Nature du maillon manquant, Proximité des distracteurs"
+          with comp.open('w', encoding='utf-8', newline='') as f:
+              w = csv.DictWriter(f, fieldnames=fields, lineterminator='\n')
+              w.writeheader()
+              w.writerows(rows)
+
+          att = Path("src/doc/Attendus référentiel 2a5e829b367e806eb43af26f0aae5642_all.csv")
+          with att.open('r', encoding='utf-8', newline='') as f:
+              rows = list(csv.DictReader(f))
+              fields = list(rows[0].keys())
+          changes = {
+              'att-cartographier-chaine-capteur-cm1': {
+                  'Intitulé': "Compléter une chaîne fonctionnelle simple de cinq maillons en choisissant l’élément manquant parmi trois propositions.",
+                  'Indicateur Acquis': "identifie le rôle du maillon manquant à partir de sa place dans la chaîne et choisit l’élément cohérent avec le fonctionnement de l’objet.",
+                  "Indicateur En cours d'Acquisition": "distingue globalement capteur, traitement et actionneur mais choisit le maillon correct avec une aide.",
+                  'Indicateur Non-Acquis': "confond les rôles des maillons ou choisit un élément incompatible avec le fonctionnement décrit.",
+                  'Variables pédagogiques': "Nature du maillon manquant, Proximité des distracteurs"
+              },
+              'att-cartographier-chaine-capteur-cm2': {
+                  'Intitulé': "Compléter une chaîne d’information et d’action de cinq maillons en choisissant l’élément manquant parmi quatre propositions plausibles.",
+                  'Indicateur Acquis': "utilise l’ensemble de la chaîne et le contexte pour identifier précisément le maillon manquant malgré des distracteurs proches.",
+                  "Indicateur En cours d'Acquisition": "repère la famille du maillon manquant mais hésite entre plusieurs éléments plausibles ou nécessite un indice.",
+                  'Indicateur Non-Acquis': "choisit un élément dont le rôle ou l’effet ne correspond pas à la chaîne représentée.",
+                  'Variables pédagogiques': "Nature du maillon manquant, Proximité des distracteurs"
+              },
+              'att-cartographier-chaine-capteur-6e': {
+                  'Intitulé': "Analyser une chaîne détaillée de sept maillons et choisir la donnée ou la commande manquante parmi cinq propositions.",
+                  'Indicateur Acquis': "distingue phénomène, capteur, donnée, traitement, commande, actionneur et effet, puis identifie correctement l’information manquante.",
+                  "Indicateur En cours d'Acquisition": "comprend le fonctionnement global mais confond encore donnée mesurée et commande envoyée à l’actionneur.",
+                  'Indicateur Non-Acquis': "ne distingue pas le trajet de l’information du trajet de la commande ou choisit un maillon incompatible avec sa position.",
+                  'Variables pédagogiques': "Nombre de maillons, Nature du maillon manquant, Proximité des distracteurs"
+              }
+          }
+          for row in rows:
+              if row['Slug'] in changes:
+                  row.update(changes[row['Slug']])
+          with att.open('w', encoding='utf-8', newline='') as f:
+              w = csv.DictWriter(f, fieldnames=fields, lineterminator='\n')
+              w.writeheader()
+              w.writerows(rows)
+          PYCSV
+          rm -f .github/workflows/materialize-chain-refactor.yml .github/workflows/repair-chain-refactor.yml
+          git config user.name "ORIGAMIA automation"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -m "Refondre la chaîne information-action"
+          git push origin HEAD:exos-pilier-objets-techniques
