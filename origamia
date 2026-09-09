@@ -12,6 +12,7 @@ ROOT_DIR = Path(__file__).resolve().parent
 OUT_DIR = ROOT_DIR / "out"
 BUILD_SCRIPT = ROOT_DIR / "zeof" / "build_exercises.js"
 DASHBOARD_SCRIPT = ROOT_DIR / "src" / "assets" / "sql" / "build_project_dashboard.py"
+REVIEWS_SCRIPT = ROOT_DIR / "zeof" / "list_reviews.js"
 
 USAGE = """Origamia CLI
 
@@ -24,6 +25,7 @@ Commands:
   build-dashboard      Build the project report into out/dashboard
   dashboard, report    Aliases for build-dashboard
   build                Alias for build-exercises
+  reviews              List exercises with a non-empty review, including its text
   clean-out            Remove generated files from out/
   clean                Alias for clean-out
   rebuild-exercises    Clean out/ then build all exercises
@@ -33,6 +35,7 @@ Examples:
   python origamia build
   python origamia dashboard
   python origamia rebuild --skip-dashboard
+  python origamia reviews
 """
 
 
@@ -79,6 +82,8 @@ def main(args: list[str]) -> int:
     if command in {"build-dashboard", "dashboard", "report"}:
         build_dashboard(rest)
         return 0
+    if command == "reviews":
+        return subprocess.run(["node", str(REVIEWS_SCRIPT), *rest], cwd=ROOT_DIR).returncode
     if command in {"clean-out", "clean"}:
         clean_out()
         return 0

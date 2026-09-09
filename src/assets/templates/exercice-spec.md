@@ -11,6 +11,7 @@ type:
 competence:
 attendu:
 statut: wip
+review: ""
 essais: 2
 media:
 link:
@@ -37,5 +38,6 @@ link:
 9. `essais` indique le nombre maximal de tentatives.
 10. Si `essais` vaut 2 ou plus, ajouter `# Feedback essai 1`, puis `# Feedback essai 2`, etc. jusqu'a l'avant-dernier essai.
 11. `# Feedback` est le feedback final apres echec complet. `# Feedback final` est aussi accepte.
+12. `review: ""` est un champ de texte libre pour les retours. Utiliser `review: |` suivi de lignes indentees pour un commentaire sur plusieurs lignes.
 
 Le format reste volontairement court pour faciliter l'ecriture.

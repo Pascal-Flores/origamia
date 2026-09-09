@@ -78,6 +78,19 @@ Le champ `essais` indique le nombre maximal de tentatives autorisees pour l'exer
 
 Le feedback d'essai doit aider sans donner directement la solution. Le feedback final doit expliquer la solution apres echec complet. La section `# Feedback final` est acceptee comme alias de `# Feedback`.
 
+## Retours des collegues : champ review
+
+Le champ `review` contient les retours en texte libre. Il est initialement vide (`review: ""`). Pour plusieurs lignes :
+
+```yaml
+review: |
+  Préciser que deux réponses sont attendues.
+```
+
+L'ajout ou la mise a jour du seul champ `review` ne necessite pas de creer ou modifier un WIP ni de passer les gates de conception. Les corrections de contenu suivent toujours les etapes ci-dessous.
+
+Le champ reste dans les fichiers sources, sans etre inclus dans le JSON destine aux eleves, et ne modifie pas le `statut`.
+
 ## Trace de validation
 
 La validation utilisateur doit etre tracee dans le fichier `NN-wip.md`.
@@ -231,7 +244,8 @@ Le workflow est pour l'instant orchestre par fichiers :
 
 - `src/exercises/WORKFLOW.md` pour la regle generale ;
 - `NN-wip.md` pour la serie active ;
-- frontmatter `statut` pour l'etat exportable du referentiel.
+- frontmatter `statut` pour l'etat exportable du referentiel ;
+- frontmatter `review` pour les retours des collegues sur chaque exercice.
 
 Un pilote Paperclip est disponible dans `src/exercises/paperclip/`.
 
