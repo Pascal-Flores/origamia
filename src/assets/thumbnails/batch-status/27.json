@@ -1,0 +1,13 @@
+{
+  "id": 27,
+  "subject": "un chocolat chaud",
+  "slug": "un-chocolat-chaud",
+  "prompt": "Use case: illustration-story. Create ONLY an isolated illustration for an Origamia educational thumbnail, on a genuine transparent PNG alpha background, including holes and openings. Consistent approved series style: VERY SIMPLE friendly flat 2D pictogram, rounded clear shapes, minimal necessary details. Immediately readable at 96 pixels. Use ONLY the specified brand palette: two solid colors by default, without extra shades, gradients, grain, texture, reflections, highlights, 3D rendering, drop shadows, heavy outlines or unnecessary geometric ornaments. Keep the complete uncut subject centered with transparent margins on a square canvas. DO NOT draw a background, white disk, badge or framing circle: these are added separately by code. For scenes, reduce to one compact iconic composition with only the necessary elements, not a detailed environment. No text except explicitly specified required lettering. Preserve the exact count when specified. Subject requested in French: un chocolat chaud. Palette: ONLY #68cfcd main fill and #417f7c secondary details. Do not add white or black to the illustration. ",
+  "source": "/home/pascal/.codex/generated_images/01a0e72b-b287-7be1-a2c8-97e198a917bb/exec-c8a7b85b-cbd2-4b54-8614-1f06ba473abe.png",
+  "status": "composed",
+  "reviewed": true,
+  "correction": {
+    "prompt": "A plain mug of hot chocolate. ONLY two colors: cream #ffe6a6 mug, ochre #9a6f03 cocoa surface and one thin rising steam curve. Plain undecorated mug with a handle, no saucer, no heart, no marshmallows, no lettering, no face. Very simple flat 2D educational pictogram. True transparent PNG background. No gradient, shadow, texture, white circle or scenery.",
+    "source": "/home/pascal/.codex/generated_images/01a0e72b-b287-7be1-a2c8-97e198a917bb/exec-c8a7b85b-cbd2-4b54-8614-1f06ba473abe.png"
+  }
+}

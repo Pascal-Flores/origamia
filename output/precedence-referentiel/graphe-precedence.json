@@ -1,0 +1,640 @@
+{
+  "title": "Graphe de précédence proposé — ORIGAMIA",
+  "date": "2026-10-02",
+  "source_sha256": "8017fdbd682ae1af3774f4db52ea134897a318f41f921d4991179f7462a9c348",
+  "assumptions": [
+    "Le graphe représente une proposition de progression pour entrer de façon autonome dans les familles de tâches. Il ne provient pas d’une table de prérequis officielle et n’a pas été validé expérimentalement.",
+    "Un prérequis signifie disposer du socle introductif utile au niveau visé. Il ne signifie pas réussir tous les exercices CM1, CM2 et 6e de la compétence amont avant de commencer la compétence aval.",
+    "La première couche n’exige aucune autre compétence de ce référentiel. Lecture de consignes, vocabulaire usuel, calcul élémentaire et repérage spatial restent des acquis extérieurs à ce graphe.",
+    "La couche est calculée par 1 + le maximum des couches des prédécesseurs. Deux compétences d’une même couche n’ont aucune relation de précédence entre elles. Les branches progressent indépendamment.",
+    "Le graphe ne conserve que les relations directes. La maîtrise des ancêtres indirects est transitive ; les dessiner de nouveau augmenterait les croisements sans ajouter de contrainte."
+  ],
+  "nodes": [
+    {
+      "key": "F",
+      "code": "R4",
+      "layer": 1,
+      "short_label": "Identifier les formes d’écriture",
+      "prerequisites": [],
+      "id_slug": "cmp-identifier-formes-algorithme",
+      "nom": "Identifier les formes d'écriture d'un algorithme",
+      "description": "Classer ou reconnaître la forme d’écriture d’un extrait algorithmique parmi langage naturel, pseudo-code du projet et blocs, à partir d’indices visibles.",
+      "pilier": "pil-representations-conversion-algorithmes",
+      "attendus": [
+        {
+          "id_slug": "att-identifier-formes-algorithme-cm1",
+          "intitule": "Classer des extraits selon leur forme d’écriture : langage naturel, pseudo-code ou blocs.",
+          "niveau": "CM1"
+        },
+        {
+          "id_slug": "att-identifier-formes-algorithme-cm2",
+          "intitule": "Reconnaître la forme d’écriture d’un programme et choisir l’indice visible qui la justifie.",
+          "niveau": "CM2"
+        },
+        {
+          "id_slug": "att-identifier-formes-algorithme-6e",
+          "intitule": "Identifier les formes d’écriture présentes dans une page composée de plusieurs extraits.",
+          "niveau": "6eme"
+        }
+      ]
+    },
+    {
+      "key": "P",
+      "code": "C4",
+      "layer": 1,
+      "short_label": "Régler les paramètres d’une instruction",
+      "prerequisites": [],
+      "id_slug": "cmp-parametrer-instructions",
+      "nom": "Paramétrer correctement des instructions (fonctions intégrées et paramètres)",
+      "description": "Repérer, vérifier ou renseigner les paramètres d’une instruction ou d’un pseudo-code fourni à partir d’une consigne : valeur, quantité, durée, nom, option ou réglage attendu, sans modifier la structure du programme.",
+      "pilier": "pil-conception-algorithmes-sequence-repetition",
+      "attendus": [
+        {
+          "id_slug": "att-parametrer-instructions-cm1",
+          "intitule": "Renseigner la valeur d’un paramètre manquant à partir des informations données dans la consigne.",
+          "niveau": "CM1"
+        },
+        {
+          "id_slug": "att-parametrer-instructions-cm2",
+          "intitule": "Sélectionner, parmi plusieurs instructions proposées, celles dont les paramètres respectent les informations de la consigne.",
+          "niveau": "CM2"
+        },
+        {
+          "id_slug": "att-parametrer-instructions-6e",
+          "intitule": "Compléter un pseudo-code à trous avec plusieurs paramètres fournis par la consigne.",
+          "niveau": "6eme"
+        }
+      ]
+    },
+    {
+      "key": "O",
+      "code": "C1",
+      "layer": 1,
+      "short_label": "Ordonner une séquence",
+      "prerequisites": [],
+      "id_slug": "cmp-ordre-sequence",
+      "nom": "Organiser et justifier l’ordre d’exécution d’un algorithme simple (séquentialité).",
+      "description": "Ordonner, comparer ou construire une séquence d’instructions fournies pour obtenir un résultat demandé, en tenant compte de l’ordre des actions et des dépendances entre étapes, sans branchement ni répétition.",
+      "pilier": "pil-conception-algorithmes-sequence-repetition",
+      "attendus": [
+        {
+          "id_slug": "att-ordre-sequence-cm1",
+          "intitule": "Ordonner trois instructions fournies pour obtenir le résultat demandé dans une situation simple.",
+          "niveau": "CM1"
+        },
+        {
+          "id_slug": "att-ordre-sequence-cm2",
+          "intitule": "Identifier, parmi plusieurs programmes de cinq instructions, ceux qui produisent exactement le même résultat.",
+          "niveau": "CM2"
+        },
+        {
+          "id_slug": "att-ordre-sequence-6e",
+          "intitule": "Construire un programme Turtle en ordonnant les blocs fournis, déjà paramétrés, afin d’obtenir le tracé demandé.",
+          "niveau": "6eme"
+        }
+      ]
+    },
+    {
+      "key": "K",
+      "code": "T1",
+      "layer": 1,
+      "short_label": "Reconstituer la chaîne capteur → actionneur",
+      "prerequisites": [],
+      "id_slug": "cmp-cartographier-chaine-capteur",
+      "nom": "Cartographier la chaine “capteur → commande → actionneur” d’un objet programmable",
+      "description": "Repérer, nommer et schématiser le trajet de l’information (mesure du capteur → traitement/commande) et celui de l’action (effet produit par l’actionneur) pour expliquer le fonctionnement global de l’objet.",
+      "pilier": "pil-objets-techniques-capteurs-actionneurs",
+      "attendus": [
+        {
+          "id_slug": "att-cartographier-chaine-capteur-cm1",
+          "intitule": "Choisir l’élément ou l’effet manquant dans un schéma fourni de la chaîne de fonctionnement d’un objet technique.",
+          "niveau": "CM1"
+        },
+        {
+          "id_slug": "att-cartographier-chaine-capteur-cm2",
+          "intitule": "Compléter ou ordonner une chaîne de quatre ou cinq éléments fournis, du capteur à l’actionneur, en respectant le sens du flux d’information.",
+          "niveau": "CM2"
+        },
+        {
+          "id_slug": "att-cartographier-chaine-capteur-6e",
+          "intitule": "Reconstituer une chaîne fonctionnelle de cinq ou six éléments fournis, du capteur à l’actionneur ou à l’effet produit, en respectant le trajet de l’information.",
+          "niveau": "6eme"
+        }
+      ]
+    },
+    {
+      "key": "V",
+      "code": "R2",
+      "layer": 2,
+      "short_label": "Vérifier la forme d’une représentation",
+      "prerequisites": [
+        "R4",
+        "C4"
+      ],
+      "id_slug": "cmp-verifier-forme-representation",
+      "nom": "Vérifier la forme d’une représentation d’algorithme simple",
+      "description": "Classer, repérer ou corriger des propositions selon qu’elles respectent la forme de représentation attendue : instruction complète, paramètres présents, cadre cohérent et forme homogène.",
+      "pilier": "pil-representations-conversion-algorithmes",
+      "attendus": [
+        {
+          "id_slug": "att-verifier-forme-representation-cm1",
+          "intitule": "Classer des propositions selon qu’elles sont ou non des instructions bien formées dans la représentation donnée.",
+          "niveau": "CM1"
+        },
+        {
+          "id_slug": "att-verifier-forme-representation-cm2",
+          "intitule": "Repérer une instruction mal formée et choisir une correction qui conserve la même forme de représentation.",
+          "niveau": "CM2"
+        },
+        {
+          "id_slug": "att-verifier-forme-representation-6e",
+          "intitule": "Repérer tous les problèmes de forme présents dans une courte séquence d’instructions.",
+          "niveau": "6eme"
+        }
+      ]
+    },
+    {
+      "key": "E",
+      "code": "A1",
+      "layer": 2,
+      "short_label": "Expliquer un programme",
+      "prerequisites": [
+        "C1"
+      ],
+      "id_slug": "cmp-expliquer-programme",
+      "nom": "Comprendre et décrire le comportement prévu d’un objet programmable",
+      "description": "Lire une séquence d’instructions et choisir ou compléter une explication qui décrit les actions réalisées, leur ordre, leur rôle et le résultat obtenu.",
+      "pilier": "pil-analyse-critique-programmes",
+      "attendus": [
+        {
+          "id_slug": "att-expliquer-programme-cm1",
+          "intitule": "Choisir la phrase qui décrit correctement ce qu’effectue une courte séquence d’instructions.",
+          "niveau": "CM1"
+        },
+        {
+          "id_slug": "att-expliquer-programme-cm2",
+          "intitule": "Associer les différentes parties d’un programme simple au rôle qu’elles jouent dans son fonctionnement.",
+          "niveau": "CM2"
+        },
+        {
+          "id_slug": "att-expliquer-programme-6e",
+          "intitule": "Compléter un texte qui explique les étapes importantes d’un programme, leur rôle et le résultat obtenu.",
+          "niveau": "6eme"
+        }
+      ]
+    },
+    {
+      "key": "I",
+      "code": "C2",
+      "layer": 2,
+      "short_label": "Repérer les entrées et les sorties",
+      "prerequisites": [
+        "C1"
+      ],
+      "id_slug": "cmp-entrees-sorties-etat",
+      "nom": "Identifier et expliciter les entrées, les sorties et l’état intermédiaire d’un algorithme.",
+      "description": "Identifier ou retrouver ce qui est donné au départ, ce que le programme produit à la fin et, lorsque c’est demandé, les informations conservées ou transformées pendant l’exécution.",
+      "pilier": "pil-conception-algorithmes-sequence-repetition",
+      "attendus": [
+        {
+          "id_slug": "att-entrees-sorties-etat-cm1",
+          "intitule": "Déterminer la sortie produite par un programme simple à partir des instructions données.",
+          "niveau": "CM1"
+        },
+        {
+          "id_slug": "att-entrees-sorties-etat-cm2",
+          "intitule": "Retrouver l’entrée, numérique ou textuelle, à partir de la sortie indiquée et de la transformation réalisée par le programme.",
+          "niveau": "CM2"
+        },
+        {
+          "id_slug": "att-entrees-sorties-etat-6e",
+          "intitule": "Choisir, parmi plusieurs programmes fournis, celui qui transforme correctement une ou plusieurs entrées données en une sortie attendue.",
+          "niveau": "6eme"
+        }
+      ]
+    },
+    {
+      "key": "R",
+      "code": "C3",
+      "layer": 2,
+      "short_label": "Répéter N fois",
+      "prerequisites": [
+        "C1"
+      ],
+      "id_slug": "cmp-repetition-n",
+      "nom": "Mettre en œuvre une répétition simple (répéter N fois) pour automatiser une action",
+      "description": "Repérer une action ou un groupe d’actions répété, déterminer le nombre de répétitions et choisir ou construire une boucle « répéter N fois » équivalente à une séquence répétée.",
+      "pilier": "pil-conception-algorithmes-sequence-repetition",
+      "attendus": [
+        {
+          "id_slug": "att-repetition-n-cm1",
+          "intitule": "Déterminer combien de fois un motif d’instructions est répété dans un programme.",
+          "niveau": "CM1"
+        },
+        {
+          "id_slug": "att-repetition-n-cm2",
+          "intitule": "Choisir le programme avec boucle qui est équivalent à une séquence d’instructions répétées.",
+          "niveau": "CM2"
+        },
+        {
+          "id_slug": "att-repetition-n-6e",
+          "intitule": "Construire un programme avec une boucle en ordonnant les instructions fournies, y compris les actions à placer hors de la boucle.",
+          "niveau": "6eme"
+        }
+      ]
+    },
+    {
+      "key": "M",
+      "code": "T4",
+      "layer": 2,
+      "short_label": "Commander un actionneur",
+      "prerequisites": [
+        "T1",
+        "C4"
+      ],
+      "id_slug": "cmp-configurer-actionneur",
+      "nom": "Commander un actionneur pour produire un effet",
+      "description": "Choisir le bloc de commande adapté à un actionneur et régler ses paramètres pour obtenir l’effet demandé. Les réglages sont fixés dans le programme et ne proviennent pas d’un capteur.",
+      "pilier": "pil-objets-techniques-capteurs-actionneurs",
+      "attendus": [
+        {
+          "id_slug": "att-configurer-actionneur-cm1",
+          "intitule": "Choisir la commande qui met en marche ou arrête un actionneur simple pour obtenir l’effet demandé.",
+          "niveau": "CM1"
+        },
+        {
+          "id_slug": "att-configurer-actionneur-cm2",
+          "intitule": "Corriger, dans une commande d’actionneur déjà placée, un paramètre fourni par la consigne pour obtenir l’effet demandé.",
+          "niveau": "CM2"
+        },
+        {
+          "id_slug": "att-configurer-actionneur-6e",
+          "intitule": "Corriger plusieurs paramètres d’une commande d’actionneur déjà placée, en conservant l’actionneur prévu, pour obtenir l’effet demandé.",
+          "niveau": "6eme"
+        }
+      ]
+    },
+    {
+      "key": "A",
+      "code": "R1",
+      "layer": 3,
+      "short_label": "Associer des représentations",
+      "prerequisites": [
+        "A1"
+      ],
+      "id_slug": "cmp-associer-representations",
+      "nom": "Associer des représentations équivalentes d’une même instruction ou séquence",
+      "description": "Choisir ou apparier des représentations qui décrivent exactement la même instruction ou la même courte séquence, en conservant l’action, les paramètres et l’ordre.",
+      "pilier": "pil-representations-conversion-algorithmes",
+      "attendus": [
+        {
+          "id_slug": "att-associer-representations-cm1",
+          "intitule": "Choisir la représentation qui décrit exactement la même instruction simple.",
+          "niveau": "CM1"
+        },
+        {
+          "id_slug": "att-associer-representations-cm2",
+          "intitule": "Associer chaque instruction d’une courte séquence à une représentation équivalente.",
+          "niveau": "CM2"
+        },
+        {
+          "id_slug": "att-associer-representations-6e",
+          "intitule": "Sélectionner les représentations qui conservent exactement le même sens, y compris avec une répétition simple.",
+          "niveau": "6eme"
+        }
+      ]
+    },
+    {
+      "key": "S",
+      "code": "A2",
+      "layer": 3,
+      "short_label": "Simuler l’exécution d’un programme",
+      "prerequisites": [
+        "A1"
+      ],
+      "id_slug": "cmp-simuler-programme",
+      "nom": "Prévoir l’état produit par l’exécution d’un programme",
+      "description": "Exécuter mentalement un programme fourni depuis un état initial pour déterminer une position, une valeur, un état final ou les situations dans lesquelles la mission réussit.",
+      "pilier": "pil-analyse-critique-programmes",
+      "attendus": [
+        {
+          "id_slug": "att-simuler-programme-cm1",
+          "intitule": "Exécuter mentalement une courte séquence de déplacements pour déterminer la position finale d’un robot.",
+          "niveau": "CM1"
+        },
+        {
+          "id_slug": "att-simuler-programme-cm2",
+          "intitule": "Exécuter mentalement un programme simple pour juger si des affirmations sur l’état obtenu sont vraies ou fausses.",
+          "niveau": "CM2"
+        },
+        {
+          "id_slug": "att-simuler-programme-6e",
+          "intitule": "Tester mentalement un même programme dans plusieurs situations initiales et repérer celles où la mission réussit.",
+          "niveau": "6eme"
+        }
+      ]
+    },
+    {
+      "key": "L",
+      "code": "T2",
+      "layer": 3,
+      "short_label": "Lire une information de capteur",
+      "prerequisites": [
+        "T1",
+        "C2"
+      ],
+      "id_slug": "cmp-lire-capteur",
+      "nom": "Lire une information de capteur et la rendre exploitable dans le programme",
+      "description": "Identifier le bloc de lecture du capteur (état/valeur), comprendre ce que signifie la lecture pour l’objet (ex. obstacle détecté / niveau lumineux) et l’exprimer clairement dans le script (étiquette/nommage utile).",
+      "pilier": "pil-objets-techniques-capteurs-actionneurs",
+      "attendus": [
+        {
+          "id_slug": "att-lire-capteur-cm1",
+          "intitule": "Choisir la lecture d’un capteur à insérer dans un programme pour afficher sa mesure ou son état réel, plutôt qu’une valeur ou un texte fixe.",
+          "niveau": "CM1"
+        },
+        {
+          "id_slug": "att-lire-capteur-cm2",
+          "intitule": "Choisir le bloc de lecture adapté parmi deux capteurs et sélectionner la justification correspondant à la mesure ou à l’état recherché.",
+          "niveau": "CM2"
+        },
+        {
+          "id_slug": "att-lire-capteur-6e",
+          "intitule": "Associer à chaque mission le capteur adapté, les relevés correspondants et l’explication de leur utilité.",
+          "niveau": "6eme"
+        }
+      ]
+    },
+    {
+      "key": "T",
+      "code": "R3",
+      "layer": 4,
+      "short_label": "Convertir des représentations",
+      "prerequisites": [
+        "R2",
+        "R1"
+      ],
+      "id_slug": "cmp-convertir-representations",
+      "nom": "Convertir des représentations d’un même algorithme",
+      "description": "Passer d’une représentation autorisée à une autre (langage naturel, pseudo-code du projet, blocs Blockly fournis) en conservant les actions, les objets, les paramètres, l’ordre et les répétitions. L’élève choisit, complète ou corrige une conversion fournie, sans inventer de syntaxe ni écrire librement des blocs.",
+      "pilier": "pil-representations-conversion-algorithmes",
+      "attendus": [
+        {
+          "id_slug": "att-convertir-representations-cm1",
+          "intitule": "Choisir la conversion correcte d’une instruction ou d’une courte séquence entre deux représentations autorisées.",
+          "niveau": "CM1"
+        },
+        {
+          "id_slug": "att-convertir-representations-cm2",
+          "intitule": "Compléter une conversion partielle en choisissant l’élément manquant qui conserve le sens de la représentation source.",
+          "niveau": "CM2"
+        },
+        {
+          "id_slug": "att-convertir-representations-6e",
+          "intitule": "Compléter un texte qui corrige une conversion erronée d’une séquence avec répétition simple.",
+          "niveau": "6eme"
+        }
+      ]
+    },
+    {
+      "key": "D",
+      "code": "A3",
+      "layer": 4,
+      "short_label": "Repérer les erreurs",
+      "prerequisites": [
+        "A2"
+      ],
+      "id_slug": "cmp-identifier-erreurs",
+      "nom": "Critiquer un programme au regard du comportement de l’objet programmé",
+      "description": "Analyser un programme ou plusieurs programmes au regard d’un résultat attendu pour repérer l’instruction ou les choix qui empêchent d’obtenir ce résultat.",
+      "pilier": "pil-analyse-critique-programmes",
+      "attendus": [
+        {
+          "id_slug": "att-identifier-erreurs-cm1",
+          "intitule": "Repérer l’instruction qui rend un programme incohérent avec le résultat attendu.",
+          "niveau": "CM1"
+        },
+        {
+          "id_slug": "att-identifier-erreurs-cm2",
+          "intitule": "Identifier les raisons qui expliquent pourquoi un programme ne permet pas d’obtenir le résultat attendu.",
+          "niveau": "CM2"
+        },
+        {
+          "id_slug": "att-identifier-erreurs-6e",
+          "intitule": "Repérer, parmi plusieurs programmes, ceux qui contiennent une erreur empêchant d’obtenir le résultat attendu.",
+          "niveau": "6eme"
+        }
+      ]
+    },
+    {
+      "key": "J",
+      "code": "T3",
+      "layer": 4,
+      "short_label": "Relier capteur et actionneur",
+      "prerequisites": [
+        "T2",
+        "T4"
+      ],
+      "id_slug": "cmp-piloter-actionneur-capteur",
+      "nom": "Relier directement un capteur à un actionneur",
+      "description": "Utiliser la valeur fournie par un capteur comme réglage d’un actionneur compatible, sans condition ni calcul de conversion, puis comprendre comment la variation mesurée modifie l’action produite.",
+      "pilier": "pil-objets-techniques-capteurs-actionneurs",
+      "attendus": [
+        {
+          "id_slug": "att-piloter-actionneur-capteur-cm1",
+          "intitule": "Compléter avec les blocs fournis une relation directe entre un capteur et un actionneur.",
+          "niveau": "CM1"
+        },
+        {
+          "id_slug": "att-piloter-actionneur-capteur-cm2",
+          "intitule": "Parmi plusieurs programmes utilisant le même capteur et le même actionneur, identifier celui où la mesure règle directement l’actionneur et prévoir comment l’action varie lorsque la mesure change.",
+          "niveau": "CM2"
+        },
+        {
+          "id_slug": "att-piloter-actionneur-capteur-6e",
+          "intitule": "Reconstituer, pour chaque montage, une relation directe cohérente en associant le bloc capteur, le bloc actionneur et la description de l’effet produit.",
+          "niveau": "6eme"
+        }
+      ]
+    },
+    {
+      "key": "C",
+      "code": "A4",
+      "layer": 5,
+      "short_label": "Corriger et vérifier un programme",
+      "prerequisites": [
+        "A3"
+      ],
+      "id_slug": "cmp-corriger-tests",
+      "nom": "Modifier un programme pour obtenir le comportement attendu d’un objet",
+      "description": "Choisir, classer ou compléter des corrections proposées afin qu’un programme obtienne le comportement attendu, sans réécriture libre du programme.",
+      "pilier": "pil-analyse-critique-programmes",
+      "attendus": [
+        {
+          "id_slug": "att-corriger-tests-cm1",
+          "intitule": "Choisir la modification qui permet à un programme simple d’obtenir le comportement attendu.",
+          "niveau": "CM1"
+        },
+        {
+          "id_slug": "att-corriger-tests-cm2",
+          "intitule": "Classer des corrections selon qu’elles réparent un test en échec sans provoquer de régression sur un test déjà réussi.",
+          "niveau": "CM2"
+        },
+        {
+          "id_slug": "att-corriger-tests-6e",
+          "intitule": "Compléter un texte de correction pour modifier un programme et obtenir le comportement attendu.",
+          "niveau": "6eme"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "R4",
+      "to": "R2",
+      "justification": "Reconnaître les conventions d’une écriture pour juger si l’extrait respecte cette forme.",
+      "exercise_examples": "85–90, 201–204"
+    },
+    {
+      "from": "C4",
+      "to": "R2",
+      "justification": "Repérer le rôle d’un paramètre pour détecter une instruction incomplète ou insuffisamment précise.",
+      "exercise_examples": "19–27 ; 82–90"
+    },
+    {
+      "from": "C1",
+      "to": "A1",
+      "justification": "Comprendre que l’ordre des instructions détermine l’ordre des actions décrites.",
+      "exercise_examples": "1–9 ; 46–54"
+    },
+    {
+      "from": "C1",
+      "to": "C2",
+      "justification": "Suivre l’ordre d’une transformation simple pour relier les données de départ à ce qui est produit.",
+      "exercise_examples": "28–30, 163–164"
+    },
+    {
+      "from": "C1",
+      "to": "C3",
+      "justification": "Identifier une séquence avant de délimiter le motif répété et les actions à placer hors de la boucle.",
+      "exercise_examples": "10–18, 151–156"
+    },
+    {
+      "from": "T1",
+      "to": "T4",
+      "justification": "Distinguer l’actionneur et son effet physique avant de choisir sa commande.",
+      "exercise_examples": "136–138 ; 118–120"
+    },
+    {
+      "from": "T1",
+      "to": "T2",
+      "justification": "Distinguer acquisition et action pour reconnaître quel élément fournit la donnée recherchée.",
+      "exercise_examples": "136–138 ; 109–117"
+    },
+    {
+      "from": "C4",
+      "to": "T4",
+      "justification": "Comprendre ce que règle un paramètre avant d’ajuster angle, puissance, volume, durée ou sens.",
+      "exercise_examples": "121–126, 225–228"
+    },
+    {
+      "from": "A1",
+      "to": "R1",
+      "justification": "Interpréter les actions décrites avant de décider que deux écritures expriment la même instruction ou séquence.",
+      "exercise_examples": "46–48 ; 73–81"
+    },
+    {
+      "from": "A1",
+      "to": "A2",
+      "justification": "Lire et comprendre les instructions avant de dérouler leurs effets depuis un état initial.",
+      "exercise_examples": "55–63, 181–186"
+    },
+    {
+      "from": "C2",
+      "to": "T2",
+      "justification": "Distinguer une donnée réellement acquise d’un nombre ou d’un texte fixe affiché en sortie.",
+      "exercise_examples": "109–111, 217–218"
+    },
+    {
+      "from": "R2",
+      "to": "R3",
+      "justification": "Reconnaître une représentation complète et cohérente pour choisir ou compléter la forme cible.",
+      "exercise_examples": "85–90 ; 94–99"
+    },
+    {
+      "from": "R1",
+      "to": "R3",
+      "justification": "Reconnaître l’équivalence sémantique pour conserver les actions, les paramètres et l’ordre lors d’une conversion.",
+      "exercise_examples": "73–81 ; 91–99"
+    },
+    {
+      "from": "A2",
+      "to": "A3",
+      "justification": "Prévoir les effets d’un programme pour les confronter à la mission et localiser ce qui empêche sa réussite.",
+      "exercise_examples": "37–45, 169–174"
+    },
+    {
+      "from": "A3",
+      "to": "A4",
+      "justification": "Identifier le défaut à corriger et son effet pour choisir une modification utile, puis vérifier la réussite.",
+      "exercise_examples": "64–72, 187–192"
+    },
+    {
+      "from": "T2",
+      "to": "T3",
+      "justification": "Identifier la donnée fournie par le capteur avant de la transmettre directement à un réglage.",
+      "exercise_examples": "127–135, 229–234"
+    },
+    {
+      "from": "T4",
+      "to": "T3",
+      "justification": "Comprendre l’effet du réglage de l’actionneur avant de remplacer sa valeur fixe par une mesure.",
+      "exercise_examples": "127–135, 229–234"
+    }
+  ],
+  "conditional_dependencies": [
+    {
+      "from": "C3",
+      "to": "R1",
+      "only_for": "att-associer-representations-6e"
+    },
+    {
+      "from": "C3",
+      "to": "R3",
+      "only_for": "att-convertir-representations-6e"
+    }
+  ],
+  "layout": {
+    "orientation": "left-to-right",
+    "layers": [
+      [
+        "R4",
+        "C4",
+        "T1",
+        "C1"
+      ],
+      [
+        "R2",
+        "T4",
+        "C2",
+        "A1",
+        "C3"
+      ],
+      [
+        "T2",
+        "R1",
+        "A2"
+      ],
+      [
+        "R3",
+        "T3",
+        "A3"
+      ],
+      [
+        "A4"
+      ]
+    ],
+    "crossings": 2,
+    "method": "Exact enumeration of within-layer permutations with dummy vertices; minimum for the chosen layered drawing model."
+  }
+}

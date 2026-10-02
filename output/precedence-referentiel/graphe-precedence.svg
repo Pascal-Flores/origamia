@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2374" height="920" viewBox="0 0 2374 920" role="img" aria-labelledby="title desc">
+<title id="title">Graphe de précédence des 16 compétences</title>
+<desc id="desc">Cinq couches de compétences, de gauche à droite, reliées par leurs prérequis directs.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8.8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L9,5 L1,9 Z" fill="#65798B"/></marker></defs>
+<rect width="2374" height="920" fill="#FFFFFF"/>
+<g font-family="DejaVu Sans, Arial, sans-serif" fill="#1D3044">
+<rect x="32" y="18" width="350" height="884" rx="18" fill="#F5F8FA"/>
+<rect x="522" y="18" width="350" height="884" rx="18" fill="#F5F8FA"/>
+<rect x="1012" y="18" width="350" height="884" rx="18" fill="#F5F8FA"/>
+<rect x="1502" y="18" width="350" height="884" rx="18" fill="#F5F8FA"/>
+<rect x="1992" y="18" width="350" height="884" rx="18" fill="#F5F8FA"/>
+<g><title>R4 → R2 : Reconnaître les conventions d’une écriture pour juger si l’extrait respecte cette forme.</title>
+<path d="M370,80.0 C440,80.0 464,69.0 530,69.0" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<path d="M370,80.0 C440,80.0 464,69.0 530,69.0" fill="none" stroke="#65798B" stroke-width="2.4" marker-end="url(#arrow)" stroke-linecap="round"/></g>
+<g><title>C4 → R2 : Repérer le rôle d’un paramètre pour détecter une instruction incomplète ou insuffisamment précise.</title>
+<path d="M370,249.0 C440,249.0 464,91.0 530,91.0" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<path d="M370,249.0 C440,249.0 464,91.0 530,91.0" fill="none" stroke="#65798B" stroke-width="2.4" marker-end="url(#arrow)" stroke-linecap="round"/></g>
+<g><title>C1 → A1 : Comprendre que l’ordre des instructions détermine l’ordre des actions décrites.</title>
+<path d="M370,737.0 C440,737.0 464,651.5 530,651.5" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<path d="M370,737.0 C440,737.0 464,651.5 530,651.5" fill="none" stroke="#65798B" stroke-width="2.4" marker-end="url(#arrow)" stroke-linecap="round"/></g>
+<g><title>C1 → C2 : Suivre l’ordre d’une transformation simple pour relier les données de départ à ce qui est produit.</title>
+<path d="M370,715.0 C440,715.0 464,471.5 530,471.5" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<path d="M370,715.0 C440,715.0 464,471.5 530,471.5" fill="none" stroke="#65798B" stroke-width="2.4" marker-end="url(#arrow)" stroke-linecap="round"/></g>
+<g><title>C1 → C3 : Identifier une séquence avant de délimiter le motif répété et les actions à placer hors de la boucle.</title>
+<path d="M370,759.0 C440,759.0 464,831.5 530,831.5" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<path d="M370,759.0 C440,759.0 464,831.5 530,831.5" fill="none" stroke="#65798B" stroke-width="2.4" marker-end="url(#arrow)" stroke-linecap="round"/></g>
+<g><title>T1 → T4 : Distinguer l’actionneur et son effet physique avant de choisir sa commande.</title>
+<path d="M370,469.5 C440,469.5 464,271.0 530,271.0" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<path d="M370,469.5 C440,469.5 464,271.0 530,271.0" fill="none" stroke="#65798B" stroke-width="2.4" marker-end="url(#arrow)" stroke-linecap="round"/></g>
+<g><title>T1 → T2 : Distinguer acquisition et action pour reconnaître quel élément fournit la donnée recherchée.</title>
+<path d="M370,491.5 C440,491.5 464,363.5 534,363.5 L860,363.5 C930,363.5 954,442.5 1020,442.5" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<path d="M370,491.5 C440,491.5 464,363.5 534,363.5 L860,363.5 C930,363.5 954,442.5 1020,442.5" fill="none" stroke="#65798B" stroke-width="2.4" marker-end="url(#arrow)" stroke-linecap="round"/></g>
+<g><title>C4 → T4 : Comprendre ce que règle un paramètre avant d’ajuster angle, puissance, volume, durée ou sens.</title>
+<path d="M370,271.0 C440,271.0 464,249.0 530,249.0" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<path d="M370,271.0 C440,271.0 464,249.0 530,249.0" fill="none" stroke="#65798B" stroke-width="2.4" marker-end="url(#arrow)" stroke-linecap="round"/></g>
+<g><title>A1 → R1 : Interpréter les actions décrites avant de décider que deux écritures expriment la même instruction ou séquence.</title>
+<path d="M860,640.5 C930,640.5 954,642.5 1020,642.5" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<path d="M860,640.5 C930,640.5 954,642.5 1020,642.5" fill="none" stroke="#65798B" stroke-width="2.4" marker-end="url(#arrow)" stroke-linecap="round"/></g>
+<g><title>A1 → A2 : Lire et comprendre les instructions avant de dérouler leurs effets depuis un état initial.</title>
+<path d="M860,662.5 C930,662.5 954,831.5 1020,831.5" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<path d="M860,662.5 C930,662.5 954,831.5 1020,831.5" fill="none" stroke="#65798B" stroke-width="2.4" marker-end="url(#arrow)" stroke-linecap="round"/></g>
+<g><title>C2 → T2 : Distinguer une donnée réellement acquise d’un nombre ou d’un texte fixe affiché en sortie.</title>
+<path d="M860,471.5 C930,471.5 954,464.5 1020,464.5" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<path d="M860,471.5 C930,471.5 954,464.5 1020,464.5" fill="none" stroke="#65798B" stroke-width="2.4" marker-end="url(#arrow)" stroke-linecap="round"/></g>
+<g><title>R2 → R3 : Reconnaître une représentation complète et cohérente pour choisir ou compléter la forme cible.</title>
+<path d="M860,80.0 C930,80.0 954,80.0 1024,80.0 L1350,80.0 C1420,80.0 1444,114.0 1510,114.0" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<path d="M860,80.0 C930,80.0 954,80.0 1024,80.0 L1350,80.0 C1420,80.0 1444,114.0 1510,114.0" fill="none" stroke="#65798B" stroke-width="2.4" marker-end="url(#arrow)" stroke-linecap="round"/></g>
+<g><title>R1 → R3 : Reconnaître l’équivalence sémantique pour conserver les actions, les paramètres et l’ordre lors d’une conversion.</title>
+<path d="M1350,642.5 C1420,642.5 1444,136.0 1510,136.0" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<path d="M1350,642.5 C1420,642.5 1444,136.0 1510,136.0" fill="none" stroke="#65798B" stroke-width="2.4" marker-end="url(#arrow)" stroke-linecap="round"/></g>
+<g><title>A2 → A3 : Prévoir les effets d’un programme pour les confronter à la mission et localiser ce qui empêche sa réussite.</title>
+<path d="M1350,831.5 C1420,831.5 1444,831.5 1510,831.5" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<path d="M1350,831.5 C1420,831.5 1444,831.5 1510,831.5" fill="none" stroke="#65798B" stroke-width="2.4" marker-end="url(#arrow)" stroke-linecap="round"/></g>
+<g><title>A3 → A4 : Identifier le défaut à corriger et son effet pour choisir une modification utile, puis vérifier la réussite.</title>
+<path d="M1840,831.5 C1910,831.5 1934,831.5 2000,831.5" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<path d="M1840,831.5 C1910,831.5 1934,831.5 2000,831.5" fill="none" stroke="#65798B" stroke-width="2.4" marker-end="url(#arrow)" stroke-linecap="round"/></g>
+<g><title>T2 → T3 : Identifier la donnée fournie par le capteur avant de la transmettre directement à un réglage.</title>
+<path d="M1350,453.5 C1420,453.5 1444,464.5 1510,464.5" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<path d="M1350,453.5 C1420,453.5 1444,464.5 1510,464.5" fill="none" stroke="#65798B" stroke-width="2.4" marker-end="url(#arrow)" stroke-linecap="round"/></g>
+<g><title>T4 → T3 : Comprendre l’effet du réglage de l’actionneur avant de remplacer sa valeur fixe par une mesure.</title>
+<path d="M860,260.0 C930,260.0 954,260.0 1024,260.0 L1350,260.0 C1420,260.0 1444,442.5 1510,442.5" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<path d="M860,260.0 C930,260.0 954,260.0 1024,260.0 L1350,260.0 C1420,260.0 1444,442.5 1510,442.5" fill="none" stroke="#65798B" stroke-width="2.4" marker-end="url(#arrow)" stroke-linecap="round"/></g>
+<g id="cmp-identifier-formes-algorithme"><title>Identifier les formes d&#x27;écriture d&#x27;un algorithme — Classer ou reconnaître la forme d’écriture d’un extrait algorithmique parmi langage naturel, pseudo-code du projet et blocs, à partir d’indices visibles.</title>
+<rect x="44" y="33.0" width="326" height="100" rx="13" fill="#DFE6EC" opacity=".5"/>
+<rect x="44" y="30.0" width="326" height="100" rx="13" fill="#F4EFFB" stroke="#77549A" stroke-opacity=".32"/>
+<text x="62" y="73.0" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">cmp-identifier-formes-</text>
+<text x="62" y="99.0" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">algorithme</text>
+</g>
+<g id="cmp-parametrer-instructions"><title>Paramétrer correctement des instructions (fonctions intégrées et paramètres) — Repérer, vérifier ou renseigner les paramètres d’une instruction ou d’un pseudo-code fourni à partir d’une consigne : valeur, quantité, durée, nom, option ou réglage attendu, sans modifier la structure du programme.</title>
+<rect x="44" y="213.0" width="326" height="100" rx="13" fill="#DFE6EC" opacity=".5"/>
+<rect x="44" y="210.0" width="326" height="100" rx="13" fill="#EDF6FC" stroke="#216A8A" stroke-opacity=".32"/>
+<text x="62" y="253.0" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">cmp-parametrer-</text>
+<text x="62" y="279.0" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">instructions</text>
+</g>
+<g id="cmp-ordre-sequence"><title>Organiser et justifier l’ordre d’exécution d’un algorithme simple (séquentialité). — Ordonner, comparer ou construire une séquence d’instructions fournies pour obtenir un résultat demandé, en tenant compte de l’ordre des actions et des dépendances entre étapes, sans branchement ni répétition.</title>
+<rect x="44" y="690.0" width="326" height="100" rx="13" fill="#DFE6EC" opacity=".5"/>
+<rect x="44" y="687.0" width="326" height="100" rx="13" fill="#EDF6FC" stroke="#216A8A" stroke-opacity=".32"/>
+<text x="62" y="744.0" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">cmp-ordre-sequence</text>
+</g>
+<g id="cmp-cartographier-chaine-capteur"><title>Cartographier la chaine “capteur → commande → actionneur” d’un objet programmable — Repérer, nommer et schématiser le trajet de l’information (mesure du capteur → traitement/commande) et celui de l’action (effet produit par l’actionneur) pour expliquer le fonctionnement global de l’objet.</title>
+<rect x="44" y="433.5" width="326" height="100" rx="13" fill="#DFE6EC" opacity=".5"/>
+<rect x="44" y="430.5" width="326" height="100" rx="13" fill="#ECF7F2" stroke="#267865" stroke-opacity=".32"/>
+<text x="62" y="473.5" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">cmp-cartographier-</text>
+<text x="62" y="499.5" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">chaine-capteur</text>
+</g>
+<g id="cmp-verifier-forme-representation"><title>Vérifier la forme d’une représentation d’algorithme simple — Classer, repérer ou corriger des propositions selon qu’elles respectent la forme de représentation attendue : instruction complète, paramètres présents, cadre cohérent et forme homogène.</title>
+<rect x="534" y="33.0" width="326" height="100" rx="13" fill="#DFE6EC" opacity=".5"/>
+<rect x="534" y="30.0" width="326" height="100" rx="13" fill="#F4EFFB" stroke="#77549A" stroke-opacity=".32"/>
+<text x="552" y="73.0" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">cmp-verifier-forme-</text>
+<text x="552" y="99.0" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">representation</text>
+</g>
+<g id="cmp-expliquer-programme"><title>Comprendre et décrire le comportement prévu d’un objet programmable — Lire une séquence d’instructions et choisir ou compléter une explication qui décrit les actions réalisées, leur ordre, leur rôle et le résultat obtenu.</title>
+<rect x="534" y="604.5" width="326" height="100" rx="13" fill="#DFE6EC" opacity=".5"/>
+<rect x="534" y="601.5" width="326" height="100" rx="13" fill="#FFF5E8" stroke="#A36321" stroke-opacity=".32"/>
+<text x="552" y="658.5" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">cmp-expliquer-programme</text>
+</g>
+<g id="cmp-entrees-sorties-etat"><title>Identifier et expliciter les entrées, les sorties et l’état intermédiaire d’un algorithme. — Identifier ou retrouver ce qui est donné au départ, ce que le programme produit à la fin et, lorsque c’est demandé, les informations conservées ou transformées pendant l’exécution.</title>
+<rect x="534" y="424.5" width="326" height="100" rx="13" fill="#DFE6EC" opacity=".5"/>
+<rect x="534" y="421.5" width="326" height="100" rx="13" fill="#EDF6FC" stroke="#216A8A" stroke-opacity=".32"/>
+<text x="552" y="478.5" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">cmp-entrees-sorties-etat</text>
+</g>
+<g id="cmp-repetition-n"><title>Mettre en œuvre une répétition simple (répéter N fois) pour automatiser une action — Repérer une action ou un groupe d’actions répété, déterminer le nombre de répétitions et choisir ou construire une boucle « répéter N fois » équivalente à une séquence répétée.</title>
+<rect x="534" y="784.5" width="326" height="100" rx="13" fill="#DFE6EC" opacity=".5"/>
+<rect x="534" y="781.5" width="326" height="100" rx="13" fill="#EDF6FC" stroke="#216A8A" stroke-opacity=".32"/>
+<text x="552" y="838.5" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">cmp-repetition-n</text>
+</g>
+<g id="cmp-configurer-actionneur"><title>Commander un actionneur pour produire un effet — Choisir le bloc de commande adapté à un actionneur et régler ses paramètres pour obtenir l’effet demandé. Les réglages sont fixés dans le programme et ne proviennent pas d’un capteur.</title>
+<rect x="534" y="213.0" width="326" height="100" rx="13" fill="#DFE6EC" opacity=".5"/>
+<rect x="534" y="210.0" width="326" height="100" rx="13" fill="#ECF7F2" stroke="#267865" stroke-opacity=".32"/>
+<text x="552" y="253.0" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">cmp-configurer-</text>
+<text x="552" y="279.0" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">actionneur</text>
+</g>
+<g id="cmp-associer-representations"><title>Associer des représentations équivalentes d’une même instruction ou séquence — Choisir ou apparier des représentations qui décrivent exactement la même instruction ou la même courte séquence, en conservant l’action, les paramètres et l’ordre.</title>
+<rect x="1024" y="595.5" width="326" height="100" rx="13" fill="#DFE6EC" opacity=".5"/>
+<rect x="1024" y="592.5" width="326" height="100" rx="13" fill="#F4EFFB" stroke="#77549A" stroke-opacity=".32"/>
+<text x="1042" y="635.5" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">cmp-associer-</text>
+<text x="1042" y="661.5" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">representations</text>
+</g>
+<g id="cmp-simuler-programme"><title>Prévoir l’état produit par l’exécution d’un programme — Exécuter mentalement un programme fourni depuis un état initial pour déterminer une position, une valeur, un état final ou les situations dans lesquelles la mission réussit.</title>
+<rect x="1024" y="784.5" width="326" height="100" rx="13" fill="#DFE6EC" opacity=".5"/>
+<rect x="1024" y="781.5" width="326" height="100" rx="13" fill="#FFF5E8" stroke="#A36321" stroke-opacity=".32"/>
+<text x="1042" y="838.5" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">cmp-simuler-programme</text>
+</g>
+<g id="cmp-lire-capteur"><title>Lire une information de capteur et la rendre exploitable dans le programme — Identifier le bloc de lecture du capteur (état/valeur), comprendre ce que signifie la lecture pour l’objet (ex. obstacle détecté / niveau lumineux) et l’exprimer clairement dans le script (étiquette/nommage utile).</title>
+<rect x="1024" y="406.5" width="326" height="100" rx="13" fill="#DFE6EC" opacity=".5"/>
+<rect x="1024" y="403.5" width="326" height="100" rx="13" fill="#ECF7F2" stroke="#267865" stroke-opacity=".32"/>
+<text x="1042" y="460.5" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">cmp-lire-capteur</text>
+</g>
+<g id="cmp-convertir-representations"><title>Convertir des représentations d’un même algorithme — Passer d’une représentation autorisée à une autre (langage naturel, pseudo-code du projet, blocs Blockly fournis) en conservant les actions, les objets, les paramètres, l’ordre et les répétitions. L’élève choisit, complète ou corrige une conversion fournie, sans inventer de syntaxe ni écrire librement des blocs.</title>
+<rect x="1514" y="78.0" width="326" height="100" rx="13" fill="#DFE6EC" opacity=".5"/>
+<rect x="1514" y="75.0" width="326" height="100" rx="13" fill="#F4EFFB" stroke="#77549A" stroke-opacity=".32"/>
+<text x="1532" y="118.0" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">cmp-convertir-</text>
+<text x="1532" y="144.0" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">representations</text>
+</g>
+<g id="cmp-identifier-erreurs"><title>Critiquer un programme au regard du comportement de l’objet programmé — Analyser un programme ou plusieurs programmes au regard d’un résultat attendu pour repérer l’instruction ou les choix qui empêchent d’obtenir ce résultat.</title>
+<rect x="1514" y="784.5" width="326" height="100" rx="13" fill="#DFE6EC" opacity=".5"/>
+<rect x="1514" y="781.5" width="326" height="100" rx="13" fill="#FFF5E8" stroke="#A36321" stroke-opacity=".32"/>
+<text x="1532" y="838.5" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">cmp-identifier-erreurs</text>
+</g>
+<g id="cmp-piloter-actionneur-capteur"><title>Relier directement un capteur à un actionneur — Utiliser la valeur fournie par un capteur comme réglage d’un actionneur compatible, sans condition ni calcul de conversion, puis comprendre comment la variation mesurée modifie l’action produite.</title>
+<rect x="1514" y="406.5" width="326" height="100" rx="13" fill="#DFE6EC" opacity=".5"/>
+<rect x="1514" y="403.5" width="326" height="100" rx="13" fill="#ECF7F2" stroke="#267865" stroke-opacity=".32"/>
+<text x="1532" y="446.5" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">cmp-piloter-actionneur-</text>
+<text x="1532" y="472.5" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">capteur</text>
+</g>
+<g id="cmp-corriger-tests"><title>Modifier un programme pour obtenir le comportement attendu d’un objet — Choisir, classer ou compléter des corrections proposées afin qu’un programme obtienne le comportement attendu, sans réécriture libre du programme.</title>
+<rect x="2004" y="784.5" width="326" height="100" rx="13" fill="#DFE6EC" opacity=".5"/>
+<rect x="2004" y="781.5" width="326" height="100" rx="13" fill="#FFF5E8" stroke="#A36321" stroke-opacity=".32"/>
+<text x="2022" y="838.5" font-family="DejaVu Sans Mono, monospace" font-size="20" font-weight="600">cmp-corriger-tests</text>
+</g>
+</g></svg>

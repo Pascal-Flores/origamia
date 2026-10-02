@@ -1,0 +1,15 @@
+{
+  "source": "Charte graphique Origmia 0926.pdf, page 2",
+  "colors": [
+    "#2f3366", "#3353d6", "#529cf7", "#3f85db", "#a7cffe", "#c8e1fe", "#68cfcd",
+    "#417f7c", "#daffd1", "#81cc71", "#35a500", "#294f20", "#ffe6a6", "#fff4be",
+    "#fff9e5", "#ffee4d", "#9a6f03", "#ff5c39", "#ffbc7a", "#ffa04e", "#c85208",
+    "#ff6b95", "#f5b0d0", "#ff6474", "#ce4758", "#ff1312", "#cbbdff", "#aa84ff",
+    "#655299"
+  ],
+  "notes": [
+    "Codes HEX prioritaires lorsque les valeurs RVB imprimées les contredisent, notamment pour #2f3366 et #ffa04e.",
+    "Le code rose imprimé f5b0d est incomplet. #f5b0d0 est déduit de la valeur RVB 245 176 208 indiquée sur le même échantillon.",
+    "Le blanc #ffffff du disque est un élément du gabarit conservé à la demande de l’utilisateur, pas une couleur ajoutée à la palette des illustrations."
+  ]
+}

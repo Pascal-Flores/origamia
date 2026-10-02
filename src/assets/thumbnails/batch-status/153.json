@@ -1,0 +1,9 @@
+{
+  "id": 153,
+  "subject": "trois paquets de feutres",
+  "slug": "trois-paquets-de-feutres",
+  "prompt": "Use case: illustration-story. Create ONLY an isolated illustration for an Origamia educational thumbnail, on a genuine transparent PNG alpha background, including holes and openings. Consistent approved series style: VERY SIMPLE friendly flat 2D pictogram, rounded clear shapes, minimal necessary details. Immediately readable at 96 pixels. Use ONLY the specified brand palette: two solid colors by default, without extra shades, gradients, grain, texture, reflections, highlights, 3D rendering, drop shadows, heavy outlines or unnecessary geometric ornaments. Keep the complete uncut subject centered with transparent margins on a square canvas. DO NOT draw a background, white disk, badge or framing circle: these are added separately by code. For scenes, reduce to one compact iconic composition with only the necessary elements, not a detailed environment. No text except explicitly specified required lettering. Preserve the exact count when specified. Subject requested in French: trois paquets de feutres. Palette: ONLY #cbbdff main fill and #655299 secondary details. Do not add white or black to the illustration. Exactly THREE distinct packets of felt-tip pens, all packets separate and countable, each shown as one small rectangular packet with pen tips. Do not anthropomorphize objects: no eyes, smiling faces, arms or legs unless the subject is a person or animal. No heart motifs, gratuitous logos, decorations or visual embellishments. Keep the illustration as spare as the requested subject allows.",
+  "source": "/home/pascal/.codex/generated_images/01a0e72b-b287-7be1-a2c8-97e198a917bb/exec-fce61db5-022c-4606-9de8-38bb2f3a55e0.png",
+  "status": "composed",
+  "reviewed": true
+}

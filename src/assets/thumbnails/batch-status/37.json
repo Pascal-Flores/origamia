@@ -1,0 +1,13 @@
+{
+  "id": 37,
+  "subject": "une ardoise scolaire",
+  "slug": "une-ardoise-scolaire",
+  "prompt": "Use case: illustration-story. Create ONLY an isolated illustration for an Origamia educational thumbnail, on a genuine transparent PNG alpha background, including holes and openings. Consistent approved series style: VERY SIMPLE friendly flat 2D pictogram, rounded clear shapes, minimal necessary details. Immediately readable at 96 pixels. Use ONLY the specified brand palette: two solid colors by default, without extra shades, gradients, grain, texture, reflections, highlights, 3D rendering, drop shadows, heavy outlines or unnecessary geometric ornaments. Keep the complete uncut subject centered with transparent margins on a square canvas. DO NOT draw a background, white disk, badge or framing circle: these are added separately by code. For scenes, reduce to one compact iconic composition with only the necessary elements, not a detailed environment. No text except explicitly specified required lettering. Preserve the exact count when specified. Subject requested in French: une ardoise scolaire. Palette: ONLY #68cfcd main fill and #417f7c secondary details. Do not add white or black to the illustration. ",
+  "source": "/home/pascal/.codex/generated_images/01a0e72b-b287-7be1-a2c8-97e198a917bb/exec-ed0e93f0-31f1-4389-aed0-8a2dd7ec610b.png",
+  "status": "composed",
+  "reviewed": true,
+  "correction": {
+    "prompt": "Origamia school illustration: a small handheld classroom chalkboard with a light blue #a7cffe rounded rectangular frame and a SOLID NAVY #2f3366 board. Across the center of the navy board, write 'ABC' in large light blue simple handwritten chalk-like letters. Clearly recognizable school slate. Clean flat 2D vector-like design with exactly these two colors, crisp edges, no textures no shading no gradients no shadows no decorative items. Isolated illustration on true transparent background outside the object only. Centered square composition with margins. Entire inside of the board opaque navy, no holes, no eraser smudge, no white regions. No circular badge, no background panel, no human faces.",
+    "source": "/home/pascal/.codex/generated_images/01a0e72b-b287-7be1-a2c8-97e198a917bb/exec-ed0e93f0-31f1-4389-aed0-8a2dd7ec610b.png"
+  }
+}

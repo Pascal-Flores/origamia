@@ -1,0 +1,18 @@
+Prérequis,Compétence accessible,Justification,Exemples d’exercices
+R4,R2,Reconnaître les conventions d’une écriture pour juger si l’extrait respecte cette forme.,"85–90, 201–204"
+C4,R2,Repérer le rôle d’un paramètre pour détecter une instruction incomplète ou insuffisamment précise.,19–27 ; 82–90
+C1,A1,Comprendre que l’ordre des instructions détermine l’ordre des actions décrites.,1–9 ; 46–54
+C1,C2,Suivre l’ordre d’une transformation simple pour relier les données de départ à ce qui est produit.,"28–30, 163–164"
+C1,C3,Identifier une séquence avant de délimiter le motif répété et les actions à placer hors de la boucle.,"10–18, 151–156"
+T1,T4,Distinguer l’actionneur et son effet physique avant de choisir sa commande.,136–138 ; 118–120
+T1,T2,Distinguer acquisition et action pour reconnaître quel élément fournit la donnée recherchée.,136–138 ; 109–117
+C4,T4,"Comprendre ce que règle un paramètre avant d’ajuster angle, puissance, volume, durée ou sens.","121–126, 225–228"
+A1,R1,Interpréter les actions décrites avant de décider que deux écritures expriment la même instruction ou séquence.,46–48 ; 73–81
+A1,A2,Lire et comprendre les instructions avant de dérouler leurs effets depuis un état initial.,"55–63, 181–186"
+C2,T2,Distinguer une donnée réellement acquise d’un nombre ou d’un texte fixe affiché en sortie.,"109–111, 217–218"
+R2,R3,Reconnaître une représentation complète et cohérente pour choisir ou compléter la forme cible.,85–90 ; 94–99
+R1,R3,"Reconnaître l’équivalence sémantique pour conserver les actions, les paramètres et l’ordre lors d’une conversion.",73–81 ; 91–99
+A2,A3,Prévoir les effets d’un programme pour les confronter à la mission et localiser ce qui empêche sa réussite.,"37–45, 169–174"
+A3,A4,"Identifier le défaut à corriger et son effet pour choisir une modification utile, puis vérifier la réussite.","64–72, 187–192"
+T2,T3,Identifier la donnée fournie par le capteur avant de la transmettre directement à un réglage.,"127–135, 229–234"
+T4,T3,Comprendre l’effet du réglage de l’actionneur avant de remplacer sa valeur fixe par une mesure.,"127–135, 229–234"

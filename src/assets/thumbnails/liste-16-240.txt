@@ -1,0 +1,225 @@
+- exo 16 : 2 feuilles de papier
+- exo 17 : pile de 6 livres
+- exo 18 : une assiette avec un verre et des couverts
+- exo 19 : une icône wifi
+- exo 20 : une carafe d’eau au citron
+- exo 21 : un dossier
+- exo 22 : se laver les mains
+- exo 23 : salade de fruit
+- exo 24 : une carte au trésor 
+- exo 25 : un audio guide
+- exo 26 : un message
+- exo 27 : un chocolat chaud
+- exo 28 : les lettres PZ
+- exo 29 : les lettres XF
+- exo 30 : les lettres NQ
+- exo 31 : le nombre 21
+- exo 32 : le nombre 18
+- exo 33 : le nombre 15
+- exo 34 : un chronomètre
+- exo 35 : une borne de recherche
+- exo 36 : un itinéraire
+- exo 37 : une ardoise scolaire
+- exo 38 : un crayon, du papier et une gomme.
+- exo 39 : une sonnerie
+- exo 40 : un cartable
+- exo 41 : une trousse ouverte
+- exo 42 : un agenda
+- exo 43 : une trousse de secours
+- exo 44 : une batterie chargée
+- exo 45 : un jeu de l’oie
+- exo 46 : une fiche et un cahier
+- exo 47 : une boite de jeu
+- exo 48 : un stylo vide
+- exo 49 : un crayon, du papier avec un dessin et une gomme.
+- exo 50 : un document téléchargé
+- exo 51 : une valise
+- exo 52 : recherche web
+- exo 53 : un groupe d’élève
+- exo 54 : un mini-tournoi
+- exo 55 : une bibliothèque
+- exo 56 : une serre
+- exo 57 : un entrepôt
+- exo 58 : un robot laveur
+- exo 59 : un robot d’inspection
+- exo 60 : un projecteur
+- exo 61 : borne de recharge d’un robot
+- exo 62 : 3 colis
+- exo 63 : un pont-levis
+- exo 64 : Un bras robotique
+- exo 65 : Une fontaine
+- exo 66 : Une aération motorisé
+- exo 67 : Un robot de recyclage
+- exo 68 : Une lampe
+- exo 69 : Un convoyeur
+- exo 70 : Un arrosage goutte à goutte
+- exo 71 : un badge
+- exo 72 : une scène de spectacle avec rideaux et projecteurs
+- exo 73 : envoyer une image par message
+- exo 74 : une pochette « à rendre »
+- exo 75 : un classeur
+- exo 76 : trois instructions
+- exo 77 : trois instructions sur un tableau
+- exo 78 : un bol de céréales
+- exo 79 : une flexion
+- exo 80 : une poésie
+- exo 81 : lire une leçon
+- exo 82 : une salle de classe
+- exo 83 : une trousse fermée
+- exo 84 : une page de cahier
+- exo 85 : nommer un fichier
+- exo 86 : un crayon, une règle et une gomme blanche.
+- exo 87 : une gourde d’eau
+- exo 88 : une feuille corrigée
+- exo 89 : un agenda signé
+- exo 90 : ouvrir une salle de classe
+- exo 91 : cahier de lecture avec étiquette de prénom
+- exo 92 : une autorisation signée
+- exo 93 : une affiche Club sciences
+- exo 94 : une tablette de lecture
+- exo 95 : une feuille et un classeur
+- exo 96 : une affiche suspendue à un fil
+- exo 97 : trois cartes tamponnées
+- exo 98 : pinceaux de peinture
+- exo 99 : une main qui se secoue pour dire bonjour
+- exo 100 : un cahier ouvert et rédigé 
+- exo 101 : un étagère de livre
+- exo 102 : un papier avec un dessin dessus
+- exo 103 : un cahier ouvert
+- exo 104 : un cahier rouge
+- exo 105 : un cartable ouvert
+- exo 106 : un classeur ouvert
+- exo 107 : un document ouvert 
+- exo 108 : une boite de feutres ouverte
+- exo 109 : un thermomètre
+- exo 110 : une main qui fait « shuuut ! »
+- exo 111 : une boussole
+- exo 112 : une sonde 
+- exo 113 : un cerfs-volant
+- exo 114 : une glacière
+- exo 115 : une salle de concert
+- exo 116 : un centre d’archives
+- exo 117 : un voilier
+- exo 118 : une boîte à quiz
+- exo 119 : un bracelet electronic
+- exo 120 : un manège
+- exo 121 : un automate
+- exo 122 : une fusée
+- exo 123 : un anneau pour faire des bulles
+- exo 124 : un téléphérique
+- exo 125 : une machine à remonter le temps
+- exo 126 : une roue des défis
+- exo 127 : un haut parleur 
+- exo 128 : un cadran indiquant la température
+- exo 129 : un ventilateur
+- exo 130 : une fenêtre
+- exo 131 : un tunnel
+- exo 132 : une grille d’aération
+- exo 133 : exposition scientifique
+- exo 134 : Un musée des sciences
+- exo 135 : un festival scientifique
+- exo 136 : un abreuvoir
+- exo 137 : une lampe
+- exo 138 : un pont-levis
+- exo 139 : un badge
+- exo 140 : Une station de tri
+- exo 141 : un portail automatique
+- exo 142 : Un robot de livraison
+- exo 143 : Une lampe de lecture
+- exo 144 : une serre avec une aération
+- exo 145 : une feuille
+- exo 146 : élève qui lève la main
+- exo 147 : une table
+- exo 148 : une feuille avec la liste des élèves de la classe
+- exo 149 : une rosace
+- exo 150 : un drapeau de départ
+- exo 151 : 3 hublots ronds alignés
+- exo 152 : un serpent stylisé dont le corps forme une ligne ondulée régulière
+- exo 153 : trois paquets de feutres
+- exo 154 : un parc 
+- exo 155 : un sac de déchets
+- exo 156 : une pile de cahiers
+- exo 157 : un cahier avec la leçon du jour
+- exo 158 : une crème solaire
+- exo 159 : une fiche de lecture et un livre
+- exo 160 : un planning des devoirs
+- exo 161 : une fiche de sortie de classe
+- exo 162 : une carte avec un numéro, un prénom et une couleur
+- exo 163 : une carotte
+- exo 164 : numéro 1
+- exo 165 : numéro 12B
+- exo 166 : une carte d’anniversaire
+- exo 167 : une étiquette avec un prénom
+- exo 168 : un exercice corrigé 
+- exo 169 : La couverture d’un cahier est déchirée
+- exo 170 : une brosse à dents
+- exo 171 : atelier lecture, géométrie et dessin
+- exo 172 : un manteau
+- exo 173 : une fenêtre ouverte
+- exo 174 : une boite à jeux d’enfants
+- exo 175 : un élève debout les bras en l’aire
+- exo 176 : un pommeau de douche
+- exo 177 : un lave vaiselle
+- exo 178 : une lessive
+- exo 179 : un classeur avec de feuilles
+- exo 180 : une banane
+- exo 181 : un petit robot transporte un déchet
+- exo 182 : une cuisine
+- exo 183 : horloge
+- exo 184 : un pansement 
+- exo 185 : un passage pieton
+- exo 186 : Une barrière automatique
+- exo 187 : un ballon
+- exo 188 : une piscine
+- exo 189 : un sac de piscine
+- exo 190 : une borne numérique
+- exo 191 : un minuteur
+- exo 192 : une application de dessin
+- exo 193 : une piece bleu
+- exo 194 : un indice numéro 2
+- exo 195 : 4 briques LEGO
+- exo 196 : un cinema
+- exo 197 : un origami
+- exo 198 : groupe de trois élèves
+- exo 199 : groupe de deux élèves
+- exo 200 : une checklist
+- exo 201 : une paire d’yeux
+- exo 202 : un plan de travail
+- exo 203 : une fiche d’auto-évaluation
+- exo 204 : une table d’écolier bien rangé
+- exo 205 : un évier
+- exo 206 : une flute
+- exo 207 : un porte manteau d’écolier
+- exo 208 : des vêtements sur une chaise
+- exo 209 : un jeu de carte 
+- exo 210 : une oeuvre d’art
+- exo 211 : une table à manger 
+- exo 212 : une pile de vêtement plier
+- exo 213 : étiquette d’un yaourt
+- exo 214 : un ticket de transport
+- exo 215 : Une fiche de retour de livre
+- exo 216 : un marque-page
+- exo 217 : une pièce avec une lampe
+- exo 218 : Un boîtier d’appel d’urgence
+- exo 219 : une salle de classe avec les lumières éteintes
+- exo 220 : un bus scolaire
+- exo 221 : une station de métro
+- exo 222 : une cours de récréation
+- exo 223 : un vélo
+- exo 224 : une casquette avec une élite
+- exo 225 : un passage piéton fermé par un passage à niveau
+- exo 226 : une machine sèche-mains 
+- exo 227 : une chambre d’enfant
+- exo 228 : une balise sonore
+- exo 229 : un mobile suspendu à un ventilateur au plafond
+- exo 230 : une boite avec un ventilateur
+- exo 231 : une serre humide
+- exo 232 : un atelier de bois
+- exo 233 : un montage électronique sur une table
+- exo 234 : un laboratoire
+- exo 235 : un distributeur automatique de savon
+- exo 236 : une serre dont la température est élevée
+- exo 237 : un store
+- exo 238 : un toilet
+- exo 239 : un parking
+- exo 240 : un distributeur automatique de billet

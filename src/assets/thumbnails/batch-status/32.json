@@ -1,0 +1,13 @@
+{
+  "id": 32,
+  "subject": "le nombre 18",
+  "slug": "le-nombre-18",
+  "prompt": "Use case: illustration-story. Create ONLY an isolated illustration for an Origamia educational thumbnail, on a genuine transparent PNG alpha background, including holes and openings. Consistent approved series style: VERY SIMPLE friendly flat 2D pictogram, rounded clear shapes, minimal necessary details. Immediately readable at 96 pixels. Use ONLY the specified brand palette: two solid colors by default, without extra shades, gradients, grain, texture, reflections, highlights, 3D rendering, drop shadows, heavy outlines or unnecessary geometric ornaments. Keep the complete uncut subject centered with transparent margins on a square canvas. DO NOT draw a background, white disk, badge or framing circle: these are added separately by code. For scenes, reduce to one compact iconic composition with only the necessary elements, not a detailed environment. No text except explicitly specified required lettering. Preserve the exact count when specified. Subject requested in French: le nombre 18. Palette: ONLY #2f3366 main fill and #2f3366 secondary details. Do not add white or black to the illustration. ONLY the exact number \"18\", bold simple rounded sans-serif. No paper, frame or other text.",
+  "source": "/home/pascal/.codex/generated_images/01a0e72b-b287-7be1-a2c8-97e198a917bb/exec-c1ed9748-b7e8-4d2f-acf5-4aa19e494713.png",
+  "status": "composed",
+  "reviewed": true,
+  "correction": {
+    "prompt": "A typography-only transparent PNG of the exact number \"18\" in solid navy #2f3366 bold rounded sans-serif. Two normal printed digit glyphs side by side, centered, complete. NOT cartoon characters: no eyes, faces, mouths, arms, hands, legs, feet, stars, counting objects, decoration, paper, circle or background. ONLY the two plain glyphs and real alpha transparency. No gradient or texture.",
+    "source": "/home/pascal/.codex/generated_images/01a0e72b-b287-7be1-a2c8-97e198a917bb/exec-c1ed9748-b7e8-4d2f-acf5-4aa19e494713.png"
+  }
+}

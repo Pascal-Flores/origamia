@@ -1,0 +1,17 @@
+{
+  "width": 344,
+  "height": 227,
+  "background": "#aa84ff",
+  "circle": {
+    "center_x": 172,
+    "center_y": 113.5,
+    "diameter": 138,
+    "fill": "#ffffff"
+  },
+  "illustration_box": {
+    "width": 96,
+    "height": 96
+  },
+  "alpha_bounds_threshold": 8,
+  "supersampling": 8
+}
