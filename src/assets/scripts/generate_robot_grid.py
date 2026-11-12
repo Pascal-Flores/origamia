@@ -17,6 +17,7 @@ COLORS = {
     "rouge": ("#fee2e2", "#dc2626"),
     "violet": ("#ede9fe", "#7c3aed"),
 }
+SYMBOLS = {"cercle", "carre", "triangle"}
 DIRECTION_ANGLES = {
     "n": 0,
     "nord": 0,
@@ -44,13 +45,36 @@ def parse_target(raw: str, columns: int, rows: int) -> tuple[int, int, str]:
     parts = raw.split(":") if ":" in raw else raw.split(maxsplit=2)
     if len(parts) not in {2, 3}:
         raise argparse.ArgumentTypeError(
-            "Target must be CASE:COLOR or CASE COLOR, with an optional label."
+            "Target must be CASE:MARKER or CASE MARKER, with an optional label."
         )
-    color = parts[1].lower()
-    if color not in COLORS:
-        raise argparse.ArgumentTypeError(f"Unknown color: {parts[1]}")
+    marker = parts[1].strip().lower()
+    if marker == "carré":
+        marker = "carre"
+    if marker not in COLORS and marker not in SYMBOLS:
+        raise argparse.ArgumentTypeError(f"Unknown color or symbol: {parts[1]}")
     col, row = parse_cell(parts[0], columns, rows)
-    return col, row, color
+    return col, row, marker
+
+
+def render_symbol(marker: str, center_x: float, center_y: float, cell: int) -> str:
+    radius = cell * 0.24
+    style = (
+        f'fill="none" stroke="#111827" stroke-width="{cell * 0.06:g}" '
+        'stroke-linejoin="round"'
+    )
+    if marker == "cercle":
+        return f'<circle cx="{center_x:g}" cy="{center_y:g}" r="{radius:g}" {style}/>'
+    if marker == "carre":
+        return (
+            f'<rect x="{center_x - radius:g}" y="{center_y - radius:g}" '
+            f'width="{2 * radius:g}" height="{2 * radius:g}" {style}/>'
+        )
+    points = (
+        f"{center_x:g},{center_y - radius:g} "
+        f"{center_x + radius:g},{center_y + radius:g} "
+        f"{center_x - radius:g},{center_y + radius:g}"
+    )
+    return f'<polygon points="{points}" {style}/>'
 
 
 def parse_spec(source: str) -> dict[str, object]:
@@ -107,8 +131,13 @@ def build_svg(args: argparse.Namespace) -> str:
                 'fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>'
             )
 
-    for col, row, color in targets:
-        fill, stroke = COLORS[color]
+    for col, row, marker in targets:
+        if marker in SYMBOLS:
+            center_x = padding + (col + 0.5) * cell
+            center_y = padding + (row + 0.5) * cell
+            pieces.append(render_symbol(marker, center_x, center_y, cell))
+            continue
+        fill, stroke = COLORS[marker]
         x = padding + col * cell + 4
         y = padding + row * cell + 4
         pieces.append(
@@ -158,7 +187,8 @@ def main() -> None:
         "--target",
         dest="targets",
         action="append",
-        help="Colored cell in the form CASE:COLOR or CASE COLOR.",
+        help="Marked cell in the form CASE:MARKER or CASE MARKER. "
+        "Use a color or a symbol (cercle, carre, triangle).",
     )
     args = parser.parse_args()
     if args.spec:
